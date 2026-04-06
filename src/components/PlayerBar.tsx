@@ -26,9 +26,9 @@ export function PlayerBar({ channel, isPlaying, volume, onTogglePlayPause, onSto
         {/* Channel info */}
         <div className="flex items-center gap-3 flex-1 min-w-0">
           {albumArt ? (
-            <img src={albumArt} alt="" className="w-12 h-12 rounded object-cover" crossOrigin="anonymous" />
+            <img src={albumArt} alt="" className="w-12 h-12 rounded object-cover" />
           ) : (
-            <img src={channel.logo} alt="" className="w-12 h-12 rounded object-cover" crossOrigin="anonymous" />
+            <img src={channel.logo} alt="" className="w-12 h-12 rounded object-cover" />
           )}
           <div className="min-w-0">
             <p className="text-foreground font-semibold text-sm truncate">{channel.name}</p>
