@@ -85,6 +85,14 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
             crossOrigin="anonymous"
           />
         )}
+
+        <Link
+          to={`/channel/${channel.id}`}
+          onClick={(e) => e.stopPropagation()}
+          className="shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
+        >
+          <ChevronRight className="w-4 h-4 text-muted-foreground" />
+        </Link>
       </div>
     </button>
   );
