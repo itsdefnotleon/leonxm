@@ -1,6 +1,7 @@
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { Channel } from "@/lib/channels";
-import { Play, Pause, Lock } from "lucide-react";
+import { Play, Pause, Lock, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ChannelCardProps {
   channel: Channel;
