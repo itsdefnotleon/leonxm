@@ -40,7 +40,7 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
             src={channel.logo}
             alt={channel.name}
             className="w-16 h-16 rounded-md object-cover"
-            crossOrigin="anonymous"
+           
           />
           <div className={`absolute inset-0 rounded-md flex items-center justify-center bg-background/60 transition-opacity ${
             isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
@@ -82,7 +82,7 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
             src={albumArt}
             alt="Album art"
             className="w-12 h-12 rounded object-cover hidden sm:block"
-            crossOrigin="anonymous"
+           
           />
         )}
 

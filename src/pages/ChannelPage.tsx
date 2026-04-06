@@ -78,7 +78,7 @@ const ChannelPage = () => {
                 src={channel.logo}
                 alt={channel.name}
                 className={`w-48 h-48 rounded-xl object-cover shadow-2xl ${isThisPlaying ? "playing-pulse" : ""}`}
-                crossOrigin="anonymous"
+               
               />
               {isThisPlaying && (
                 <div className="absolute -bottom-2 -right-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
@@ -152,7 +152,7 @@ const ChannelPage = () => {
                 src={albumArt}
                 alt="Album art"
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover shadow-lg"
-                crossOrigin="anonymous"
+               
               />
             ) : (
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg bg-muted flex items-center justify-center">
