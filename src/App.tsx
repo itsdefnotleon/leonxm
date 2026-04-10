@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
 import About from "./pages/About.tsx";
 import News from "./pages/News.tsx";
+import Terms from "./pages/Terms.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/channel/:id" element={<ChannelPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
+          <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
