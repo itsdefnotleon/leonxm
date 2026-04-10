@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { AudioPlayerProvider, useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
+import { PlayerBar } from "@/components/PlayerBar";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
@@ -12,22 +14,39 @@ import Terms from "./pages/Terms.tsx";
 
 const queryClient = new QueryClient();
 
+function GlobalPlayerBar() {
+  const { currentChannel, isPlaying, volume, togglePlayPause, stop, changeVolume } = useAudioPlayerContext();
+  return (
+    <PlayerBar
+      channel={currentChannel}
+      isPlaying={isPlaying}
+      volume={volume}
+      onTogglePlayPause={togglePlayPause}
+      onStop={stop}
+      onVolumeChange={changeVolume}
+    />
+  );
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/channel/:id" element={<ChannelPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/terms" element={<Terms />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AudioPlayerProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/channel/:id" element={<ChannelPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/terms" element={<Terms />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <GlobalPlayerBar />
+        </BrowserRouter>
+      </AudioPlayerProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -1,8 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { channels } from "@/lib/channels";
 import { useNowPlaying } from "@/hooks/use-now-playing";
-import { useAudioPlayer } from "@/hooks/use-audio-player";
-import { PlayerBar } from "@/components/PlayerBar";
+import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users } from "lucide-react";
@@ -31,7 +30,7 @@ const channelDescriptions: Record<number, { tagline: string; description: string
 const ChannelPage = () => {
   const { id } = useParams();
   const channel = channels.find((c) => c.id === Number(id));
-  const { currentChannel, isPlaying, volume, play, stop, togglePlayPause, changeVolume } = useAudioPlayer();
+  const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
 
   if (!channel) {
     return (
@@ -79,7 +78,6 @@ const ChannelPage = () => {
                 src={channel.logo}
                 alt={channel.name}
                 className={`w-48 h-48 rounded-xl object-cover shadow-2xl ${isThisPlaying ? "playing-pulse" : ""}`}
-               
               />
               {isThisPlaying && (
                 <div className="absolute -bottom-2 -right-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
@@ -153,7 +151,6 @@ const ChannelPage = () => {
                 src={albumArt}
                 alt="Album art"
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover shadow-lg"
-               
               />
             ) : (
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg bg-muted flex items-center justify-center">
@@ -188,14 +185,6 @@ const ChannelPage = () => {
         )}
       </section>
 
-      <PlayerBar
-        channel={currentChannel}
-        isPlaying={isPlaying}
-        volume={volume}
-        onTogglePlayPause={togglePlayPause}
-        onStop={stop}
-        onVolumeChange={changeVolume}
-      />
       <Footer />
     </div>
   );

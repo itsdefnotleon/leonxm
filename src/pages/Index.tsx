@@ -1,13 +1,12 @@
 import { channels } from "@/lib/channels";
-import { useAudioPlayer } from "@/hooks/use-audio-player";
+import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { ChannelCard } from "@/components/ChannelCard";
-import { PlayerBar } from "@/components/PlayerBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Radio, Headphones, Zap } from "lucide-react";
 
 const Index = () => {
-  const { currentChannel, isPlaying, volume, play, stop, togglePlayPause, changeVolume } = useAudioPlayer();
+  const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
 
   return (
     <div className="min-h-screen bg-background">
@@ -64,15 +63,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Player */}
-      <PlayerBar
-        channel={currentChannel}
-        isPlaying={isPlaying}
-        volume={volume}
-        onTogglePlayPause={togglePlayPause}
-        onStop={stop}
-        onVolumeChange={changeVolume}
-      />
       <Footer />
     </div>
   );
