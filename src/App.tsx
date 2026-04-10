@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
 import About from "./pages/About.tsx";
+import News from "./pages/News.tsx";
 
 const queryClient = new QueryClient();
 
