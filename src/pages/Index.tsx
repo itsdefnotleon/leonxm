@@ -3,6 +3,7 @@ import { useAudioPlayer } from "@/hooks/use-audio-player";
 import { ChannelCard } from "@/components/ChannelCard";
 import { PlayerBar } from "@/components/PlayerBar";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Radio, Headphones, Zap } from "lucide-react";
 
 const Index = () => {
@@ -72,6 +73,7 @@ const Index = () => {
         onStop={stop}
         onVolumeChange={changeVolume}
       />
+      <Footer />
     </div>
   );
 };

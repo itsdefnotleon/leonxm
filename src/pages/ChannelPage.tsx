@@ -4,6 +4,7 @@ import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayer } from "@/hooks/use-audio-player";
 import { PlayerBar } from "@/components/PlayerBar";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users } from "lucide-react";
 
 const channelDescriptions: Record<number, { tagline: string; description: string; genre: string; location: string }> = {
@@ -195,6 +196,7 @@ const ChannelPage = () => {
         onStop={stop}
         onVolumeChange={changeVolume}
       />
+      <Footer />
     </div>
   );
 };
