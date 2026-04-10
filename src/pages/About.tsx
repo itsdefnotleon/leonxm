@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Radio, Shield, Heart, Users } from "lucide-react";
 
@@ -87,6 +88,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
