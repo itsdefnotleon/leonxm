@@ -10,7 +10,7 @@ export function Header() {
           <img src={leonxmLogo} alt="LeonXM" className="h-8 object-contain" />
         </Link>
         <nav className="flex items-center gap-6">
-          <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Channels</Link>
+          <Link to="/channels" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Channels</Link>
           <Link to="/news" className="text-sm text-muted-foreground hover:text-foreground transition-colors">News</Link>
           <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
           <div className="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
