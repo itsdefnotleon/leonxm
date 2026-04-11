@@ -6,9 +6,9 @@ export function Header() {
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur-xl sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src={leonxmLogo} alt="LeonXM" className="h-8 object-contain" />
-        </div>
+        </Link>
         <nav className="flex items-center gap-6">
           <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Channels</Link>
           <Link to="/news" className="text-sm text-muted-foreground hover:text-foreground transition-colors">News</Link>

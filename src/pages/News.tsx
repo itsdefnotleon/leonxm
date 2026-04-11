@@ -25,7 +25,7 @@ export default function News() {
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-10">
-          <h1 className="text-4xl font-bold tracking-tight mb-2">News & Updates</h1>
+          <h1 className="text-4xl font-bold tracking-tight mb-2">News</h1>
           <p className="text-muted-foreground">The latest from LeonXM</p>
         </div>
 
@@ -44,7 +44,7 @@ export default function News() {
               </div>
               <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
                 <Radio className="w-4 h-4" />
-                <Link to="/channel/ilikeradio" className="hover:underline font-medium">Listen to ilikeRadio on LeonXM →</Link>
+                <Link to="/channel/2" className="hover:underline font-medium">Listen to ilikeRadio on LeonXM →</Link>
               </div>
             </article>
           ))}
