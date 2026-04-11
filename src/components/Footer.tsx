@@ -11,9 +11,8 @@ export function Footer() {
             <span>© {new Date().getFullYear()} LeonXM. All rights reserved.</span>
           </div>
           <nav className="flex items-center gap-6">
-            <Link to="/news" className="text-sm text-muted-foreground hover:text-foreground transition-colors">News</Link>
-            <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
             <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
           </nav>
         </div>
       </div>
