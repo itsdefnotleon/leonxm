@@ -7,6 +7,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import blazeProof from "@/assets/blazexm-proof.webp";
 
 export function BlazeXMPopup() {
   const [open, setOpen] = useState(false);
