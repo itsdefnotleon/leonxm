@@ -2,8 +2,35 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Calendar, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
+import blazeProof from "@/assets/blazexm-proof.webp";
 
 const articles = [
+  {
+    id: "blazexm-exposed",
+    title: "BlazeXM Exposed: Stolen Branding, Fake Permissions, and Endless Drama",
+    date: "April 12, 2026",
+    summary: "A deep dive into BlazeXM's pattern of stolen branding, fabricated claims of permission from SiriusXM and iHeart, and the toxic behavior of its owner.",
+    content: `If you've spent any time in the online radio community, you've probably heard of BlazeXM. And if you have, you probably already know what a mess it is. But for those who don't — buckle up, because this one's a ride.
+
+BlazeXM is a knockoff internet radio service that has built its entire identity by ripping off SiriusXM's branding. The name, the styling, the look and feel — it's all lifted directly from one of the biggest names in radio. And when called out on it, the owner — who goes by "Blaze" — has repeatedly claimed that SiriusXM gave them permission to use their branding.
+
+Spoiler: they didn't.
+
+When pressed for proof of this supposed permission, Blaze's response was telling. In a Discord conversation, after being asked directly for evidence, Blaze first said "Okay, Okay, No" — and then when pushed further, his excuse was: "Because ur not a blazeXM staff." That's not an answer. That's a deflection. If you had legitimate permission from a multi-billion dollar corporation, you'd be shouting it from the rooftops — not hiding behind a staff-only excuse that conveniently prevents anyone from ever verifying the claim.
+
+But it doesn't stop at SiriusXM. Blaze has also been caught stealing Y100's branding from iHeart Radio, once again claiming he had permission to do so. And once again, he didn't. Community members have pointed out that Blaze has also claimed to "know the bosses at iHeart & Audacy Radio Group" — a laughable claim that nobody has been able to verify, because it's almost certainly fabricated.
+
+The pattern is clear: make a bold claim, refuse to back it up, and then deflect or attack anyone who questions it. It's textbook dishonesty.
+
+And then there's the drama. Blaze is notorious in the community for constantly picking fights, stirring up conflicts, and dragging other creators into pointless beef. Instead of focusing on building a quality product, Blaze spends his time starting arguments, being antagonistic, and creating a toxic atmosphere wherever he goes. It's exhausting for everyone involved, and it's driven away countless community members who just want to enjoy internet radio without the middle school drama.
+
+The service itself reflects this lack of care. BlazeXM's streams are unreliable, the branding is entirely derivative, and there's zero originality to be found. It's a carbon copy pretending to be something it's not, run by someone who would rather fight than build.
+
+At LeonXM, we took a different path. We built our platform from the ground up with original branding, reliable infrastructure, and quality stations that actually work. We don't steal other companies' identities. We don't fabricate permissions. And we definitely don't spend our time starting drama with other creators.
+
+We're here to deliver great radio — free, reliable, and without the baggage. If you've been burned by BlazeXM's nonsense, welcome home. LeonXM is the real deal, and we're not going anywhere.`,
+    hasProofImage: true,
+  },
   {
     id: "ilikeradio-maintenance",
     title: "ilikeRadio Website Down for Maintenance This Saturday — LeonXM Stays Live",
@@ -41,6 +68,16 @@ export default function News() {
                 {article.content.split("\n\n").map((paragraph, i) => (
                   <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{paragraph}</p>
                 ))}
+                {article.hasProofImage && (
+                  <div className="my-6 space-y-2">
+                    <p className="text-foreground font-medium text-sm">Evidence: Blaze refusing to provide proof of SiriusXM's permission</p>
+                    <img
+                      src={blazeProof}
+                      alt="Discord screenshot showing Blaze claiming SiriusXM gave permission but refusing to provide proof"
+                      className="rounded-lg border border-border w-full max-w-xl"
+                    />
+                  </div>
+                )}
               </div>
               <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
                 <Radio className="w-4 h-4" />
