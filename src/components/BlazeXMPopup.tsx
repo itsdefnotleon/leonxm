@@ -32,15 +32,23 @@ export function BlazeXMPopup() {
         <div className="space-y-4 text-sm text-muted-foreground">
           <p>
             BlazeXM has <strong className="text-foreground">falsely claimed</strong> to have permission
-            from SiriusXM to copy their branding. They don't. It's a lie.
+            from SiriusXM to copy their branding. They don't. It's a straight-up lie, and they've
+            been repeating it to make themselves look legitimate when they're anything but.
           </p>
           <p>
-            On top of that, the owner constantly starts drama and stirs up unnecessary conflict
-            in the community. It's exhausting and unprofessional.
+            The owner, Blaze, is known for constantly stirring up drama and picking fights with
+            other creators in the community. Instead of building something worthwhile, they spend
+            their time starting beef, being annoying, and dragging everyone into pointless conflicts.
+            It's exhausting, immature, and completely unprofessional.
+          </p>
+          <p>
+            Their service itself isn't much better either — unreliable streams, sloppy branding ripped
+            straight from SiriusXM, and zero originality. It's a knockoff pretending to be the real thing.
           </p>
           <p className="text-foreground font-medium">
-            LeonXM is different. We focus on what matters — great stations, reliable streams,
-            and zero drama. Welcome to the real deal.
+            LeonXM is different. We built this from the ground up with original branding, quality stations,
+            reliable streams, and a community that's actually worth being part of. No drama, no lies,
+            no stolen branding — just great radio. Welcome to the real deal.
           </p>
         </div>
         <Button onClick={() => setOpen(false)} className="w-full mt-2">
