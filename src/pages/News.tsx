@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Calendar, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
+import blazeProof from "@/assets/blazexm-proof.webp";
 
 const articles = [
   {
