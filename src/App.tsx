@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AudioPlayerProvider, useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { PlayerBar } from "@/components/PlayerBar";
+import { BlazeXMPopup } from "@/components/BlazeXMPopup";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
@@ -36,6 +37,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <AudioPlayerProvider>
+        <BlazeXMPopup />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
