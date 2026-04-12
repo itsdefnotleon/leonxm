@@ -37,6 +37,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <AudioPlayerProvider>
+        <BlazeXMPopup />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
