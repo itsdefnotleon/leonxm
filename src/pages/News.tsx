@@ -68,6 +68,16 @@ export default function News() {
                 {article.content.split("\n\n").map((paragraph, i) => (
                   <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{paragraph}</p>
                 ))}
+                {article.hasProofImage && (
+                  <div className="my-6 space-y-2">
+                    <p className="text-foreground font-medium text-sm">Evidence: Blaze refusing to provide proof of SiriusXM's permission</p>
+                    <img
+                      src={blazeProof}
+                      alt="Discord screenshot showing Blaze claiming SiriusXM gave permission but refusing to provide proof"
+                      className="rounded-lg border border-border w-full max-w-xl"
+                    />
+                  </div>
+                )}
               </div>
               <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
                 <Radio className="w-4 h-4" />
