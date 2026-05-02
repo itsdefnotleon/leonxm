@@ -14,6 +14,7 @@ import News from "./pages/News.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Channels from "./pages/Channels.tsx";
+import Premium from "./pages/Premium.tsx";
 
 const queryClient = new QueryClient();
 
