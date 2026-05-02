@@ -20,11 +20,30 @@ const Index = () => {
             <h1 className="text-5xl sm:text-7xl font-black text-foreground tracking-tight leading-none mb-6">
               Listen<span className="text-primary">.</span><br />
               Anytime<span className="text-primary">.</span><br />
-              Free<span className="text-primary">.</span>
+              $9.99/mo<span className="text-primary">.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-8">
-              Curated radio channels streaming 24/7. No subscriptions, no ads, no sign-up required.
+              Curated radio channels streaming 24/7. Now with the premium experience of paying us monthly for things that used to be free.
             </p>
+            <div className="mb-8 inline-flex flex-col gap-3 rounded-2xl border border-primary/30 bg-primary/5 p-6">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest">LeonXM Premium™</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-5xl font-black text-foreground">$9.99</span>
+                <span className="text-muted-foreground">/ month</span>
+              </div>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>✓ The same exact radio you had before</li>
+                <li>✓ Audio in groundbreaking "stereo"</li>
+                <li>✓ The play button now works</li>
+                <li>✓ Cancel anytime (you can't)</li>
+              </ul>
+              <button
+                onClick={() => alert("Just kidding — it's still free. Press play and enjoy. 🎧")}
+                className="mt-2 rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Subscribe Now
+              </button>
+            </div>
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Radio className="w-4 h-4 text-primary" />
