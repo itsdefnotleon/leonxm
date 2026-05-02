@@ -55,7 +55,10 @@ export function PremiumPopup() {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => setRevealed(true)}
+                onClick={() => {
+                  close();
+                  navigate("/premium");
+                }}
                 className="flex-1 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 Subscribe Now
