@@ -5,6 +5,7 @@ import { X, Sparkles } from "lucide-react";
 export function PremiumPopup() {
   const [open, setOpen] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (sessionStorage.getItem("leonxm-premium-dismissed")) return;
