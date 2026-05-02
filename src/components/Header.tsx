@@ -15,7 +15,7 @@ export function Header() {
           <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
           <div className="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
             <Radio className="w-3.5 h-3.5" />
-            <span className="text-xs font-semibold uppercase tracking-wider">Free to Listen</span>
+            <span className="text-xs font-semibold uppercase tracking-wider">$9.99/mo</span>
           </div>
         </nav>
       </div>
