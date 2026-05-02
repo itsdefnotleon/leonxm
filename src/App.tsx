@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AudioPlayerProvider, useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { PlayerBar } from "@/components/PlayerBar";
+import { PremiumPopup } from "@/components/PremiumPopup";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
