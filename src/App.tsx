@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AudioPlayerProvider, useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { PlayerBar } from "@/components/PlayerBar";
-import { PremiumPopup } from "@/components/PremiumPopup";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ChannelPage from "./pages/ChannelPage.tsx";
@@ -14,7 +13,6 @@ import News from "./pages/News.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Channels from "./pages/Channels.tsx";
-import Premium from "./pages/Premium.tsx";
 
 const queryClient = new QueryClient();
 
@@ -47,12 +45,10 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/channels" element={<Channels />} />
-            <Route path="/premium" element={<Premium />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <GlobalPlayerBar />
-          <PremiumPopup />
         </BrowserRouter>
       </AudioPlayerProvider>
     </TooltipProvider>
