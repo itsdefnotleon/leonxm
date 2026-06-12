@@ -1,21 +1,42 @@
-import { Radio } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import leonxmLogo from "@/assets/leonxm-logo.png";
+
+const navItems = [
+  { to: "/channels", label: "Channels" },
+  { to: "/news", label: "News" },
+  { to: "/about", label: "About" },
+];
 
 export function Header() {
   return (
-    <header className="border-b border-border bg-background/80 backdrop-blur-xl sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={leonxmLogo} alt="LeonXM" className="h-8 object-contain" />
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={leonxmLogo} alt="LeonXM" className="h-8 object-contain transition-transform group-hover:scale-105" />
         </Link>
-        <nav className="flex items-center gap-6">
-          <Link to="/channels" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Channels</Link>
-          <Link to="/news" className="text-sm text-muted-foreground hover:text-foreground transition-colors">News</Link>
-          <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
-          <div className="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
-            <Radio className="w-3.5 h-3.5" />
-            <span className="text-xs font-semibold uppercase tracking-wider">Free to Listen</span>
+
+        <nav className="flex items-center gap-1">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                  isActive
+                    ? "text-foreground bg-card"
+                    : "text-muted-foreground hover:text-foreground"
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <div className="ml-4 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em]">Free to Listen</span>
           </div>
         </nav>
       </div>
