@@ -80,10 +80,11 @@ const Index = () => {
                   />
                 ))}
                 {/* center */}
-                <div className="relative z-10 text-center">
+                <div className="relative z-10 text-center px-6">
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">On Air</p>
-                  <p className="mt-2 text-5xl font-black text-foreground">88.7</p>
-                  <p className="mt-1 text-xs text-muted-foreground">LeonXM Network</p>
+                  <p className="mt-2 text-6xl font-black text-foreground leading-none">24/7</p>
+                  <p className="mt-2 text-xs text-muted-foreground">LeonXM Network</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">Live · No ads · Free</p>
                   <div className="mt-4 flex items-end justify-center gap-1 h-6">
                     {[0, 1, 2, 3, 4].map((i) => (
                       <div
