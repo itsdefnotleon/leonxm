@@ -56,6 +56,7 @@ const App = () => {
       </AudioPlayerProvider>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
