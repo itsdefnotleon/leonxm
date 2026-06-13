@@ -1,5 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import leonxmLogo from "@/assets/leonxm-logo.png";
+import { useTimeTheme, themeLabels } from "@/hooks/use-time-theme";
+import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
+
+const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
 
 const navItems = [
   { to: "/channels", label: "Channels" },
@@ -8,6 +12,8 @@ const navItems = [
 ];
 
 export function Header() {
+  const theme = useTimeTheme();
+  const Icon = themeIcons[theme];
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -32,11 +38,8 @@ export function Header() {
             </NavLink>
           ))}
           <div className="ml-4 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em]">Free to Listen</span>
+            <Icon className="w-3.5 h-3.5" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em]">{themeLabels[theme]} Mode</span>
           </div>
         </nav>
       </div>
