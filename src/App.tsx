@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AudioPlayerProvider, useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
+import { useTimeTheme } from "@/hooks/use-time-theme";
 import { PlayerBar } from "@/components/PlayerBar";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -30,7 +31,9 @@ function GlobalPlayerBar() {
   );
 }
 
-const App = () => (
+const App = () => {
+  useTimeTheme();
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
