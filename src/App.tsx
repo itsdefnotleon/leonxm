@@ -47,6 +47,7 @@ const App = () => {
       <Sonner />
       <AudioPlayerProvider>
         <BrowserRouter>
+          <RouteTracker />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/channel/:id" element={<ChannelPage />} />
