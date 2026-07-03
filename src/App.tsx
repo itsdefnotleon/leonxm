@@ -17,6 +17,8 @@ import Channels from "./pages/Channels.tsx";
 
 const queryClient = new QueryClient();
 
+import { usePreviousPathTracker } from "@/hooks/use-previous-path";
+
 function GlobalPlayerBar() {
   const { currentChannel, isPlaying, volume, togglePlayPause, stop, changeVolume } = useAudioPlayerContext();
   return (
@@ -29,6 +31,11 @@ function GlobalPlayerBar() {
       onVolumeChange={changeVolume}
     />
   );
+}
+
+function RouteTracker() {
+  usePreviousPathTracker();
+  return null;
 }
 
 const App = () => {
