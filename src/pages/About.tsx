@@ -1,18 +1,49 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ArrowLeft, Radio, Shield, Heart, Users } from "lucide-react";
 
+const routeLabels: Record<string, string> = {
+  "/": "Home",
+  "/channels": "Channels",
+  "/news": "News",
+  "/about": "About",
+  "/terms": "Terms",
+  "/privacy": "Privacy",
+};
+
+const getBackLabel = (pathname: string): string => {
+  if (routeLabels[pathname]) return routeLabels[pathname];
+  if (pathname.startsWith("/channel/")) return "Channel";
+  return "Previous Page";
+};
+
 const About = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const previousPath = (location.state as { from?: string } | null)?.from;
+  const hasHistory = typeof previousPath === "string" && previousPath !== "/about";
+  const backLabel = hasHistory ? `Back to ${getBackLabel(previousPath!)}` : "Back to Home";
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (hasHistory) navigate(-1);
+    else navigate("/");
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <div className="max-w-3xl mx-auto px-4 py-16">
-        <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8">
+        <a
+          href={hasHistory ? "#" : "/"}
+          onClick={handleBack}
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 cursor-pointer"
+        >
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm">Back to Channels</span>
-        </Link>
+          <span className="text-sm">{backLabel}</span>
+        </a>
 
         <h1 className="text-4xl sm:text-5xl font-black text-foreground tracking-tight mb-8">
           About LeonXM
