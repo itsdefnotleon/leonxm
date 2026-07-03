@@ -1,13 +1,13 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Radio, Shield, Heart, Users } from "lucide-react";
+import { getPreviousPath } from "@/hooks/use-previous-path";
 
 const routeLabels: Record<string, string> = {
   "/": "Home",
   "/channels": "Channels",
   "/news": "News",
-  "/about": "About",
   "/terms": "Terms",
   "/privacy": "Privacy",
 };
@@ -20,9 +20,8 @@ const getBackLabel = (pathname: string): string => {
 
 const About = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const previousPath = (location.state as { from?: string } | null)?.from;
-  const hasHistory = typeof previousPath === "string" && previousPath !== "/about";
+  const previousPath = getPreviousPath();
+  const hasHistory = !!previousPath && previousPath !== "/about";
   const backLabel = hasHistory ? `Back to ${getBackLabel(previousPath!)}` : "Back to Home";
 
   const handleBack = (e: React.MouseEvent) => {
