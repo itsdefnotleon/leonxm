@@ -2,6 +2,8 @@ import { useNowPlaying } from "@/hooks/use-now-playing";
 import { Channel } from "@/lib/channels";
 import { Play, Pause, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
+import { useGeoBlock } from "@/contexts/GeoBlockContext";
 
 interface ChannelCardProps {
   channel: Channel;
@@ -16,10 +18,24 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
   const songTitle = nowPlaying?.now_playing?.song?.title || "Loading...";
   const artist = nowPlaying?.now_playing?.song?.artist || "";
   const albumArt = nowPlaying?.now_playing?.song?.art;
+  const { country } = useGeoCountry();
+  const { showBlock } = useGeoBlock();
+  const blocked = isChannelBlocked(channel.geoRestricted, country);
 
   const handleClick = () => {
+    if (blocked) {
+      showBlock(channel);
+      return;
+    }
     if (isActive && isPlaying) onStop();
     else onPlay(channel);
+  };
+
+  const handleLinkClick = (e: React.MouseEvent) => {
+    if (blocked) {
+      e.preventDefault();
+      showBlock(channel);
+    }
   };
 
   return (
