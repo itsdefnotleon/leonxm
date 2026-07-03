@@ -2,8 +2,18 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Calendar, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
+import defaultArticleImage from "@/assets/leonxm-default-article.webp.asset.json";
 
-const articles = [
+type Article = {
+  id: string;
+  title: string;
+  date: string;
+  summary: string;
+  content: string;
+  image?: string;
+};
+
+const articles: Article[] = [
   {
     id: "ilikeradio-maintenance",
     title: "ilikeRadio Website Down for Maintenance This Saturday — LeonXM Stays Live",
