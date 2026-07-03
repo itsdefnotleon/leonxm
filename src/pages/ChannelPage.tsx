@@ -1,10 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { channels } from "@/lib/channels";
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
+import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
+import { useGeoBlock } from "@/contexts/GeoBlockContext";
 
 const channelDescriptions: Record<number, { tagline: string; description: string; genre: string; location: string }> = {
   1: {
@@ -35,6 +38,19 @@ const ChannelPage = () => {
   const channel = channels.find((c) => c.id === Number(id));
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
   const nowPlaying = useNowPlaying(channel?.nowPlayingApi ?? "");
+  const { status: geoStatus, country } = useGeoCountry();
+  const { showBlock } = useGeoBlock();
+  const blocked = !!channel && isChannelBlocked(channel.geoRestricted, country);
+
+  useEffect(() => {
+    if (channel && geoStatus === "ready" && blocked) {
+      showBlock(channel);
+    }
+  }, [channel, geoStatus, blocked, showBlock]);
+
+  if (channel && geoStatus === "ready" && blocked) {
+    return <Navigate to="/" replace />;
+  }
 
   if (!channel) {
     return (

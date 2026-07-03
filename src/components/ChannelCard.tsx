@@ -2,6 +2,8 @@ import { useNowPlaying } from "@/hooks/use-now-playing";
 import { Channel } from "@/lib/channels";
 import { Play, Pause, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
+import { useGeoBlock } from "@/contexts/GeoBlockContext";
 
 interface ChannelCardProps {
   channel: Channel;
@@ -16,10 +18,24 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
   const songTitle = nowPlaying?.now_playing?.song?.title || "Loading...";
   const artist = nowPlaying?.now_playing?.song?.artist || "";
   const albumArt = nowPlaying?.now_playing?.song?.art;
+  const { country } = useGeoCountry();
+  const { showBlock } = useGeoBlock();
+  const blocked = isChannelBlocked(channel.geoRestricted, country);
 
   const handleClick = () => {
+    if (blocked) {
+      showBlock(channel);
+      return;
+    }
     if (isActive && isPlaying) onStop();
     else onPlay(channel);
+  };
+
+  const handleLinkClick = (e: React.MouseEvent) => {
+    if (blocked) {
+      e.preventDefault();
+      showBlock(channel);
+    }
   };
 
   return (
@@ -72,7 +88,7 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
 
       {/* Body */}
       <div className="p-5">
-        <Link to={`/channel/${channel.id}`} className="block">
+        <Link to={`/channel/${channel.id}`} onClick={handleLinkClick} className="block">
           <h3 className="text-foreground font-bold text-lg truncate group-hover:text-primary transition-colors">
             {channel.name}
           </h3>

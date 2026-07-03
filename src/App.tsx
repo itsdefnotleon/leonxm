@@ -18,6 +18,7 @@ import Channels from "./pages/Channels.tsx";
 const queryClient = new QueryClient();
 
 import { usePreviousPathTracker } from "@/hooks/use-previous-path";
+import { GeoBlockProvider } from "@/contexts/GeoBlockContext";
 
 function GlobalPlayerBar() {
   const { currentChannel, isPlaying, volume, togglePlayPause, stop, changeVolume } = useAudioPlayerContext();
@@ -48,18 +49,20 @@ const App = () => {
       <AudioPlayerProvider>
         <BrowserRouter>
           <RouteTracker />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/channel/:id" element={<ChannelPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/channels" element={<Channels />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <GlobalPlayerBar />
+          <GeoBlockProvider>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/channel/:id" element={<ChannelPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/channels" element={<Channels />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <GlobalPlayerBar />
+          </GeoBlockProvider>
         </BrowserRouter>
       </AudioPlayerProvider>
     </TooltipProvider>
