@@ -88,7 +88,7 @@ export function ChannelCard({ channel, isActive, isPlaying, onPlay, onStop }: Ch
 
       {/* Body */}
       <div className="p-5">
-        <Link to={`/channel/${channel.id}`} className="block">
+        <Link to={`/channel/${channel.id}`} onClick={handleLinkClick} className="block">
           <h3 className="text-foreground font-bold text-lg truncate group-hover:text-primary transition-colors">
             {channel.name}
           </h3>
