@@ -22,7 +22,7 @@ const About = () => {
   const navigate = useNavigate();
   const previousPath = getPreviousPath();
   const hasHistory = !!previousPath && previousPath !== "/about";
-  const backLabel = hasHistory ? `Back to ${getBackLabel(previousPath!)}` : "Back to Home";
+  const backLabel = hasHistory ? `Back to ${getBackLabel(previousPath!)}` : "Back";
 
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
