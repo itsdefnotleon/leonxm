@@ -41,20 +41,28 @@ export default function News() {
 
         <div className="space-y-10">
           {articles.map((article) => (
-            <article key={article.id} className="border border-border rounded-2xl p-8 bg-card">
-              <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
-                <Calendar className="w-4 h-4" />
-                <time>{article.date}</time>
-              </div>
-              <h2 className="text-2xl font-bold mb-4 text-foreground">{article.title}</h2>
-              <div className="prose prose-invert max-w-none">
-                {article.content.split("\n\n").map((paragraph, i) => (
-                  <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
-                <Radio className="w-4 h-4" />
-                <Link to="/channel/2" className="hover:underline font-medium">Listen to ilikeRadio on LeonXM →</Link>
+            <article key={article.id} className="border border-border rounded-2xl overflow-hidden bg-card">
+              <img
+                src={article.image ?? defaultArticleImage.url}
+                alt={article.title}
+                className="w-full aspect-[1200/630] object-cover border-b border-border"
+                loading="lazy"
+              />
+              <div className="p-8">
+                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
+                  <Calendar className="w-4 h-4" />
+                  <time>{article.date}</time>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-foreground">{article.title}</h2>
+                <div className="prose prose-invert max-w-none">
+                  {article.content.split("\n\n").map((paragraph, i) => (
+                    <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
+                <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
+                  <Radio className="w-4 h-4" />
+                  <Link to="/channel/2" className="hover:underline font-medium">Listen to ilikeRadio on LeonXM →</Link>
+                </div>
               </div>
             </article>
           ))}
