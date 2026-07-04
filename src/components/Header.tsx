@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import leonxmLogo from "@/assets/leonxm-logo.png";
 import { useTimeTheme, useCurrentTime } from "@/hooks/use-time-theme";
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
+import { useNewArticleIndicator } from "@/hooks/use-new-article";
 
 const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
 
@@ -15,6 +16,7 @@ export function Header() {
   const theme = useTimeTheme();
   const time = useCurrentTime();
   const Icon = themeIcons[theme];
+  const { isUnseen, markSeen } = useNewArticleIndicator();
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -27,11 +29,16 @@ export function Header() {
             <NavLink
               key={item.to}
               to={item.to}
+              onClick={item.to === "/news" ? markSeen : undefined}
               className={({ isActive }) =>
                 `px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                   isActive
                     ? "text-foreground bg-card"
                     : "text-muted-foreground hover:text-foreground"
+                } ${
+                  item.to === "/news" && isUnseen
+                    ? "ring-2 ring-destructive shadow-[0_0_20px_-5px_hsl(var(--destructive)/0.5)] animate-pulse"
+                    : ""
                 }`
               }
             >
