@@ -16,6 +16,7 @@ export function Header() {
   const theme = useTimeTheme();
   const time = useCurrentTime();
   const Icon = themeIcons[theme];
+  const { isUnseen, markSeen } = useNewArticleIndicator();
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
