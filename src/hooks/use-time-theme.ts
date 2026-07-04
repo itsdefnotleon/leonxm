@@ -33,3 +33,25 @@ export function useTimeTheme(): TimeTheme {
 
   return theme;
 }
+
+export function formatUserTime(date = new Date()): string {
+  return date.toLocaleTimeString(undefined, {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
+}
+
+export function useCurrentTime(): string {
+  const [time, setTime] = useState<string>(() => formatUserTime());
+
+  useEffect(() => {
+    const update = () => setTime(formatUserTime());
+    update();
+    const id = window.setInterval(update, 60_000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return time;
+}
+
