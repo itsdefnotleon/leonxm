@@ -29,11 +29,16 @@ export function Header() {
             <NavLink
               key={item.to}
               to={item.to}
+              onClick={item.to === "/news" ? markSeen : undefined}
               className={({ isActive }) =>
                 `px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                   isActive
                     ? "text-foreground bg-card"
                     : "text-muted-foreground hover:text-foreground"
+                } ${
+                  item.to === "/news" && isUnseen
+                    ? "ring-2 ring-destructive shadow-[0_0_20px_-5px_hsl(var(--destructive)/0.5)] animate-pulse"
+                    : ""
                 }`
               }
             >
