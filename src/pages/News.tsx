@@ -79,10 +79,12 @@ export default function News() {
                     <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{paragraph}</p>
                   ))}
                 </div>
-                <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
-                  <Radio className="w-4 h-4" />
-                  <Link to="/channel/2" className="hover:underline font-medium">Listen to ilikeRadio on LeonXM →</Link>
-                </div>
+                {article.link && (
+                  <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
+                    <Radio className="w-4 h-4" />
+                    <Link to={article.link.to} className="hover:underline font-medium">{article.link.label}</Link>
+                  </div>
+                )}
               </div>
             </article>
           ))}
