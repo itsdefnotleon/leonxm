@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import leonxmLogo from "@/assets/leonxm-logo.png";
 import { useTimeTheme, useCurrentTime } from "@/hooks/use-time-theme";
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
+import { useNewArticleIndicator } from "@/hooks/use-new-article";
 
 const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
 
