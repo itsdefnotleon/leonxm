@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import leonxmLogo from "@/assets/leonxm-logo.png";
 import { useTimeTheme, useCurrentTime } from "@/hooks/use-time-theme";
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
-import { useNewArticleIndicator } from "@/hooks/use-new-article";
+import { useArticleReads } from "@/hooks/use-article-reads";
 
 const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
 
@@ -16,7 +16,7 @@ export function Header() {
   const theme = useTimeTheme();
   const time = useCurrentTime();
   const Icon = themeIcons[theme];
-  const { isUnseen, markSeen } = useNewArticleIndicator();
+  const { hasUnread, unreadCount } = useArticleReads();
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
