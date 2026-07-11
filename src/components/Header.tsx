@@ -29,20 +29,24 @@ export function Header() {
             <NavLink
               key={item.to}
               to={item.to}
-              onClick={item.to === "/news" ? markSeen : undefined}
               className={({ isActive }) =>
-                `px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                `relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                   isActive
                     ? "text-foreground bg-card"
                     : "text-muted-foreground hover:text-foreground"
                 } ${
-                  item.to === "/news" && isUnseen
+                  item.to === "/news" && hasUnread
                     ? "ring-2 ring-destructive shadow-[0_0_20px_-5px_hsl(var(--destructive)/0.5)] animate-pulse"
                     : ""
                 }`
               }
             >
               {item.label}
+              {item.to === "/news" && hasUnread && (
+                <span className="ml-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold align-middle">
+                  {unreadCount}
+                </span>
+              )}
             </NavLink>
           ))}
           <div className="ml-4 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]">
