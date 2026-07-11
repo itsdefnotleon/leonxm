@@ -44,11 +44,11 @@ export function GeoBlockProvider({ children }: { children: ReactNode }) {
               {blocked?.name} isn't available in your region
             </DialogTitle>
             <DialogDescription className="text-center">
-              Due to licensing, {blocked?.name} can only be streamed from{" "}
+              Our AzuraCast server for {blocked?.name} is geolocked to{" "}
               <span className="font-semibold text-foreground">
                 {allowed.map(countryName).join(" and ")}
               </span>
-              . Sorry about that — plenty of other channels are still free to enjoy.
+              , so the stream can't be reached from your location. Sorry about that — plenty of other channels are still free to enjoy.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="sm:justify-center">
