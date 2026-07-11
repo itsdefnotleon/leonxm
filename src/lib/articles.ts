@@ -38,7 +38,7 @@ On the News page, every article now has a default cover image, so stories always
 
 We've also made the homepage cleaner: the "Browse all channels" button has been removed, and the main "Start listening" button now takes you straight to the full channel directory.
 
-Finally, licensing rules mean ilikeRadio and Swarm Radio are now only available to listeners in the United Kingdom and Sweden. If you try to open those channels from outside those countries, you'll see a clear popup and be redirected back home.`,
+Finally, ilikeRadio and Swarm Radio are now only reachable from the United Kingdom and Sweden. This isn't a licensing decision — our AzuraCast server that hosts those streams is geolocked to those two countries, so requests from elsewhere can't connect. If you try to open those channels from outside the UK or Sweden, you'll see a clear popup and be redirected back home.`,
     link: { to: "/channels", label: "Explore all channels →" },
   },
 ];
