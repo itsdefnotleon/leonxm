@@ -39,10 +39,18 @@ export function useArticleReads() {
   useEffect(() => {
     listeners.add(setReads);
     setReads(getCurrent());
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== KEY) return;
+      current = loadReads();
+      listeners.forEach((l) => l(current!));
+    };
+    window.addEventListener("storage", onStorage);
     return () => {
       listeners.delete(setReads);
+      window.removeEventListener("storage", onStorage);
     };
   }, []);
+
 
   const markRead = useCallback((id: string) => {
     const c = getCurrent();
