@@ -1,4 +1,5 @@
 import truckHitsThumb from "@/assets/TruckHits_Radio_thumbnail.png.asset.json";
+import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -47,6 +48,7 @@ So if you're a fan of ilikeRadio and want uninterrupted access to Bristol's best
     title: "LeonXM Summer Update: Smarter Navigation, Local Time, and Regional Streaming",
     date: "July 4, 2026",
     summary: "We've rolled out a handful of updates to make LeonXM easier to use — from dynamic back buttons and a local-time header to clearer regional access for ilikeRadio and Swarm Radio.",
+    image: summerUpdateThumb.url,
     content: `We're always tuning the LeonXM experience. This week we've shipped a few quality-of-life improvements across the site.
 
 First, the header has changed. Instead of labeling the current theme mode, it now shows your local time and timezone, kept up to date alongside a day or night emoji so you can still tell whether LeonXM is in daylight or after-hours mode.
