@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Calendar, ChevronDown, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
-import defaultArticleImage from "@/assets/leonxm-default-article.webp.asset.json";
+import defaultArticleImage from "@/assets/LeonXM_thumbnail.png.asset.json";
 import { sortedArticles } from "@/lib/articles";
 import { useArticleReads } from "@/hooks/use-article-reads";
 
