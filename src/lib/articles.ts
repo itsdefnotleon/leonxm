@@ -16,6 +16,7 @@ export const articles: Article[] = [
     title: "TruckHits Radio on LeonXM now available again",
     date: "July 18, 2026",
     summary: "TruckHits Radio is back on LeonXM. We apologise for the recent interruption, and we want listeners to know about upcoming work on the hosting platform.",
+    image: truckHitsThumb.url,
     content: `TruckHits Radio is now available again on LeonXM. We sincerely apologise to anyone who tuned in recently and couldn't hear anything — we're not sure how long the issue was going on, which is why we're taking full responsibility for not catching it sooner.
 
 Please try listening again now. The stream should be back to full strength with all the hit music you expect on your hauls.
