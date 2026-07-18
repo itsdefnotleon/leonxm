@@ -11,14 +11,16 @@ export type Article = {
 export const articles: Article[] = [
   {
     id: "truckhits-stream-fixed",
-    title: "TruckHits Radio Stream URL Fixed",
+    title: "TruckHits Radio on LeonXM now available again",
     date: "July 18, 2026",
-    summary: "We've corrected the TruckHits Radio stream URL on LeonXM. We apologise for any interruptions this may have caused.",
-    content: `We recently discovered that the TruckHits Radio stream URL on LeonXM was pointing to the wrong endpoint. The correct stream is now active, and playback should work as expected.
+    summary: "TruckHits Radio is back on LeonXM. We apologise for the recent interruption, and we want listeners to know about upcoming work on the hosting platform.",
+    content: `TruckHits Radio is now available again on LeonXM. We sincerely apologise to anyone who tuned in recently and couldn't hear anything — we're not sure how long the issue was going on, which is why we're taking full responsibility for not catching it sooner.
 
-We sincerely apologise to anyone who tried to tune in and couldn't hear anything. We're not sure how long the incorrect URL was in place, which is why we take full responsibility for not catching it sooner.
+Please try listening again now. The stream should be back to full strength with all the hit music you expect on your hauls.
 
-If TruckHits Radio has been silent for you recently, please try again now. The stream should be back to full strength with all the hit music you expect on your hauls.
+Important note for TruckHits Radio listeners: the station's hosting platform, AzuraCast (Node 2) & Xtra Audio, will be shutting down on July 31, 2026 at 06:00 HAT. If you run a station on this service, start your migration now at cast1.typicalmedia.net and DM Seehed for your username and password.
+
+Because of this shutdown, more disruption to TruckHits Radio may occur over the coming days. We'll keep this article updated as we learn more, so stay tuned to LeonXM for the latest.
 
 Thanks for sticking with LeonXM — and for letting us know when things don't sound right.`,
     link: { to: "/channel/1", label: "Listen to TruckHits Radio →" },
