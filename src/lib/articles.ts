@@ -1,3 +1,5 @@
+import truckHitsThumb from "@/assets/TruckHits_Radio_thumbnail.png.asset.json";
+
 export type Article = {
   id: string;
   title: string;
