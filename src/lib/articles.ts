@@ -18,11 +18,11 @@ export const articles: Article[] = [
 
 Please try listening again now. The stream should be back to full strength with all the hit music you expect on your hauls.
 
-Important note for TruckHits Radio listeners: the station's hosting platform, AzuraCast (Node 2) & Xtra Audio, will be shutting down on July 31, 2026 at 06:00 HAT. If you run a station on this service, start your migration now at cast1.typicalmedia.net and DM Seehed for your username and password.
+However, the station's hosting platform, AzuraCast (Node 2) & Xtra Audio, will be shutting down on July 31, 2026 at 06:00 HAT.
 
 Because of this shutdown, more disruption to TruckHits Radio may occur over the coming days. We'll keep this article updated as we learn more, so stay tuned to LeonXM for the latest.
 
-Thanks for sticking with LeonXM — and for letting us know when things don't sound right.`,
+We were only just made aware of this ourselves, and we're sorry it wasn't caught sooner.`,
     link: { to: "/channel/1", label: "Listen to TruckHits Radio →" },
   },
   {
