@@ -25,7 +25,7 @@ export const channels: Channel[] = [
     id: 1,
     name: "TruckHits Radio",
     logo: "https://leons-image-library.neocities.org/truckhitsradio/cover.png",
-    streamUrl: "https://azura.typicalmedia.net/listen/truckhits/stream",
+    streamUrl: "https://azura.typicalmedia.net/listen/truckhits/radio.mp3",
     nowPlayingApi: "https://azura.typicalmedia.net/api/station/truckhits/nowplaying",
   },
   {

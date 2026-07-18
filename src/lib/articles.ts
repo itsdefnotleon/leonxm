@@ -10,6 +10,20 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "truckhits-stream-fixed",
+    title: "TruckHits Radio Stream URL Fixed",
+    date: "July 18, 2026",
+    summary: "We've corrected the TruckHits Radio stream URL on LeonXM. We apologise for any interruptions this may have caused.",
+    content: `We recently discovered that the TruckHits Radio stream URL on LeonXM was pointing to the wrong endpoint. The correct stream is now active, and playback should work as expected.
+
+We sincerely apologise to anyone who tried to tune in and couldn't hear anything. We're not sure how long the incorrect URL was in place, which is why we take full responsibility for not catching it sooner.
+
+If TruckHits Radio has been silent for you recently, please try again now. The stream should be back to full strength with all the hit music you expect on your hauls.
+
+Thanks for sticking with LeonXM — and for letting us know when things don't sound right.`,
+    link: { to: "/channel/1", label: "Listen to TruckHits Radio →" },
+  },
+  {
     id: "ilikeradio-maintenance",
     title: "ilikeRadio Website Down for Maintenance This Saturday — LeonXM Stays Live",
     date: "April 10, 2026",
