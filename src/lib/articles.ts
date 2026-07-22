@@ -13,6 +13,21 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "truckhits-azuracast-down-again",
+    title: "TruckHits Radio Temporarily Offline",
+    date: "July 22, 2026",
+    summary: "TruckHits Radio is currently unavailable due to an outage on its AzuraCast hosting server. The station operator has confirmed the service will return as soon as possible.",
+    image: truckHitsThumb.url,
+    content: `TruckHits Radio is currently offline on LeonXM due to an outage affecting the AzuraCast server that hosts the stream.
+
+The station operator has been made aware of the issue and has told us the server will come back online whenever the hosting platform is restored. Unfortunately, this means we don't have a firm estimate for when TruckHits Radio will be available again.
+
+We know this is frustrating for listeners who rely on TruckHits Radio for music during their drives, and we're sorry for the interruption. As soon as the AzuraCast server is back up, the stream will resume automatically on LeonXM — no action needed on your end.
+
+We'll keep this article updated with any new information we receive. In the meantime, you can still tune in to ilikeRadio and Swarm Radio on LeonXM.`,
+    link: { to: "/channels", label: "Browse all channels →" },
+  },
+  {
     id: "truckhits-stream-fixed",
     title: "TruckHits Radio on LeonXM now available again",
     date: "July 18, 2026",
