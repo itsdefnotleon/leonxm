@@ -13,6 +13,7 @@ export function Footer() {
           <nav className="flex items-center gap-6">
             <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
+            <a href="/rss.xml" target="_blank" rel="noopener" className="text-sm text-muted-foreground hover:text-foreground transition-colors">RSS</a>
           </nav>
         </div>
       </div>
