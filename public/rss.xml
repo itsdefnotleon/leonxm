@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LeonXM News</title>
+    <link>https://leonxm.lovable.app/news</link>
+    <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Updates, announcements, and station news from LeonXM.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Jul 2026 09:01:03 GMT</lastBuildDate>
+    <item>
+      <title>TruckHits Radio Temporarily Offline</title>
+      <link>https://leonxm.lovable.app/news#truckhits-azuracast-down-again</link>
+      <guid isPermaLink="false">truckhits-azuracast-down-again</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>TruckHits Radio is currently unavailable due to an outage on its AzuraCast hosting server. The station operator has confirmed the service will return as soon as possible.</description>
+      <content:encoded><![CDATA[<p>TruckHits Radio is currently offline on LeonXM due to an outage affecting the AzuraCast server that hosts the stream.</p><p>The station operator has been made aware of the issue and has told us the server will come back online whenever the hosting platform is restored. Unfortunately, this means we don&apos;t have a firm estimate for when TruckHits Radio will be available again.</p><p>We know this is frustrating for listeners who rely on TruckHits Radio for music during their drives, and we&apos;re sorry for the interruption. As soon as the AzuraCast server is back up, the stream will resume automatically on LeonXM — no action needed on your end.</p><p>We&apos;ll keep this article updated with any new information we receive. In the meantime, you can still tune in to ilikeRadio and Swarm Radio on LeonXM.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>TruckHits Radio on LeonXM now available again</title>
+      <link>https://leonxm.lovable.app/news#truckhits-stream-fixed</link>
+      <guid isPermaLink="false">truckhits-stream-fixed</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>TruckHits Radio is back on LeonXM. We apologise for the recent interruption, and we want listeners to know about upcoming work on the hosting platform.</description>
+      <content:encoded><![CDATA[<p>TruckHits Radio is now available again on LeonXM. We sincerely apologise to anyone who tuned in recently and couldn&apos;t hear anything — we&apos;re not sure how long the issue was going on, which is why we&apos;re taking full responsibility for not catching it sooner.</p><p>Please try listening again now. The stream should be back to full strength with all the hit music you expect on your hauls.</p><p>However, the station&apos;s hosting platform, AzuraCast (Node 2) &amp; Xtra Audio, will be shutting down on July 31, 2026 at 06:00 HAT.</p><p>Because of this shutdown, more disruption to TruckHits Radio may occur over the coming days. We&apos;ll keep this article updated as we learn more, so stay tuned to LeonXM for the latest.</p><p>We were only just made aware of this ourselves, and we&apos;re sorry it wasn&apos;t caught sooner.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>LeonXM Summer Update: Smarter Navigation, Local Time, and Regional Streaming</title>
+      <link>https://leonxm.lovable.app/news#leonxm-summer-update</link>
+      <guid isPermaLink="false">leonxm-summer-update</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>We&apos;ve rolled out a handful of updates to make LeonXM easier to use — from dynamic back buttons and a local-time header to clearer regional access for ilikeRadio and Swarm Radio.</description>
+      <content:encoded><![CDATA[<p>We&apos;re always tuning the LeonXM experience. This week we&apos;ve shipped a few quality-of-life improvements across the site.</p><p>First, the header has changed. Instead of labeling the current theme mode, it now shows your local time and timezone, kept up to date alongside a day or night emoji so you can still tell whether LeonXM is in daylight or after-hours mode.</p><p>Navigation is smarter too. The About page now shows a back button that remembers where you came from, so if you arrived from the News page it says &quot;Back to News&quot; — and if you landed there directly, it falls back to &quot;Back to Home&quot;.</p><p>On the News page, every article now has a default cover image, so stories always look polished even when no custom image is set.</p><p>We&apos;ve also made the homepage cleaner: the &quot;Browse all channels&quot; button has been removed, and the main &quot;Start listening&quot; button now takes you straight to the full channel directory.</p><p>Finally, ilikeRadio and Swarm Radio are now only reachable from the United Kingdom and Sweden. This isn&apos;t a licensing decision — our AzuraCast server that hosts those streams is geolocked to those two countries, so requests from elsewhere can&apos;t connect. If you try to open those channels from outside the UK or Sweden, you&apos;ll see a clear popup and be redirected back home.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ilikeRadio Website Down for Maintenance This Saturday — LeonXM Stays Live</title>
+      <link>https://leonxm.lovable.app/news#ilikeradio-maintenance</link>
+      <guid isPermaLink="false">ilikeradio-maintenance</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <description>ilikeRadio&apos;s website will be undergoing scheduled maintenance this Saturday, but don&apos;t worry — LeonXM will continue broadcasting without interruption.</description>
+      <content:encoded><![CDATA[<p>This Saturday, ilikeRadio&apos;s standalone website will be going offline temporarily for scheduled maintenance. During this downtime, listeners who rely on the ilikeRadio website directly will be unable to access the stream.</p><p>However, if you&apos;re listening through LeonXM, you won&apos;t notice a thing. LeonXM&apos;s infrastructure operates independently, meaning all of our channels — including ilikeRadio — will continue to broadcast without any interruption.</p><p>This is one of the key advantages of the LeonXM platform. Our streams are hosted on robust, independent infrastructure that ensures 24/7 availability regardless of what happens with individual station websites.</p><p>So if you&apos;re a fan of ilikeRadio and want uninterrupted access to Bristol&apos;s best music this weekend, just keep it locked to LeonXM. We&apos;ll be here, as always — free, online, and live.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
