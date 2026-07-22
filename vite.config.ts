@@ -22,10 +22,10 @@ function rssPlugin() {
     buildStart() {
       return run();
     },
-    configureServer(server) {
+    configureServer(server: any) {
       run();
       server.watcher.add(path.resolve(__dirname, "src/lib/articles.ts"));
-      server.watcher.on("change", (file) => {
+      server.watcher.on("change", (file: string) => {
         if (file.endsWith("src/lib/articles.ts") || file.endsWith("src\\lib\\articles.ts")) {
           run();
         }
