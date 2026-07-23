@@ -5,6 +5,8 @@ import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";

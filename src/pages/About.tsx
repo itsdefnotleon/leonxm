@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Radio, Shield, Heart, Users } from "lucide-react";
 import { getPreviousPath } from "@/hooks/use-previous-path";
@@ -32,7 +33,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About LeonXM — Free Online Radio Network"
+        description="LeonXM is a free, online-only radio platform built on integrity — no subscriptions, no ads, just curated stations streaming 24/7."
+        path="/about"
+      />
       <Header />
+
+
 
       <div className="max-w-3xl mx-auto px-4 py-16">
         <a
