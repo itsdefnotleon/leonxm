@@ -86,6 +86,20 @@ const ChannelPage = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title={`${channel.name} — LeonXM`}
+        description={info ? `${info.tagline} ${info.description}` : `Listen to ${channel.name} live on LeonXM — free, 24/7.`}
+        path={`/channel/${channel.id}`}
+        image={channel.logo}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "RadioStation",
+          name: channel.name,
+          url: `https://leonxm.lovable.app/channel/${channel.id}`,
+          genre: info?.genre,
+          areaServed: info?.location,
+        }}
+      />
       <Header />
 
       {/* Hero */}
@@ -161,6 +175,11 @@ const ChannelPage = () => {
                     </>
                   )}
                 </button>
+                <ShareButtons
+                  url={`https://leonxm.lovable.app/channel/${channel.id}`}
+                  title={`${channel.name} on LeonXM`}
+                  compact
+                />
               </div>
 
               {info && (
