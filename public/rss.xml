@@ -6,7 +6,15 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 08:20:50 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 08:21:45 GMT</lastBuildDate>
+    <item>
+      <title>You Can Now Share LeonXM News Articles on Social Media</title>
+      <link>https://leonxm.lovable.app/news#share-articles-social</link>
+      <guid isPermaLink="false">share-articles-social</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Every article on the LeonXM News page now has built-in share buttons for X, Facebook, LinkedIn, and one-tap copy link — so spreading the word takes seconds.</description>
+      <content:encoded><![CDATA[<p>Sharing LeonXM news just got a whole lot easier. Every article on the News page now comes with a dedicated share row featuring one-click buttons for X (formerly Twitter), Facebook, and LinkedIn, plus a copy-link button that puts the article&apos;s direct URL straight onto your clipboard.</p><p>On mobile, you&apos;ll also see a native share button that hooks into your device&apos;s built-in share sheet — so you can send an article to WhatsApp, Messages, Discord, or anywhere else you chat, without leaving LeonXM.</p><p>We&apos;ve paired this with a proper SEO pass across the whole site. Each article, channel, and page now has its own tailored title, description, and social preview card. That means when you paste a LeonXM link into a social post or a chat, the preview that pops up will actually reflect the specific article or channel you&apos;re sharing — not just a generic homepage card.</p><p>We built this because we want LeonXM&apos;s stories to travel. Whether it&apos;s a station outage update, a Summer feature drop, or news about ilikeRadio in Bristol, you should be able to hand it to a friend in a single tap.</p><p>Give it a try on this very article — scroll down, hit the X, Facebook, or LinkedIn button, and see how it looks in the wild.</p>]]></content:encoded>
+    </item>
     <item>
       <title>TruckHits Radio Temporarily Offline</title>
       <link>https://leonxm.lovable.app/news#truckhits-azuracast-down-again</link>
