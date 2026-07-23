@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Calendar, ChevronDown, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
 import defaultArticleImage from "@/assets/LeonXM_thumbnail.png.asset.json";
 import { sortedArticles } from "@/lib/articles";
 import { useArticleReads } from "@/hooks/use-article-reads";
+
+const SITE_URL = "https://leonxm.lovable.app";
 
 export default function News() {
   const { isRead, markRead } = useArticleReads();
@@ -18,7 +22,6 @@ export default function News() {
     const unread = sortedArticles.filter((a) => !isRead(a.id)).map((a) => a.id);
     if (unread.length > 0) {
       setOpenIds(new Set(unread));
-      // Mark them read shortly after — they're now on screen
       const timer = setTimeout(() => {
         unread.forEach(markRead);
       }, 800);
@@ -42,8 +45,25 @@ export default function News() {
     });
   };
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: sortedArticles.map((a, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE_URL}/news#${a.id}`,
+      name: a.title,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="News — LeonXM"
+        description="Updates, announcements, and station news from LeonXM — the free online radio network."
+        path="/news"
+        jsonLd={itemListJsonLd}
+      />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-10">
@@ -55,9 +75,11 @@ export default function News() {
           {sortedArticles.map((article) => {
             const isNew = !isRead(article.id);
             const isOpen = openIds.has(article.id);
+            const articleUrl = `${SITE_URL}/news#${article.id}`;
             return (
               <article
                 key={article.id}
+                id={article.id}
                 className={`border rounded-2xl overflow-hidden bg-card transition-all ${
                   isNew
                     ? "border-destructive/60 ring-2 ring-destructive/60 shadow-[0_0_30px_-5px_hsl(var(--destructive)/0.5)]"
@@ -111,8 +133,13 @@ export default function News() {
                         </p>
                       ))}
                     </div>
+
+                    <div className="mt-6 pt-6 border-t border-border">
+                      <ShareButtons url={articleUrl} title={article.title} />
+                    </div>
+
                     {article.link && (
-                      <div className="mt-6 pt-6 border-t border-border flex items-center gap-2 text-primary text-sm">
+                      <div className="mt-6 flex items-center gap-2 text-primary text-sm">
                         <Radio className="w-4 h-4" />
                         <Link to={article.link.to} className="hover:underline font-medium">
                           {article.link.label}
