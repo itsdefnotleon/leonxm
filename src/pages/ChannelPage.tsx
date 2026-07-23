@@ -5,6 +5,8 @@ import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
@@ -84,6 +86,20 @@ const ChannelPage = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title={`${channel.name} — LeonXM`}
+        description={info ? `${info.tagline} ${info.description}` : `Listen to ${channel.name} live on LeonXM — free, 24/7.`}
+        path={`/channel/${channel.id}`}
+        image={channel.logo}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "RadioStation",
+          name: channel.name,
+          url: `https://leonxm.lovable.app/channel/${channel.id}`,
+          genre: info?.genre,
+          areaServed: info?.location,
+        }}
+      />
       <Header />
 
       {/* Hero */}
@@ -159,6 +175,11 @@ const ChannelPage = () => {
                     </>
                   )}
                 </button>
+                <ShareButtons
+                  url={`https://leonxm.lovable.app/channel/${channel.id}`}
+                  title={`${channel.name} on LeonXM`}
+                  compact
+                />
               </div>
 
               {info && (

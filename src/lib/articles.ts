@@ -1,5 +1,6 @@
 import truckHitsThumb from "@/assets/TruckHits_Radio_thumbnail.png.asset.json";
 import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
+import shareUpdateThumb from "@/assets/LeonXM_share_update_thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -12,6 +13,23 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "share-articles-social",
+    title: "You Can Now Share LeonXM News Articles on Social Media",
+    date: "July 23, 2026",
+    summary: "Every article on the LeonXM News page now has built-in share buttons for X, Facebook, LinkedIn, and one-tap copy link — so spreading the word takes seconds.",
+    image: shareUpdateThumb.url,
+    content: `Sharing LeonXM news just got a whole lot easier. Every article on the News page now comes with a dedicated share row featuring one-click buttons for X (formerly Twitter), Facebook, and LinkedIn, plus a copy-link button that puts the article's direct URL straight onto your clipboard.
+
+On mobile, you'll also see a native share button that hooks into your device's built-in share sheet — so you can send an article to WhatsApp, Messages, Discord, or anywhere else you chat, without leaving LeonXM.
+
+We've paired this with a proper SEO pass across the whole site. Each article, channel, and page now has its own tailored title, description, and social preview card. That means when you paste a LeonXM link into a social post or a chat, the preview that pops up will actually reflect the specific article or channel you're sharing — not just a generic homepage card.
+
+We built this because we want LeonXM's stories to travel. Whether it's a station outage update, a Summer feature drop, or news about ilikeRadio in Bristol, you should be able to hand it to a friend in a single tap.
+
+Give it a try on this very article — scroll down, hit the X, Facebook, or LinkedIn button, and see how it looks in the wild.`,
+    link: { to: "/news", label: "Back to all news →" },
+  },
   {
     id: "truckhits-azuracast-down-again",
     title: "TruckHits Radio Temporarily Offline",

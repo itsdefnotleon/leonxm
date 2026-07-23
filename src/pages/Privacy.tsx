@@ -1,9 +1,15 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Privacy Policy — LeonXM"
+        description="How LeonXM handles your data — the short version: we don't collect it. No accounts, no tracking cookies."
+        path="/privacy"
+      />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold tracking-tight mb-2">Privacy Policy</h1>

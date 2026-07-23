@@ -3,6 +3,7 @@ import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { ChannelCard } from "@/components/ChannelCard";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Radio, Headphones, Zap, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -11,6 +12,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title="LeonXM — Free Online Radio, 24/7"
+        description="LeonXM is a free internet radio network with curated stations streaming live around the clock. No subscriptions, no ads, no sign-up."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "LeonXM",
+          url: "https://leonxm.lovable.app/",
+        }}
+      />
       <Header />
 
       {/* Hero: asymmetric editorial split */}
