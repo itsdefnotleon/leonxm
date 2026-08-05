@@ -146,8 +146,7 @@ const Survey = () => {
                 {submitting ? "Sending..." : "Submit my answers"}
               </button>
             </form>
-          </>
-        )}
+      </main>
       </main>
 
       <Footer />
