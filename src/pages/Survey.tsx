@@ -32,6 +32,8 @@ const Survey = () => {
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
 
+  const set = (key: string, value: string) => setAnswers((a) => ({ ...a, [key]: value }));
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const missing = fields.filter((f) => !f.optional && !answers[f.key]);
