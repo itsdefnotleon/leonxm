@@ -6,7 +6,15 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 12:45:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 12:50:19 GMT</lastBuildDate>
+    <item>
+      <title>Tell Us What You Think — The LeonXM Listener Survey Is Live</title>
+      <link>https://leonxm.lovable.app/news#listener-survey-2026</link>
+      <guid isPermaLink="false">listener-survey-2026</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description>We want to hear how LeonXM is doing. Our new listener survey takes under two minutes and goes straight to the team.</description>
+      <content:encoded><![CDATA[<p>LeonXM has grown a lot since it launched, and everything we&apos;ve built so far — the channel pages, the persistent player, local time theming, share buttons — came from listening to the people actually using it.</p><p>So now we&apos;re asking directly: what do you think of LeonXM?</p><p>We&apos;ve put together a short listener survey covering the things we care most about. How is the audio quality when you stream? Which channel do you have on the most? What do you make of the site&apos;s design? And, most importantly, what&apos;s missing — what would make LeonXM better for you?</p><p>The survey takes under two minutes. It&apos;s completely anonymous unless you choose to leave a Discord username or email at the end, and every response goes straight to the LeonXM team. We read all of them.</p><p>Whether you&apos;re an ETS2 driver with TruckHits Radio on in the background, a Bristol listener tuning into ilikeRadio, or you&apos;re here for Swarm Radio, your answers shape what we build next.</p><p>Hit the button below and let us know how we&apos;re doing.</p>]]></content:encoded>
+    </item>
     <item>
       <title>You Can Now Share LeonXM News Articles on Social Media</title>
       <link>https://leonxm.lovable.app/news#share-articles-social</link>
