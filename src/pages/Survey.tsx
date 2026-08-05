@@ -80,23 +80,7 @@ const Survey = () => {
           <span className="text-sm">Back to News</span>
         </Link>
 
-        {done ? (
-          <div className="text-center py-16">
-            <CheckCircle2 className="w-14 h-14 text-primary mx-auto mb-6" />
-            <h1 className="text-3xl font-black text-foreground mb-4">Thank you!</h1>
-            <p className="text-muted-foreground mb-8">
-              Your answers have been sent straight to the LeonXM team. We read every single response.
-            </p>
-            <Link
-              to="/channels"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
-            >
-              Back to the channels
-            </Link>
-          </div>
-        ) : (
-          <>
-            <h1 className="text-4xl sm:text-5xl font-black text-foreground tracking-tight mb-4">
+        <h1 className="text-4xl sm:text-5xl font-black text-foreground tracking-tight mb-4">
               LeonXM Listener Survey
             </h1>
             <p className="text-muted-foreground mb-10 leading-relaxed">
