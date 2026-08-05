@@ -56,7 +56,7 @@ const Survey = () => {
         },
       });
       if (error) throw error;
-      setDone(true);
+      navigate("/survey/thanks", { state: { answers } });
     } catch (err) {
       console.error("survey submit failed", err);
       toast.error("Something went wrong sending your answers. Please try again.");
