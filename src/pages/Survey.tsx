@@ -30,9 +30,7 @@ const fields: Field[] = [
 const Survey = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [done, setDone] = useState(false);
-
-  const set = (key: string, value: string) => setAnswers((a) => ({ ...a, [key]: value }));
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
