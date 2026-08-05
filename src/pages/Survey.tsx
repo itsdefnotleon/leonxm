@@ -147,7 +147,6 @@ const Survey = () => {
               </button>
             </form>
       </main>
-      </main>
 
       <Footer />
     </div>
