@@ -14,6 +14,24 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "listener-survey-2026",
+    title: "Tell Us What You Think — The LeonXM Listener Survey Is Live",
+    date: "August 5, 2026",
+    summary: "We want to hear how LeonXM is doing. Our new listener survey takes under two minutes and goes straight to the team.",
+    content: `LeonXM has grown a lot since it launched, and everything we've built so far — the channel pages, the persistent player, local time theming, share buttons — came from listening to the people actually using it.
+
+So now we're asking directly: what do you think of LeonXM?
+
+We've put together a short listener survey covering the things we care most about. How is the audio quality when you stream? Which channel do you have on the most? What do you make of the site's design? And, most importantly, what's missing — what would make LeonXM better for you?
+
+The survey takes under two minutes. It's completely anonymous unless you choose to leave a Discord username or email at the end, and every response goes straight to the LeonXM team. We read all of them.
+
+Whether you're an ETS2 driver with TruckHits Radio on in the background, a Bristol listener tuning into ilikeRadio, or you're here for Swarm Radio, your answers shape what we build next.
+
+Hit the button below and let us know how we're doing.`,
+    link: { to: "/survey", label: "Take the LeonXM survey →" },
+  },
+  {
     id: "share-articles-social",
     title: "You Can Now Share LeonXM News Articles on Social Media",
     date: "July 23, 2026",
