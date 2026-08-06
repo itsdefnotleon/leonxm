@@ -255,7 +255,18 @@ const ChannelPage = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">{info.description}</p>
           </div>
         )}
+
+        {stationNewsSource[channel.id] && (
+          <div className="lg:col-span-3">
+            <StationNews
+              station={stationNewsSource[channel.id]}
+              limit={5}
+              title={`${channel.name} News`}
+            />
+          </div>
+        )}
       </section>
+
 
       {/* Other channels */}
       <section className="max-w-7xl mx-auto w-full px-6 pb-24">
