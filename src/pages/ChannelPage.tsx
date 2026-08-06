@@ -10,6 +10,13 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
+import { StationNews } from "@/components/StationNews";
+
+const stationNewsSource: Record<number, "ilikeradio" | "swarmradio"> = {
+  2: "ilikeradio",
+  3: "swarmradio",
+};
+
 
 const channelDescriptions: Record<number, { tagline: string; description: string; genre: string; location: string }> = {
   1: {
@@ -248,7 +255,18 @@ const ChannelPage = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">{info.description}</p>
           </div>
         )}
+
+        {stationNewsSource[channel.id] && (
+          <div className="lg:col-span-3">
+            <StationNews
+              station={stationNewsSource[channel.id]}
+              limit={5}
+              title={`${channel.name} News`}
+            />
+          </div>
+        )}
       </section>
+
 
       {/* Other channels */}
       <section className="max-w-7xl mx-auto w-full px-6 pb-24">
