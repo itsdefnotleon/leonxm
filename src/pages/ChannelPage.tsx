@@ -10,6 +10,13 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
+import { StationNews } from "@/components/StationNews";
+
+const stationNewsSource: Record<number, "ilikeradio" | "swarmradio"> = {
+  2: "ilikeradio",
+  3: "swarmradio",
+};
+
 
 const channelDescriptions: Record<number, { tagline: string; description: string; genre: string; location: string }> = {
   1: {

@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import defaultArticleImage from "@/assets/LeonXM_thumbnail.png.asset.json";
 import { sortedArticles } from "@/lib/articles";
 import { useArticleReads } from "@/hooks/use-article-reads";
+import { StationNews } from "@/components/StationNews";
+
 
 const SITE_URL = "https://leonxm.lovable.app";
 
@@ -152,7 +154,16 @@ export default function News() {
             );
           })}
         </div>
+
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold tracking-tight mb-2">From our stations</h2>
+          <p className="text-muted-foreground mb-6">
+            Automatically pulled from ilikeRadio and Swarm Radio's own newsrooms.
+          </p>
+          <StationNews limit={5} title="Latest station updates" />
+        </section>
       </main>
+
       <Footer />
     </div>
   );
