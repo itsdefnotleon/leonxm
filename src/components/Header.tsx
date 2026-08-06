@@ -49,6 +49,12 @@ export function Header() {
               )}
             </NavLink>
           ))}
+          <NavLink
+            to="/survey"
+            className="ml-4 px-4 py-2 text-sm font-bold rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]"
+          >
+            Survey
+          </NavLink>
           <div className="ml-4 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]">
             <Icon className="w-3.5 h-3.5" />
             <span className="text-[10px] font-bold uppercase tracking-[0.18em]">{time}</span>
