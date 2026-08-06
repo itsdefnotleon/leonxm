@@ -20,6 +20,7 @@ export function useStationNews(station?: "ilikeradio" | "swarmradio", limit = 5)
 
     const load = (showSpinner: boolean) => {
       if (showSpinner) setLoading(true);
+      setError(null);
       return supabase.functions
       .invoke(`station-news?${params.toString()}`, { method: "GET" })
       .then(({ data, error }) => {
