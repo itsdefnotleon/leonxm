@@ -15,13 +15,13 @@ export function useStationNews(station?: "ilikeradio" | "swarmradio", limit = 5)
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setError(null);
-
     const params = new URLSearchParams({ limit: String(limit) });
     if (station) params.set("station", station);
 
-    supabase.functions
+    const load = (showSpinner: boolean) => {
+      if (showSpinner) setLoading(true);
+      setError(null);
+      return supabase.functions
       .invoke(`station-news?${params.toString()}`, { method: "GET" })
       .then(({ data, error }) => {
         if (cancelled) return;
@@ -33,9 +33,19 @@ export function useStationNews(station?: "ilikeradio" | "swarmradio", limit = 5)
       })
       .catch((e) => !cancelled && setError(String(e)))
       .finally(() => !cancelled && setLoading(false));
+    };
+
+    load(true);
+
+    // Automatic refresh: every 5 minutes and whenever the tab regains focus.
+    const interval = window.setInterval(() => load(false), 5 * 60 * 1000);
+    const onFocus = () => load(false);
+    window.addEventListener("focus", onFocus);
 
     return () => {
       cancelled = true;
+      window.clearInterval(interval);
+      window.removeEventListener("focus", onFocus);
     };
   }, [station, limit]);
 

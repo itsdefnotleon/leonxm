@@ -1,4 +1,4 @@
-import { ExternalLink, Newspaper } from "lucide-react";
+import { AlertTriangle, ExternalLink, Newspaper, RefreshCw } from "lucide-react";
 import { useStationNews } from "@/hooks/use-station-news";
 
 interface Props {
@@ -15,10 +15,54 @@ function formatDate(iso: string | null) {
   return d.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
 }
 
+const swarmPlatforms = [
+  { label: "Typical Nerds LIVE! Player", url: "https://live.typicalnerds.uk/?station=leonfm-swarm" },
+  { label: "Swarm Radio Player", url: "https://swarm.itsdefnotleon.qzz.io/" },
+  { label: "OnlineRadioBox", url: "https://onlineradiobox.com/se/swarm/" },
+  { label: "RadioReg", url: "https://radioreg.net/stations/684" },
+  { label: "Zeno FM", url: "https://zeno.fm/radio/swarm-radio/" },
+  { label: "TuneIn", url: "https://tunein.com/radio/Swarm-Radio-s352122/" },
+];
+
+function SwarmNotice() {
+  return (
+    <div className="mb-6 rounded-xl border border-destructive/40 bg-destructive/10 p-5">
+      <div className="flex items-center gap-2 mb-2">
+        <AlertTriangle className="w-4 h-4 text-destructive" />
+        <h3 className="text-sm font-bold text-foreground">Important Notice</h3>
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        We are discontinuing our Caster FM page on 1st September 2026 as part of a move to improve
+        our listeners experience.
+      </p>
+      <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+        To continue listening to Swarm Radio, you can keep listening on the following platforms:
+      </p>
+      <ul className="mt-3 space-y-1.5">
+        {swarmPlatforms.map((p) => (
+          <li key={p.url}>
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+            >
+              {p.label}
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function StationNews({ station, limit = 5, title = "Station News", className = "" }: Props) {
   const { items, loading, error } = useStationNews(station, limit);
 
-  if (!loading && !error && items.length === 0) return null;
+  const showSwarmNotice = station === "swarmradio";
+
+  if (!loading && !error && items.length === 0 && !showSwarmNotice) return null;
 
   return (
     <div className={`rounded-2xl border border-border bg-card/60 backdrop-blur p-6 sm:p-8 ${className}`}>
@@ -26,6 +70,8 @@ export function StationNews({ station, limit = 5, title = "Station News", classN
         <Newspaper className="w-4 h-4 text-primary" />
         <h2 className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary">{title}</h2>
       </div>
+
+      {showSwarmNotice && <SwarmNotice />}
 
       {loading && (
         <div className="space-y-3">
@@ -65,6 +111,11 @@ export function StationNews({ station, limit = 5, title = "Station News", classN
           ))}
         </ul>
       )}
+
+      <p className="mt-6 pt-4 border-t border-border/60 text-xs text-muted-foreground flex items-center gap-1.5">
+        <RefreshCw className="w-3 h-3" />
+        Updated automatically · Powered by the stations' Caster.FM websites
+      </p>
     </div>
   );
 }
