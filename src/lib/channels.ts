@@ -1,4 +1,6 @@
 import ilikeRadioLogo from "@/assets/ilikeradio-logo.png.asset.json";
+import relaxLogo from "@/assets/relax-logo.png.asset.json";
+
 
 export interface Channel {
   id: number;
@@ -46,4 +48,12 @@ export const channels: Channel[] = [
     nowPlayingApi: "https://live.typicalnerds.uk/api/station/leonfm-swarm/nowplaying",
     geoRestricted: ["GB", "SE"],
   },
+  {
+    id: 4,
+    name: "Relax",
+    logo: relaxLogo.url,
+    streamUrl: "https://cast1.typicalmedia.net/listen/relax/mp3",
+    nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/relax/nowplaying",
+  },
 ];
+
