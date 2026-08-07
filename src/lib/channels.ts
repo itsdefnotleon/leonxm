@@ -1,4 +1,6 @@
 import ilikeRadioLogo from "@/assets/ilikeradio-logo.png.asset.json";
+import relaxLogo from "@/assets/relax-logo.png.asset.json";
+
 
 export interface Channel {
   id: number;
