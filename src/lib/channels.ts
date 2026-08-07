@@ -1,3 +1,5 @@
+import ilikeRadioLogo from "@/assets/ilikeradio-logo.png.asset.json";
+
 export interface Channel {
   id: number;
   name: string;
@@ -31,7 +33,7 @@ export const channels: Channel[] = [
   {
     id: 2,
     name: "ilikeRadio",
-    logo: "https://leons-image-library.neocities.org/ilikeradio.jpg",
+    logo: ilikeRadioLogo.url,
     streamUrl: "https://live.typicalnerds.uk/listen/ilikeradio/stream",
     nowPlayingApi: "https://live.typicalnerds.uk/api/station/ilikeradio/nowplaying",
     geoRestricted: ["GB", "SE"],
