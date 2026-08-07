@@ -43,7 +43,7 @@ const channelDescriptions: Record<number, { tagline: string; description: string
   4: {
     tagline: "All chill non-stop.",
     description:
-      "Relax is LeonXM's home for chill music — laid-back beats, mellow vocals and easy listening around the clock. Whether you're working, studying or winding down for the night, Relax keeps the calm going non-stop.",
+      "Relax is chill music around the clock — laid-back beats, mellow vocals and easy listening. Whether you're working, studying or winding down for the night, Relax keeps the calm going non-stop.",
     genre: "Chill / Lo-fi / Easy Listening",
     location: "Online",
   },

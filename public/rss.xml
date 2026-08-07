@@ -6,7 +6,15 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Aug 2026 10:23:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 10:26:21 GMT</lastBuildDate>
+    <item>
+      <title>Say Hello to Relax — All Chill, Non-Stop</title>
+      <link>https://leonxm.lovable.app/news#relax-station-launch</link>
+      <guid isPermaLink="false">relax-station-launch</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+      <description>A brand new station joins the lineup: Relax, dedicated entirely to chill music, streaming 24/7.</description>
+      <content:encoded><![CDATA[<p>There&apos;s a new station on the dial. Relax has officially joined the lineup, and it&apos;s dedicated to one thing: chill music, all day and all night.</p><p>Expect laid-back beats, mellow vocals and easy listening with no interruptions. It&apos;s the station to put on while you&apos;re working, studying, gaming quietly or winding down at the end of the day. The slogan says it best — all chill, non-stop.</p><p>Relax streams 24/7 with live now-playing info, just like every other station here, so you&apos;ll always see what&apos;s on. It&apos;s available to everyone with no regional restrictions.</p><p>Head over to the Relax channel page and hit play.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Tell Us What You Think — The LeonXM Listener Survey Is Live</title>
       <link>https://leonxm.lovable.app/news#listener-survey-2026</link>
