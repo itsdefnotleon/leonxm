@@ -2,6 +2,7 @@ import truckHitsThumb from "@/assets/TruckHits_Radio_thumbnail.png.asset.json";
 import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
 import shareUpdateThumb from "@/assets/LeonXM_share_update_thumbnail.png.asset.json";
 import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
+import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -14,6 +15,21 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "ilikeradio-swarm-global",
+    title: "ilikeRadio and Swarm Radio Are No Longer Geolocked",
+    date: "August 8, 2026",
+    summary: "Both stations have moved to new global stream links, so the UK and Sweden restriction is gone — anyone, anywhere, can now listen.",
+    image: globalThumb.url,
+    content: `Good news for listeners outside the UK and Sweden: ilikeRadio and Swarm Radio are now available everywhere on LeonXM.
+
+Until now, both stations ran through an AzuraCast server that was geolocked to the United Kingdom and Sweden. That wasn't a licensing decision — the server simply refused connections from other countries, so we had to block those channels for everyone else and show a popup explaining why.
+
+Both stations have now switched to new global stream links, which can be reached from any country. As a result, we've removed the regional restriction entirely. The lock icons are gone, the popup is gone, and the channel pages work for everyone.
+
+Nothing changes if you were already listening from the UK or Sweden — the audio is the same, and now-playing info still updates live. If you've tried these stations before and hit the region popup, give them another go.`,
+    link: { to: "/channels", label: "Browse all channels →" },
+  },
   {
     id: "relax-station-launch",
     title: "Say Hello to Relax — All Chill, Non-Stop",

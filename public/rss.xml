@@ -6,7 +6,15 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2026 08:04:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 08:04:40 GMT</lastBuildDate>
+    <item>
+      <title>ilikeRadio and Swarm Radio Are No Longer Geolocked</title>
+      <link>https://leonxm.lovable.app/news#ilikeradio-swarm-global</link>
+      <guid isPermaLink="false">ilikeradio-swarm-global</guid>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Both stations have moved to new global stream links, so the UK and Sweden restriction is gone — anyone, anywhere, can now listen.</description>
+      <content:encoded><![CDATA[<p>Good news for listeners outside the UK and Sweden: ilikeRadio and Swarm Radio are now available everywhere on LeonXM.</p><p>Until now, both stations ran through an AzuraCast server that was geolocked to the United Kingdom and Sweden. That wasn&apos;t a licensing decision — the server simply refused connections from other countries, so we had to block those channels for everyone else and show a popup explaining why.</p><p>Both stations have now switched to new global stream links, which can be reached from any country. As a result, we&apos;ve removed the regional restriction entirely. The lock icons are gone, the popup is gone, and the channel pages work for everyone.</p><p>Nothing changes if you were already listening from the UK or Sweden — the audio is the same, and now-playing info still updates live. If you&apos;ve tried these stations before and hit the region popup, give them another go.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Say Hello to Relax — All Chill, Non-Stop</title>
       <link>https://leonxm.lovable.app/news#relax-station-launch</link>
