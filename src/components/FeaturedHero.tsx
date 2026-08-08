@@ -47,9 +47,6 @@ export function FeaturedHero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-12 gap-12 items-center">
-        {/* Details */}
-        <div className="order-2 lg:order-1 lg:col-span-7">
-
         {/* Album cover */}
         <div className="order-1 lg:order-2 lg:col-span-5">
           <div className="relative aspect-square max-w-[220px] sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.6)]">
