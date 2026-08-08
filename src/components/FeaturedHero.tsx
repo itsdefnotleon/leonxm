@@ -6,10 +6,10 @@ import { useTimeTheme, TimeTheme } from "@/hooks/use-time-theme";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 
 const featuredByTime: Record<TimeTheme, { id: number; blurb: string }> = {
-  dawn: { id: 4, blurb: "Easing into the morning" },
+  dawn: { id: 1, blurb: "TruckBreakfast with Neuro-sama — weekdays 5am-10am" },
   day: { id: 2, blurb: "Your daytime soundtrack" },
-  dusk: { id: 1, blurb: "Evening drive companion" },
-  night: { id: 3, blurb: "After-hours on the dial" },
+  dusk: { id: 3, blurb: "Evening drive companion" },
+  night: { id: 4, blurb: "All chill non-stop" },
 };
 
 const timeLabels: Record<TimeTheme, string> = {
