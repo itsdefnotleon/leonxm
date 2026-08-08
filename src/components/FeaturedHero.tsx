@@ -48,8 +48,8 @@ export function FeaturedHero() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-12 gap-12 items-center">
         {/* Album cover */}
-        <div className="lg:col-span-5 order-1">
-          <div className="relative aspect-square max-w-md mx-auto rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.6)]">
+        <div className="order-1 lg:order-2 lg:col-span-5">
+          <div className="relative aspect-square max-w-[220px] sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto rounded-3xl overflow-hidden border border-border shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.6)]">
             <img src={art} alt={`${title} cover art`} className="w-full h-full object-cover" />
             {live && (
               <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
@@ -61,7 +61,7 @@ export function FeaturedHero() {
         </div>
 
         {/* Details */}
-        <div className="lg:col-span-7 order-2">
+        <div className="order-2 lg:order-1 lg:col-span-7">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-4">
             {timeLabels[theme]}
           </p>
