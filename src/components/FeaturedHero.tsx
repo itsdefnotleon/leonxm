@@ -14,7 +14,7 @@ const featuredByTime: Record<TimeTheme, { id: number; blurb: string }> = {
 
 const timeLabels: Record<TimeTheme, string> = {
   dawn: "Featured this morning",
-  day: "Featured today",
+  day: "Featured this afternoon",
   dusk: "Featured this evening",
   night: "Featured tonight",
 };
