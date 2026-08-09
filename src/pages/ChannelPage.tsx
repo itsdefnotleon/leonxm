@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { channels } from "@/lib/channels";
+import { channels, requestUrls } from "@/lib/channels";
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ShareButtons } from "@/components/ShareButtons";
-import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
+import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight, Mic2 } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
