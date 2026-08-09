@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { channels } from "@/lib/channels";
+import { channels, requestUrls } from "@/lib/channels";
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ShareButtons } from "@/components/ShareButtons";
-import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight } from "lucide-react";
+import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight, Mic2 } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
@@ -190,12 +190,30 @@ const ChannelPage = () => {
                     </>
                   )}
                 </button>
+                {requestUrls[channel.id] && (
+                  <a
+                    href={requestUrls[channel.id]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors"
+                  >
+                    <Mic2 className="w-4 h-4" />
+                    Request a song
+                  </a>
+                )}
                 <ShareButtons
                   url={`https://leonxm.lovable.app/channel/${channel.id}`}
                   title={`${channel.name} on LeonXM`}
                   compact
                 />
               </div>
+              {requestUrls[channel.id] && (
+                <p className="mt-3 text-xs text-muted-foreground max-w-xl">
+                  Opens the {channel.name} player — press the{" "}
+                  <span className="font-semibold text-foreground">Request</span> button there to send your song.
+                </p>
+              )}
+
 
               {info && (
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">

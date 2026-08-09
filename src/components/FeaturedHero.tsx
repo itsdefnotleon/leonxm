@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Play, Pause, ArrowRight } from "lucide-react";
-import { channels, Channel } from "@/lib/channels";
+import { Play, Pause, ArrowRight, Mic2 } from "lucide-react";
+import { channels, Channel, requestUrls } from "@/lib/channels";
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useTimeTheme, TimeTheme } from "@/hooks/use-time-theme";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
@@ -14,7 +14,7 @@ const featuredByTime: Record<TimeTheme, { id: number; blurb: string }> = {
 
 const timeLabels: Record<TimeTheme, string> = {
   dawn: "Featured this morning",
-  day: "Featured today",
+  day: "Featured this afternoon",
   dusk: "Featured this evening",
   night: "Featured tonight",
 };
@@ -103,7 +103,23 @@ export function FeaturedHero() {
             >
               Go to station <ArrowRight className="w-4 h-4" />
             </Link>
+            {requestUrls[channel.id] && (
+              <a
+                href={requestUrls[channel.id]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors"
+              >
+                <Mic2 className="w-4 h-4" /> Request a song
+              </a>
+            )}
           </div>
+          {requestUrls[channel.id] && (
+            <p className="mt-3 text-xs text-muted-foreground">
+              Opens the {channel.name} player — press the <span className="font-semibold text-foreground">Request</span> button there to send your song.
+            </p>
+          )}
+
         </div>
       </div>
     </section>
