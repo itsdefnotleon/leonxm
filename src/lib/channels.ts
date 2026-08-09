@@ -11,6 +11,12 @@ export interface Channel {
   geoRestricted?: string[];
 }
 
+// Song request pages (external players with a Request button)
+export const requestUrls: Record<number, string> = {
+  2: "https://live.typicalnerds.uk/?station=ilikeradio",
+  3: "https://swarm.itsdefnotleon.qzz.io/",
+};
+
 export interface NowPlaying {
   now_playing?: {
     song?: {
