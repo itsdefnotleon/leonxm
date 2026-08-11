@@ -97,7 +97,7 @@ export default function News() {
                   <img
                     src={article.image ?? defaultArticleImage.url}
                     alt={article.title}
-                    className="w-full aspect-[1200/630] object-cover border-b border-border"
+                    className="w-full border-b border-border"
                     loading="lazy"
                   />
                   <div className="p-6 sm:p-8">
