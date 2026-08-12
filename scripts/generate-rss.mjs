@@ -54,25 +54,36 @@ export async function generateRss() {
       const url = `${SITE_URL}/news#${a.id}`;
       const pubDate = new Date(a.date).toUTCString();
       const desc = a.summary || a.content?.split("\n\n")[0] || "";
+      const img = a.image
+        ? a.image.startsWith("http")
+          ? a.image
+          : `${SITE_URL}${a.image}`
+        : "";
       const html =
-        (a.image ? `<p><img src="${escapeXml(a.image)}" alt=""/></p>` : "") +
+        (img ? `<p><img src="${escapeXml(img)}" alt=""/></p>` : "") +
         a.content
           .split(/\n\n+/)
           .map((p) => `<p>${escapeXml(p)}</p>`)
           .join("");
+      const media = img
+        ? `
+      <enclosure url="${escapeXml(img)}" type="image/png"/>
+      <media:content url="${escapeXml(img)}" medium="image"/>
+      <media:thumbnail url="${escapeXml(img)}"/>`
+        : "";
       return `    <item>
       <title>${escapeXml(a.title)}</title>
       <link>${escapeXml(url)}</link>
       <guid isPermaLink="false">${escapeXml(a.id)}</guid>
       <pubDate>${pubDate}</pubDate>
-      <description>${escapeXml(desc)}</description>
+      <description>${escapeXml(desc)}</description>${media}
       <content:encoded><![CDATA[${html}]]></content:encoded>
     </item>`;
     })
     .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LeonXM News</title>
     <link>${SITE_URL}/news</link>
