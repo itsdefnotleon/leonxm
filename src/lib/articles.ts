@@ -22,13 +22,13 @@ export const articles: Article[] = [
     date: "August 12, 2026",
     summary: "An exclusive new LeonXM station built for the gym — motivational tunes to get you moving, streaming 24/7.",
     image: workoutThumb.url,
-    content: `LeonXM Workout has officially joined the lineup, and it's exclusive to LeonXM.
+    content: `Need a boost? LeonXM Workout is live now — and it's built for motion.
 
-The station is dedicated entirely to workout tracks — high-energy music picked to keep your pace up whether you're lifting, running, cycling or grinding through the last set. The slogan says it all: motivational tunes to get you moving!
+This isn't background music. It's a station that pushes harder as you do: fast tempos, heavy drops, and the kind of tracks that make you want to add another set, another lap, or another kilometre. Whether you're warming up, mid-lift, or chasing a personal best, the playlist is locked in to keep your energy up.
 
-Like every other station here, LeonXM Workout streams 24/7 with live now-playing info, and it's free with no sign-up and no regional restrictions.
+LeonXM Workout is exclusive to LeonXM and 100% free. No sign-up, no geoblocks, no interruptions — just motivational tunes to get you moving, streaming around the clock.
 
-Put your headphones on, hit play, and go.`,
+Grab your headphones, press play, and earn the rest.`,
     link: { to: "/channel/5", label: "Listen to LeonXM Workout →" },
   },
   {
