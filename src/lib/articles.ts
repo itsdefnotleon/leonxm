@@ -3,6 +3,7 @@ import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
 import shareUpdateThumb from "@/assets/LeonXM_share_update_thumbnail.png.asset.json";
 import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
 import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
+import workoutThumb from "@/assets/workout-launch-thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -15,6 +16,21 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "leonxm-workout-launch",
+    title: "LeonXM Workout Is Now Live",
+    date: "August 12, 2026",
+    summary: "An exclusive new LeonXM station built for the gym — motivational tunes to get you moving, streaming 24/7.",
+    image: workoutThumb.url,
+    content: `LeonXM Workout has officially joined the lineup, and it's exclusive to LeonXM.
+
+The station is dedicated entirely to workout tracks — high-energy music picked to keep your pace up whether you're lifting, running, cycling or grinding through the last set. The slogan says it all: motivational tunes to get you moving!
+
+Like every other station here, LeonXM Workout streams 24/7 with live now-playing info, and it's free with no sign-up and no regional restrictions.
+
+Put your headphones on, hit play, and go.`,
+    link: { to: "/channel/5", label: "Listen to LeonXM Workout →" },
+  },
   {
     id: "ilikeradio-swarm-global",
     title: "ilikeRadio and Swarm Radio Are No Longer Geolocked",
