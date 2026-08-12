@@ -18,7 +18,7 @@ function escapeXml(str) {
 }
 
 export async function generateRss() {
-  // Bundle articles.ts to plain JS, stubbing asset JSON imports.
+  // Bundle articles.ts to plain JS (asset JSON pointers resolve normally).
   const result = await build({
     entryPoints: [resolve(root, "src/lib/articles.ts")],
     bundle: true,
@@ -26,22 +26,10 @@ export async function generateRss() {
     platform: "neutral",
     write: false,
     logLevel: "silent",
-    plugins: [
-      {
-        name: "stub-assets",
-        setup(b) {
-          b.onResolve({ filter: /\.asset\.json$/ }, (args) => ({
-            path: args.path,
-            namespace: "stub-asset",
-          }));
-          b.onLoad({ filter: /.*/, namespace: "stub-asset" }, () => ({
-            contents: JSON.stringify({ url: "" }),
-            loader: "json",
-          }));
-        },
-      },
-    ],
+    loader: { ".json": "json" },
+    alias: { "@": resolve(root, "src") },
   });
+
 
   const code = result.outputFiles[0].text;
   const dataUrl =
