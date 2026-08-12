@@ -3,7 +3,7 @@ import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
 import shareUpdateThumb from "@/assets/LeonXM_share_update_thumbnail.png.asset.json";
 import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
 import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
-import workoutThumb from "@/assets/workout-launch-thumbnail.png.asset.json";
+import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 
 export type Article = {
   id: string;
@@ -18,19 +18,24 @@ export type Article = {
 export const articles: Article[] = [
   {
     id: "leonxm-workout-launch",
-    title: "LeonXM Workout Is Now Live",
+    title: "LeonXM Workout and LeonXM Dance Are Now Live",
     date: "August 12, 2026",
-    summary: "An exclusive new LeonXM station built for the gym — motivational tunes to get you moving, streaming 24/7.",
-    image: workoutThumb.url,
+    summary: "Two exclusive LeonXM stations kick off the LeonXM Original Stations collection — Workout for the gym, Dance for the floor.",
+    image: originalsThumb.url,
     content: `Need a boost? LeonXM Workout is live now — and it's built for motion.
 
 This isn't background music. It's a station that pushes harder as you do: fast tempos, heavy drops, and the kind of tracks that make you want to add another set, another lap, or another kilometre. Whether you're warming up, mid-lift, or chasing a personal best, the playlist is locked in to keep your energy up.
 
-LeonXM Workout is exclusive to LeonXM and 100% free. No sign-up, no geoblocks, no interruptions — just motivational tunes to get you moving, streaming around the clock.
+And it's not arriving alone. LeonXM Dance has launched alongside it — big room anthems, club classics and non-stop beats for whenever you want the party to follow you. The slogan says it all: dance away!
 
-Grab your headphones, press play, and earn the rest.`,
-    link: { to: "/channel/5", label: "Listen to LeonXM Workout →" },
+Together, these two stations launch the LeonXM Original Stations collection: stations made by us, exclusive to LeonXM, and available nowhere else. Workout and Dance are just the start — more originals are coming soon.
+
+Both are 100% free. No sign-up, no geoblocks, no interruptions — streaming around the clock.
+
+Grab your headphones and press play.`,
+    link: { to: "/channel/6", label: "Listen to LeonXM Dance →" },
   },
+
   {
     id: "ilikeradio-swarm-global",
     title: "ilikeRadio and Swarm Radio Are No Longer Geolocked",

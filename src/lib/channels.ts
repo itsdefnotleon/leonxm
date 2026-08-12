@@ -1,6 +1,7 @@
 import ilikeRadioLogo from "@/assets/ilikeradio-logo.png.asset.json";
 import relaxLogo from "@/assets/relax-logo.png.asset.json";
 import workoutLogo from "@/assets/workout-logo.png.asset.json";
+import danceLogo from "@/assets/dance-logo.png.asset.json";
 
 
 export interface Channel {
@@ -67,5 +68,13 @@ export const channels: Channel[] = [
     streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-workout/mp3",
     nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-workout/nowplaying",
   },
+  {
+    id: 6,
+    name: "LeonXM Dance",
+    logo: danceLogo.url,
+    streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-dance/mp3",
+    nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-dance/nowplaying",
+  },
 ];
+
 

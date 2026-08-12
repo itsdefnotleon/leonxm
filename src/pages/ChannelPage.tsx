@@ -54,7 +54,15 @@ const channelDescriptions: Record<number, { tagline: string; description: string
     genre: "Workout / High Energy",
     location: "Online",
   },
+  6: {
+    tagline: "Dance away!",
+    description:
+      "LeonXM Dance is an exclusive LeonXM station built for the dancefloor. Big room anthems, club classics and non-stop beats streaming 24/7 — wherever you are, the party follows.",
+    genre: "Dance / Electronic",
+    location: "Online",
+  },
 };
+
 
 
 const ChannelPage = () => {
