@@ -3,7 +3,7 @@ import summerUpdateThumb from "@/assets/LeonXM_summer_thumbnail.png.asset.json";
 import shareUpdateThumb from "@/assets/LeonXM_share_update_thumbnail.png.asset.json";
 import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
 import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
-import workoutThumb from "@/assets/workout-launch-thumbnail.png.asset.json";
+import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 
 export type Article = {
   id: string;
