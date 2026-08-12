@@ -47,6 +47,13 @@ const channelDescriptions: Record<number, { tagline: string; description: string
     genre: "Chill / Lo-fi / Easy Listening",
     location: "Online",
   },
+  5: {
+    tagline: "Motivational tunes to get you moving!",
+    description:
+      "LeonXM Workout is an exclusive LeonXM station dedicated to workout tracks. High-energy music built to keep your pace up — whether you're lifting, running, cycling or pushing through that last set, the playlist keeps the momentum going around the clock.",
+    genre: "Workout / High Energy",
+    location: "Online",
+  },
 };
 
 

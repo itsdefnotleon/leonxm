@@ -6,7 +6,15 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Aug 2026 12:39:17 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 12:40:04 GMT</lastBuildDate>
+    <item>
+      <title>LeonXM Workout Is Now Live</title>
+      <link>https://leonxm.lovable.app/news#leonxm-workout-launch</link>
+      <guid isPermaLink="false">leonxm-workout-launch</guid>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
+      <description>An exclusive new LeonXM station built for the gym — motivational tunes to get you moving, streaming 24/7.</description>
+      <content:encoded><![CDATA[<p>LeonXM Workout has officially joined the lineup, and it&apos;s exclusive to LeonXM.</p><p>The station is dedicated entirely to workout tracks — high-energy music picked to keep your pace up whether you&apos;re lifting, running, cycling or grinding through the last set. The slogan says it all: motivational tunes to get you moving!</p><p>Like every other station here, LeonXM Workout streams 24/7 with live now-playing info, and it&apos;s free with no sign-up and no regional restrictions.</p><p>Put your headphones on, hit play, and go.</p>]]></content:encoded>
+    </item>
     <item>
       <title>ilikeRadio and Swarm Radio Are No Longer Geolocked</title>
       <link>https://leonxm.lovable.app/news#ilikeradio-swarm-global</link>
