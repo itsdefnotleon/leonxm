@@ -14,6 +14,7 @@ import News from "./pages/News.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Channels from "./pages/Channels.tsx";
+import Originals from "./pages/Originals.tsx";
 import Survey from "./pages/Survey.tsx";
 import SurveyConfirmation from "./pages/SurveyConfirmation.tsx";
 
@@ -60,6 +61,7 @@ const App = () => {
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/channels" element={<Channels />} />
+              <Route path="/originals" element={<Originals />} />
               <Route path="/survey" element={<Survey />} />
               <Route path="/survey/thanks" element={<SurveyConfirmation />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

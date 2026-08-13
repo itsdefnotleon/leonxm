@@ -8,6 +8,7 @@ const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as con
 
 const navItems = [
   { to: "/channels", label: "Channels" },
+  { to: "/originals", label: "Originals" },
   { to: "/news", label: "News" },
   { to: "/about", label: "About" },
 ];

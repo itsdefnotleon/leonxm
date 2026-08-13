@@ -11,6 +11,7 @@ export interface Channel {
   streamUrl: string;
   nowPlayingApi: string;
   geoRestricted?: string[];
+  original?: boolean;
 }
 
 // Song request pages (external players with a Request button)
@@ -64,6 +65,7 @@ export const channels: Channel[] = [
   {
     id: 5,
     name: "LeonXM Workout",
+    original: true,
     logo: workoutLogo.url,
     streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-workout/mp3",
     nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-workout/nowplaying",
@@ -71,6 +73,7 @@ export const channels: Channel[] = [
   {
     id: 6,
     name: "LeonXM Dance",
+    original: true,
     logo: danceLogo.url,
     streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-dance/mp3",
     nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-dance/nowplaying",
