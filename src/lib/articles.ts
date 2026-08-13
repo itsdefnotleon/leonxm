@@ -33,7 +33,7 @@ Together, these two stations launch the LeonXM Original Stations collection: sta
 Both are 100% free. No sign-up, no geoblocks, no interruptions — streaming around the clock.
 
 Grab your headphones and press play.`,
-    link: { to: "/channel/6", label: "Listen to LeonXM Dance →" },
+    link: { to: "/originals", label: "Explore LeonXM Originals →" },
   },
 
   {
