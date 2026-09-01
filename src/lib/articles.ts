@@ -5,6 +5,7 @@ import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
 import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
 import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
+import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
