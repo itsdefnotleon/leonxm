@@ -37,7 +37,7 @@ function SwarmNotice() {
         section will no longer receive updates.
       </p>
       <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-        To continue listening to Swarm Radio, you can keep listening to us here on Leon XM or on the
+        To continue listening to Swarm Radio, you can keep listening to us here on LeonXM or on the
         other following platforms:
       </p>
       <ul className="mt-3 space-y-1.5">
