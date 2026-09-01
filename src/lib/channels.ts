@@ -79,6 +79,14 @@ export const channels: Channel[] = [
     streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-dance/mp3",
     nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-dance/nowplaying",
   },
+  {
+    id: 7,
+    name: "LeonXM HipHop",
+    original: true,
+    logo: hiphopLogo.url,
+    streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-hip-hop/mp3",
+    nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-hip-hop/nowplaying",
+  },
 ];
 
 
