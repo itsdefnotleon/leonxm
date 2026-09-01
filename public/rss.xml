@@ -6,7 +6,18 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Sep 2026 17:45:53 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 17:50:12 GMT</lastBuildDate>
+    <item>
+      <title>Swarm Radio&apos;s Caster.FM Website Has Shut Down</title>
+      <link>https://leonxm.lovable.app/news#swarm-casterfm-shutdown</link>
+      <guid isPermaLink="false">swarm-casterfm-shutdown</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <description>As of 9pm UTC+0 on Tuesday the 1st of September 2026, Swarm Radio&apos;s Caster.FM website has officially shutdown and will remain archived until further notice.</description>
+      <enclosure url="https://leonxm.lovable.app/__l5e/assets-v1/9ccfe6d2-9ef7-49a0-91da-7a48e03a3c1d/swarm-shutdown-thumbnail.png" type="image/png"/>
+      <media:content url="https://leonxm.lovable.app/__l5e/assets-v1/9ccfe6d2-9ef7-49a0-91da-7a48e03a3c1d/swarm-shutdown-thumbnail.png" medium="image"/>
+      <media:thumbnail url="https://leonxm.lovable.app/__l5e/assets-v1/9ccfe6d2-9ef7-49a0-91da-7a48e03a3c1d/swarm-shutdown-thumbnail.png"/>
+      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/9ccfe6d2-9ef7-49a0-91da-7a48e03a3c1d/swarm-shutdown-thumbnail.png" alt=""/></p><p>As of 9pm UTC+0 on Tuesday the 1st of September 2026, Swarm Radio&apos;s Caster.FM website has officially shutdown and will remain archived until further notice.</p><p>This means the news feed that was automatically pulled from Swarm Radio&apos;s Caster.FM page will no longer receive updates. If you&apos;ve been checking that section for the latest Swarm Radio announcements, this is the final update from that source.</p><p>The good news is that Swarm Radio itself is not going anywhere. You can keep listening right here on LeonXM, and the station is also available on several other platforms and players.</p><p>Nothing changes for LeonXM listeners — the stream is still live, now-playing info still updates, and Swarm Radio remains part of the channel lineup. This shutdown only affects the Caster.FM website and the news feed that was sourced from it.</p><p>Thanks to everyone who followed Swarm Radio&apos;s updates through LeonXM. The station lives on — just in a new home.</p>]]></content:encoded>
+    </item>
     <item>
       <title>LeonXM HipHop Joins the Original Stations Collection</title>
       <link>https://leonxm.lovable.app/news#leonxm-hiphop-launch</link>

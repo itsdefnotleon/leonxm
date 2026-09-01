@@ -5,6 +5,7 @@ import relaxThumb from "@/assets/relax-article-thumbnail.png.asset.json";
 import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
 import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
+import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -17,6 +18,23 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "swarm-casterfm-shutdown",
+    title: "Swarm Radio's Caster.FM Website Has Shut Down",
+    date: "September 1, 2026",
+    summary: "As of 9pm UTC+0 on Tuesday the 1st of September 2026, Swarm Radio's Caster.FM website has officially shutdown and will remain archived until further notice.",
+    image: swarmShutdownThumb.url,
+    content: `As of 9pm UTC+0 on Tuesday the 1st of September 2026, Swarm Radio's Caster.FM website has officially shutdown and will remain archived until further notice.
+
+This means the news feed that was automatically pulled from Swarm Radio's Caster.FM page will no longer receive updates. If you've been checking that section for the latest Swarm Radio announcements, this is the final update from that source.
+
+The good news is that Swarm Radio itself is not going anywhere. You can keep listening right here on LeonXM, and the station is also available on several other platforms and players.
+
+Nothing changes for LeonXM listeners — the stream is still live, now-playing info still updates, and Swarm Radio remains part of the channel lineup. This shutdown only affects the Caster.FM website and the news feed that was sourced from it.
+
+Thanks to everyone who followed Swarm Radio's updates through LeonXM. The station lives on — just in a new home.`,
+    link: { to: "/channel/3", label: "Listen to Swarm Radio →" },
+  },
   {
     id: "leonxm-hiphop-launch",
     title: "LeonXM HipHop Joins the Original Stations Collection",
