@@ -18,6 +18,25 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "leonxm-hiphop-launch",
+    title: "LeonXM HipHop Joins the Original Stations Collection",
+    date: "September 1, 2026",
+    summary: "The hottest and peakest Hip-Hop and R&B — LeonXM HipHop is live now as the third station in the LeonXM Original Stations collection.",
+    image: hiphopThumb.url,
+    content: `The LeonXM Original Stations collection just got bigger. LeonXM HipHop is live now — the third exclusive station made by us, for you, and available nowhere else.
+
+The slogan says it all: the hottest and peakest Hip-Hop and R&B. This is a station built from the ground up for heads who take their music seriously. Expect the biggest anthems in the game, the hardest-hitting new drops, and deep-cut classics that remind you why you fell in love with the culture in the first place — all mixed into a non-stop stream that never lets the energy dip.
+
+Whether you're cruising through the city, grinding through a late-night session, or just want something with real bounce in your headphones, LeonXM HipHop is locked in. Bars, bass and beats around the clock — no filler, no interruptions, just the peak of the genre from open to close.
+
+It joins LeonXM Workout and LeonXM Dance as part of the Original Stations collection, which launched last month and has been growing ever since. Workout keeps the gym sessions pushing, Dance keeps the floor moving, and now HipHop brings the heat for everyone who lives on 808s and lyricism. And we're not done — more originals are already in the works.
+
+Just like every station on LeonXM, it's 100% free to listen. No sign-up, no geoblocks, no interruptions — streaming 24/7 with live now-playing info so you always know what's on. You'll find LeonXM HipHop on the Originals page and in the full channel directory.
+
+Press play and run it up.`,
+    link: { to: "/originals", label: "Explore LeonXM Originals →" },
+  },
+  {
     id: "leonxm-workout-launch",
     title: "LeonXM Workout and LeonXM Dance Are Now Live",
     date: "August 12, 2026",
