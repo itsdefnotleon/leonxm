@@ -62,7 +62,7 @@ function SwarmNotice() {
 export function StationNews({ station, limit = 5, title = "Station News", className = "" }: Props) {
   const { items, loading, error } = useStationNews(station, limit);
 
-  const showSwarmNotice = station === "swarmradio";
+  const showSwarmNotice = station === "swarmradio" || station === undefined;
 
   if (!loading && !error && items.length === 0 && !showSwarmNotice) return null;
 
