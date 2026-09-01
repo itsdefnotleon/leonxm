@@ -26,8 +26,8 @@ export default function Originals() {
           </span>
           <h1 className="mt-4 text-4xl font-bold text-foreground tracking-tight">Original Stations</h1>
           <p className="text-muted-foreground mt-2 max-w-2xl">
-            Stations made by us, exclusive to LeonXM, and available nowhere else. Workout and Dance
-            kick off the collection — more originals are coming soon.
+            Stations made by us, exclusive to LeonXM, and available nowhere else. Workout, Dance,
+            and HipHop kick off the collection — more originals are coming soon.
           </p>
         </div>
 
