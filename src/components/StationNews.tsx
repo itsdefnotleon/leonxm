@@ -32,11 +32,13 @@ function SwarmNotice() {
         <h3 className="text-sm font-bold text-foreground">Important Notice</h3>
       </div>
       <p className="text-sm text-muted-foreground leading-relaxed">
-        We are discontinuing our Caster FM page on 1st September 2026 as part of a move to improve
-        our listeners experience.
+        As of 9pm UTC+0 on Tuesday the 1st of September 2026, Swarm Radio's Caster.FM website has
+        officially shutdown and will remain archived until further notice. Therefore, this news
+        section will no longer receive updates.
       </p>
       <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-        To continue listening to Swarm Radio, you can keep listening on the following platforms:
+        To continue listening to Swarm Radio, you can keep listening to us here on Leon XM or on the
+        other following platforms:
       </p>
       <ul className="mt-3 space-y-1.5">
         {swarmPlatforms.map((p) => (
@@ -60,7 +62,7 @@ function SwarmNotice() {
 export function StationNews({ station, limit = 5, title = "Station News", className = "" }: Props) {
   const { items, loading, error } = useStationNews(station, limit);
 
-  const showSwarmNotice = station === "swarmradio";
+  const showSwarmNotice = station === "swarmradio" || station === undefined;
 
   if (!loading && !error && items.length === 0 && !showSwarmNotice) return null;
 
