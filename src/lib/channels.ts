@@ -2,6 +2,7 @@ import ilikeRadioLogo from "@/assets/ilikeradio-logo.png.asset.json";
 import relaxLogo from "@/assets/relax-logo.png.asset.json";
 import workoutLogo from "@/assets/workout-logo.png.asset.json";
 import danceLogo from "@/assets/dance-logo.png.asset.json";
+import hiphopLogo from "@/assets/leonxm-hiphop-logo.png.asset.json";
 
 
 export interface Channel {
