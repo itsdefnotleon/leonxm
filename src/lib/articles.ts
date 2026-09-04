@@ -6,6 +6,7 @@ import globalThumb from "@/assets/swarm-ilike-global-thumbnail.png.asset.json";
 import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
 import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
+import ninetiesThumb from "@/assets/leonxm-90s-launch.png.asset.json";
 
 export type Article = {
   id: string;
@@ -18,6 +19,25 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "leonxm-90s-launch",
+    title: "LeonXM 90s Is Now Live — Rewind to the Decade of Dance",
+    date: "September 4, 2026",
+    summary: "The songs that made people dance during the 90s — LeonXM 90s is live now as the fourth station in the LeonXM Original Stations collection.",
+    image: ninetiesThumb.url,
+    content: `Get ready to rewind. LeonXM 90s is live now — the fourth exclusive station in the LeonXM Original Stations collection, made by us and available nowhere else.
+
+The slogan says it all: the songs that made people dance during the 90s. This is a full-time celebration of the decade that gave us Eurodance, big beat, pop anthems and club classics that still fill floors today. From cassette-deck favourites to the tracks that defined every school disco and summer road trip, LeonXM 90s plays the decade's biggest and best — non-stop, no filler.
+
+Whether you grew up with these songs or you're discovering why everyone talks about them, LeonXM 90s keeps the energy of the era going around the clock. Neon nights, unforgettable hooks and beats that never left — it's all here.
+
+It joins LeonXM Workout, LeonXM Dance and LeonXM HipHop in the Original Stations collection, which keeps growing. And we're not done — more originals are already in the works.
+
+Just like every station on LeonXM, it's 100% free to listen. No sign-up, no geoblocks, no interruptions — streaming 24/7 with live now-playing info so you always know what's on. You'll find LeonXM 90s on the Originals page and in the full channel directory.
+
+Press play and take it back to the 90s.`,
+    link: { to: "/channel/8", label: "Listen to LeonXM 90s →" },
+  },
   {
     id: "swarm-casterfm-shutdown",
     title: "Swarm Radio's Caster.FM Website Has Shut Down",
