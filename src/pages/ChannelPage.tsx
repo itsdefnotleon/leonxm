@@ -61,6 +61,13 @@ const channelDescriptions: Record<number, { tagline: string; description: string
     genre: "Dance / Electronic",
     location: "Online",
   },
+  8: {
+    tagline: "The songs that made people dance during the 90s",
+    description:
+      "LeonXM 90s is an exclusive LeonXM station dedicated to the decade of neon, cassette tapes and unforgettable hooks. From dancefloor classics to sing-along anthems, it's the songs that made people dance during the 90s — around the clock.",
+    genre: "90s / Dance Classics",
+    location: "Online",
+  },
 };
 
 
