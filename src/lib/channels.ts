@@ -3,6 +3,7 @@ import relaxLogo from "@/assets/relax-logo.png.asset.json";
 import workoutLogo from "@/assets/workout-logo.png.asset.json";
 import danceLogo from "@/assets/dance-logo.png.asset.json";
 import hiphopLogo from "@/assets/leonxm-hiphop-logo.png.asset.json";
+import ninetiesLogo from "@/assets/leonxm-90s-logo.png.asset.json";
 
 
 export interface Channel {
@@ -86,6 +87,14 @@ export const channels: Channel[] = [
     logo: hiphopLogo.url,
     streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-hip-hop/mp3",
     nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-hip-hop/nowplaying",
+  },
+  {
+    id: 8,
+    name: "LeonXM 90s",
+    original: true,
+    logo: ninetiesLogo.url,
+    streamUrl: "https://cast1.typicalmedia.net/stream/leonxm-90s/mp3",
+    nowPlayingApi: "https://cast1.typicalmedia.net/api/v1/stations/leonxm-90s/nowplaying",
   },
 ];
 
