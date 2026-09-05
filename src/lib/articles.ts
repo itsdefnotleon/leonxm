@@ -7,6 +7,7 @@ import originalsThumb from "@/assets/dance-workout-originals.png.asset.json";
 import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
 import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
 import ninetiesThumb from "@/assets/leonxm-90s-launch.png.asset.json";
+import oneLaunchThumb from "@/assets/leonxm-one-launch.png.asset.json";
 
 export type Article = {
   id: string;
@@ -19,6 +20,23 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "leonxm-one-launch",
+    title: "LeonXM One Is Now Live — All Originals in One Stream",
+    date: "September 5, 2026",
+    summary: "Every LeonXM original station in one place — LeonXM One is live now, bringing the best of Workout, Dance, HipHop and 90s together.",
+    image: oneLaunchThumb.url,
+    content: `There's a new way to hear everything LeonXM Originals has to offer. LeonXM One is live now — the fifth exclusive station in the LeonXM Original Stations collection, made by us and available nowhere else.
+
+LeonXM One is built for listeners who want it all. It pulls together the biggest tracks and hardest moments from LeonXM Workout, LeonXM Dance, LeonXM HipHop and LeonXM 90s into one non-stop stream. Whether you're in the mood for gym energy, club anthems, Hip-Hop heat or 90s throwbacks, you don't have to choose — One has it covered.
+
+It's the simplest way to explore the Original Stations collection. No flipping between channels, no missing a favourite drop — just the best of LeonXM originals, back-to-back, around the clock.
+
+It joins LeonXM Workout, LeonXM Dance, LeonXM HipHop and LeonXM 90s in the Original Stations collection, and like every station on LeonXM, it's 100% free to listen. No sign-up, no geoblocks, no interruptions — streaming 24/7 with live now-playing info so you always know what's on. You'll find LeonXM One on the Originals page and in the full channel directory.
+
+Press play and hear everything in One.`,
+    link: { to: "/channel/9", label: "Listen to LeonXM One →" },
+  },
   {
     id: "leonxm-90s-launch",
     title: "LeonXM 90s Is Now Live — Rewind to the Decade of Dance",
