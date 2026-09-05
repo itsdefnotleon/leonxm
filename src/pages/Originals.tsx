@@ -27,7 +27,7 @@ export default function Originals() {
           <h1 className="mt-4 text-4xl font-bold text-foreground tracking-tight">Original Stations</h1>
           <p className="text-muted-foreground mt-2 max-w-2xl">
             Stations made by us, exclusive to LeonXM, and available nowhere else. Workout, Dance,
-            HipHop and 90s lead the collection — more originals are coming soon.
+            HipHop, 90s and One lead the collection — more originals are coming soon.
           </p>
         </div>
 
