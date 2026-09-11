@@ -49,14 +49,14 @@ export const channels: Channel[] = [
     name: "ilikeRadio",
     logo: ilikeRadioLogo.url,
     streamUrl: "https://stream.zeno.fm/otmlz6yddt6vv",
-    nowPlayingApi: "https://live.typicalnerds.uk/api/station/ilikeradio/nowplaying",
+    nowPlayingApi: "https://live.typicalnerds.co.uk/api/station/ilikeradio/nowplaying",
   },
   {
     id: 3,
     name: "Swarm Radio",
     logo: "https://leons-image-library.neocities.org/swarm.png",
     streamUrl: "https://stream.zeno.fm/acunkwb7nf9uv",
-    nowPlayingApi: "https://live.typicalnerds.uk/api/station/leonfm-swarm/nowplaying",
+    nowPlayingApi: "https://live.typicalnerds.co.uk/api/station/leonfm-swarm/nowplaying",
   },
   {
     id: 4,
