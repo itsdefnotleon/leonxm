@@ -66,7 +66,9 @@ export function RagdollButton() {
       onClick={ragdoll}
       aria-label="Secret"
       title=""
-      className="w-2 h-2 rounded-full bg-muted-foreground/20 hover:bg-muted-foreground/40 transition-colors cursor-default"
-    />
+      className="text-sm text-muted-foreground/40 hover:text-muted-foreground/80 transition-colors cursor-default"
+    >
+      i am Garry and i made a mod
+    </button>
   );
 }
