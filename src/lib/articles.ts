@@ -8,6 +8,7 @@ import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
 import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
 import ninetiesThumb from "@/assets/leonxm-90s-launch.png.asset.json";
 import oneLaunchThumb from "@/assets/leonxm-one-launch.png.asset.json";
+import defaultThumb from "@/assets/LeonXM_thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
