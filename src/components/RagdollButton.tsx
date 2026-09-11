@@ -18,9 +18,13 @@ export function RagdollButton() {
     // Grab the big visible chunks of the page and make them flop
     const targets = Array.from(
       document.querySelectorAll<HTMLElement>(
-        "header, main > *, footer > div, [data-ragdoll]"
+        "header, main > *, main, footer > div, #root > div > *, [data-ragdoll]"
       )
-    ).filter((el) => !el.closest("[data-no-ragdoll]"));
+    ).filter(
+      (el, i, arr) =>
+        !el.closest("[data-no-ragdoll]") &&
+        !arr.some((other) => other !== el && other.contains(el))
+    );
 
     const originals = targets.map((el) => ({
       el,
