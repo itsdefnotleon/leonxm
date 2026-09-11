@@ -8,6 +8,7 @@ import hiphopThumb from "@/assets/leonxm-hiphop-launch.png.asset.json";
 import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json";
 import ninetiesThumb from "@/assets/leonxm-90s-launch.png.asset.json";
 import oneLaunchThumb from "@/assets/leonxm-one-launch.png.asset.json";
+import defaultThumb from "@/assets/LeonXM_thumbnail.png.asset.json";
 
 export type Article = {
   id: string;
@@ -20,6 +21,21 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    id: "ilikeradio-swarm-metadata",
+    title: "ilikeRadio and Swarm Radio Metadata Restored",
+    date: "September 11, 2026",
+    summary: "Now-playing metadata for ilikeRadio and Swarm Radio was briefly unavailable while server domains were changed behind the scenes.",
+    image: defaultThumb.url,
+    content: `You may have noticed that now-playing metadata for ilikeRadio and Swarm Radio stopped showing for a short time. This was caused by a server-side domain change and was not a problem with either station's stream.
+
+This only impacted metadata — track titles, artist names and artwork were temporarily missing from the LeonXM player and channel pages. It did not affect listeners' experiences: both stations kept streaming normally throughout.
+
+The metadata feed has now been restored. You should see current song info for both stations again, and no further disruption is expected.
+
+Thanks for your patience while we sorted it out.`,
+    link: { to: "/channels", label: "Back to all channels →" },
+  },
   {
     id: "leonxm-one-launch",
     title: "LeonXM One Is Now Live — All Originals in One Stream",

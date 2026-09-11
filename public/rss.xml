@@ -6,7 +6,18 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2026 19:00:57 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 19:03:17 GMT</lastBuildDate>
+    <item>
+      <title>ilikeRadio and Swarm Radio Metadata Restored</title>
+      <link>https://leonxm.lovable.app/news#ilikeradio-swarm-metadata</link>
+      <guid isPermaLink="false">ilikeradio-swarm-metadata</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Now-playing metadata for ilikeRadio and Swarm Radio was briefly unavailable while server domains were changed behind the scenes.</description>
+      <enclosure url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" type="image/png"/>
+      <media:content url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" medium="image"/>
+      <media:thumbnail url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png"/>
+      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" alt=""/></p><p>You may have noticed that now-playing metadata for ilikeRadio and Swarm Radio stopped showing for a short time. This was caused by a server-side domain change and was not a problem with either station&apos;s stream.</p><p>This only impacted metadata — track titles, artist names and artwork were temporarily missing from the LeonXM player and channel pages. It did not affect listeners&apos; experiences: both stations kept streaming normally throughout.</p><p>The metadata feed has now been restored. You should see current song info for both stations again, and no further disruption is expected.</p><p>Thanks for your patience while we sorted it out.</p>]]></content:encoded>
+    </item>
     <item>
       <title>LeonXM One Is Now Live — All Originals in One Stream</title>
       <link>https://leonxm.lovable.app/news#leonxm-one-launch</link>
