@@ -22,6 +22,21 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "ilikeradio-swarm-metadata",
+    title: "ilikeRadio and Swarm Radio Metadata Restored",
+    date: "September 11, 2026",
+    summary: "Now-playing metadata for ilikeRadio and Swarm Radio was briefly unavailable while server domains were changed behind the scenes.",
+    image: defaultThumb.url,
+    content: `You may have noticed that now-playing metadata for ilikeRadio and Swarm Radio stopped showing for a short time. This was caused by a server-side domain change and was not a problem with either station's stream.
+
+Audio playback was not affected — both stations kept streaming normally. Only the track title, artist and artwork were temporarily missing from the LeonXM player and channel pages.
+
+The metadata feed has now been restored. You should see current song info for both stations again, and no further disruption is expected.
+
+Thanks for your patience while we sorted it out.`,
+    link: { to: "/channels", label: "Back to all channels →" },
+  },
+  {
     id: "leonxm-one-launch",
     title: "LeonXM One Is Now Live — All Originals in One Stream",
     date: "September 5, 2026",
