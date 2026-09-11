@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Radio } from "lucide-react";
+import { RagdollButton } from "@/components/RagdollButton";
 
 export function Footer() {
   return (
@@ -14,6 +15,7 @@ export function Footer() {
             <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
             <a href="/rss.xml" target="_blank" rel="noopener" className="text-sm text-muted-foreground hover:text-foreground transition-colors">RSS</a>
+            <RagdollButton />
           </nav>
         </div>
       </div>
