@@ -29,7 +29,7 @@ export const articles: Article[] = [
     image: defaultThumb.url,
     content: `You may have noticed that now-playing metadata for ilikeRadio and Swarm Radio stopped showing for a short time. This was caused by a server-side domain change and was not a problem with either station's stream.
 
-Audio playback was not affected — both stations kept streaming normally. Only the track title, artist and artwork were temporarily missing from the LeonXM player and channel pages.
+This only impacted metadata — track titles, artist names and artwork were temporarily missing from the LeonXM player and channel pages. It did not affect listeners' experiences: both stations kept streaming normally throughout.
 
 The metadata feed has now been restored. You should see current song info for both stations again, and no further disruption is expected.
 
