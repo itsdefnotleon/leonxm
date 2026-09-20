@@ -14,7 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string
+          display_name: string
+          id: string
+          station_id: number
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          display_name: string
+          id?: string
+          station_id: number
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          station_id?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      stations: {
+        Row: {
+          active: boolean
+          created_at: string
+          description: string | null
+          genre: string | null
+          geo_restricted: string[] | null
+          id: number
+          is_original: boolean
+          location: string | null
+          logo_url: string
+          name: string
+          now_playing_api: string
+          request_url: string | null
+          sort_order: number
+          stream_url: string
+          tagline: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          description?: string | null
+          genre?: string | null
+          geo_restricted?: string[] | null
+          id: number
+          is_original?: boolean
+          location?: string | null
+          logo_url: string
+          name: string
+          now_playing_api: string
+          request_url?: string | null
+          sort_order?: number
+          stream_url: string
+          tagline?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          description?: string | null
+          genre?: string | null
+          geo_restricted?: string[] | null
+          id?: number
+          is_original?: boolean
+          location?: string | null
+          logo_url?: string
+          name?: string
+          now_playing_api?: string
+          request_url?: string | null
+          sort_order?: number
+          stream_url?: string
+          tagline?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
