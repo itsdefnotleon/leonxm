@@ -91,8 +91,7 @@ export function MinecraftParticles({ onDone, originX, originY }: Props) {
         if (p.life > p.maxLife) continue;
         alive++;
 
-        p.vx *= Math.pow(DRAG, dt * 60 * 0.02 + 1) ** 0.02;
-        p.vx *= 1 - 0.9 * dt;
+        p.vx *= Math.pow(DRAG, dt * 60);
         p.vy += GRAVITY * dt;
         p.x += p.vx * dt;
         p.y += p.vy * dt;

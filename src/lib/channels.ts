@@ -15,6 +15,11 @@ export interface Channel {
   nowPlayingApi: string;
   geoRestricted?: string[];
   original?: boolean;
+  tagline?: string;
+  description?: string;
+  genre?: string;
+  location?: string;
+  requestUrl?: string;
 }
 
 // Song request pages (external players with a Request button)
