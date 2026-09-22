@@ -17,6 +17,7 @@ import Channels from "./pages/Channels.tsx";
 import Originals from "./pages/Originals.tsx";
 import Survey from "./pages/Survey.tsx";
 import SurveyConfirmation from "./pages/SurveyConfirmation.tsx";
+import Auth from "./pages/Auth.tsx";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => {
               <Route path="/originals" element={<Originals />} />
               <Route path="/survey" element={<Survey />} />
               <Route path="/survey/thanks" element={<SurveyConfirmation />} />
+              <Route path="/auth" element={<Auth />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

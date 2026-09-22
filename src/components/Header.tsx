@@ -3,6 +3,8 @@ import leonxmLogo from "@/assets/leonxm-logo.png";
 import { useTimeTheme, useCurrentTime } from "@/hooks/use-time-theme";
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
 import { useArticleReads } from "@/hooks/use-article-reads";
+import { useAuth } from "@/hooks/use-auth";
+import { supabase } from "@/integrations/supabase/client";
 
 const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
 
@@ -18,6 +20,7 @@ export function Header() {
   const time = useCurrentTime();
   const Icon = themeIcons[theme];
   const { hasUnread, unreadCount } = useArticleReads();
+  const { user } = useAuth();
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 py-3 sm:h-20 sm:py-0 flex flex-col sm:flex-row items-center gap-3 sm:gap-0 sm:justify-between">
@@ -57,6 +60,21 @@ export function Header() {
           >
             Survey
           </NavLink>
+          {user ? (
+            <button
+              onClick={() => supabase.auth.signOut()}
+              className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Sign out
+            </button>
+          ) : (
+            <NavLink
+              to="/auth"
+              className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Sign in
+            </NavLink>
+          )}
           <div className="ml-4 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]">
             <Icon className="w-3.5 h-3.5" />
             <span className="text-[10px] font-bold uppercase tracking-[0.18em]">{time}</span>
