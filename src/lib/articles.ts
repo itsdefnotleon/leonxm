@@ -22,6 +22,20 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "station-live-chat-launch",
+    title: "Live Chat Is Here — Talk on Every Station Page",
+    date: "September 22, 2026",
+    summary: "Every station page now has a live chat, so listeners can ask questions, say hi and see replies appear in real time.",
+    content: `LeonXM just got a lot more social. Every station page now has its own live chat — a place where listeners can ask questions, talk about the track that just played, or simply say hi while the stream runs in the background.
+
+It works in real time: when someone posts a message, it appears instantly for everyone on that station's page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you're listening to. Chatting on TruckHits stays with the TruckHits crew, and ilikeRadio listeners keep their own corner of the site.
+
+Anyone can read the chat, and signing in takes seconds if you want to join in — you can use your email or a Google account, and pick a display name to post under. You can also delete your own messages at any time.
+
+Whether it's a quick question for other listeners, a song shout-out during a long haul, or just keeping company on a late-night chill session with Relax, the chat is there. Open any station page, scroll to the chat, and join the conversation.`,
+    link: { to: "/channels", label: "Pick a station and join the chat →" },
+  },
+  {
     id: "ilikeradio-swarm-metadata",
     title: "ilikeRadio and Swarm Radio Metadata Restored",
     date: "September 11, 2026",
