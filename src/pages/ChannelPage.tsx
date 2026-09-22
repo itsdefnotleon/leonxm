@@ -11,6 +11,7 @@ import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight, Mic2 } from "
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
+import { StationChat } from "@/components/StationChat";
 
 const stationNewsSource: Record<number, "ilikeradio" | "swarmradio"> = {
   2: "ilikeradio",
@@ -317,6 +318,10 @@ const ChannelPage = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">{info.description}</p>
           </div>
         )}
+
+        <div className="lg:col-span-3">
+          <StationChat stationId={channel.id} stationName={channel.name} />
+        </div>
 
         {stationNewsSource[channel.id] && (
           <div className="lg:col-span-3">
