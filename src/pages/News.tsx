@@ -58,14 +58,38 @@ export default function News() {
     })),
   };
 
+  // When the page is opened on a specific article (/news#article-id), share that
+  // article's own title, summary and image on social platforms.
+  const hashId = typeof window !== "undefined" ? window.location.hash.replace("#", "") : "";
+  const focused = sortedArticles.find((a) => a.id === hashId);
+  const focusedJsonLd = focused
+    ? {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: focused.title,
+        description: focused.summary,
+        image: [focused.image ?? defaultArticleImage.url],
+        datePublished: new Date(focused.date).toISOString(),
+        url: `${SITE_URL}/news#${focused.id}`,
+        publisher: { "@type": "Organization", name: "LeonXM" },
+      }
+    : null;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="News — LeonXM"
-        description="Updates, announcements, and station news from LeonXM — the free online radio network."
-        path="/news"
-        jsonLd={itemListJsonLd}
+        title={focused ? `${focused.title} — LeonXM News` : "News — LeonXM"}
+        description={
+          focused?.summary ??
+          "Updates, announcements, and station news from LeonXM — the free online radio network."
+        }
+        path={focused ? `/news#${focused.id}` : "/news"}
+        image={focused?.image ?? defaultArticleImage.url}
+        type={focused ? "article" : "website"}
+        publishedTime={focused ? new Date(focused.date).toISOString() : undefined}
+        jsonLd={focusedJsonLd ? [focusedJsonLd, itemListJsonLd] : itemListJsonLd}
       />
+
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-10">

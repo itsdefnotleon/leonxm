@@ -26,6 +26,7 @@ export const articles: Article[] = [
     title: "Live Chat Is Here — Talk on Every Station Page",
     date: "September 22, 2026",
     summary: "Every station page now has a live chat, so listeners can ask questions, say hi and see replies appear in real time.",
+    image: defaultThumb.url,
     content: `LeonXM just got a lot more social. Every station page now has its own live chat — a place where listeners can ask questions, talk about the track that just played, or simply say hi while the stream runs in the background.
 
 It works in real time: when someone posts a message, it appears instantly for everyone on that station's page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you're listening to. Chatting on TruckHits stays with the TruckHits crew, and ilikeRadio listeners keep their own corner of the site.

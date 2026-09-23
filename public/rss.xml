@@ -6,14 +6,17 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Sep 2026 15:04:40 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 15:07:58 GMT</lastBuildDate>
     <item>
       <title>Live Chat Is Here — Talk on Every Station Page</title>
       <link>https://leonxm.lovable.app/news#station-live-chat-launch</link>
       <guid isPermaLink="false">station-live-chat-launch</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
       <description>Every station page now has a live chat, so listeners can ask questions, say hi and see replies appear in real time.</description>
-      <content:encoded><![CDATA[<p>LeonXM just got a lot more social. Every station page now has its own live chat — a place where listeners can ask questions, talk about the track that just played, or simply say hi while the stream runs in the background.</p><p>It works in real time: when someone posts a message, it appears instantly for everyone on that station&apos;s page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you&apos;re listening to. Chatting on TruckHits stays with the TruckHits crew, and ilikeRadio listeners keep their own corner of the site.</p><p>Anyone can read the chat, and signing in takes seconds if you want to join in — you can use your email or a Google account, and pick a display name to post under. You can also delete your own messages at any time.</p><p>Whether it&apos;s a quick question for other listeners, a song shout-out during a long haul, or just keeping company on a late-night chill session with Relax, the chat is there. Open any station page, scroll to the chat, and join the conversation.</p>]]></content:encoded>
+      <enclosure url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" type="image/png"/>
+      <media:content url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" medium="image"/>
+      <media:thumbnail url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png"/>
+      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" alt=""/></p><p>LeonXM just got a lot more social. Every station page now has its own live chat — a place where listeners can ask questions, talk about the track that just played, or simply say hi while the stream runs in the background.</p><p>It works in real time: when someone posts a message, it appears instantly for everyone on that station&apos;s page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you&apos;re listening to. Chatting on TruckHits stays with the TruckHits crew, and ilikeRadio listeners keep their own corner of the site.</p><p>Anyone can read the chat, and signing in takes seconds if you want to join in — you can use your email or a Google account, and pick a display name to post under. You can also delete your own messages at any time.</p><p>Whether it&apos;s a quick question for other listeners, a song shout-out during a long haul, or just keeping company on a late-night chill session with Relax, the chat is there. Open any station page, scroll to the chat, and join the conversation.</p>]]></content:encoded>
     </item>
     <item>
       <title>ilikeRadio and Swarm Radio Metadata Restored</title>
