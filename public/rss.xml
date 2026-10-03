@@ -6,7 +6,7 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Oct 2026 08:36:06 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 08:36:54 GMT</lastBuildDate>
     <item>
       <title>TruckHits Radio Is Temporarily Unavailable</title>
       <link>https://leonxm.lovable.app/news#truckhits-unavailable-oct-2026</link>
@@ -16,7 +16,7 @@
       <enclosure url="https://leonxm.lovable.app/__l5e/assets-v1/1661abfa-642b-4bed-b393-646013dec7a6/TruckHits_Radio_thumbnail.png" type="image/png"/>
       <media:content url="https://leonxm.lovable.app/__l5e/assets-v1/1661abfa-642b-4bed-b393-646013dec7a6/TruckHits_Radio_thumbnail.png" medium="image"/>
       <media:thumbnail url="https://leonxm.lovable.app/__l5e/assets-v1/1661abfa-642b-4bed-b393-646013dec7a6/TruckHits_Radio_thumbnail.png"/>
-      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1661abfa-642b-4bed-b393-646013dec7a6/TruckHits_Radio_thumbnail.png" alt=""/></p><p>Quick update for TruckHits fans: we&apos;ve temporarily taken TruckHits Radio off the LeonXM channel list and the home page.</p><p>TruckHits has been unreliable for a couple of months now. The station runs on older AzuraCast servers operated by Typical Media Group (TMG), and those servers haven&apos;t been kept running smoothly since TMG shifted its focus to its newer streaming platform. The result has been a stream that keeps cutting out or won&apos;t play at all. Rather than leave a station up that doesn&apos;t work properly, we&apos;ve decided to pull it until things are stable again.</p><p>We&apos;re sorry for the disruption — we know plenty of you enjoy it on the road. The rest of the network is unaffected, so there&apos;s still plenty to listen to in the meantime. We&apos;ll post an update here as soon as TruckHits Radio is back.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1661abfa-642b-4bed-b393-646013dec7a6/TruckHits_Radio_thumbnail.png" alt=""/></p><p>Quick update for TruckHits fans: we&apos;ve temporarily taken TruckHits Radio off the LeonXM channel list and the home page.</p><p>TruckHits has been unreliable for a couple of months now. The station runs on older AzuraCast servers operated by Typical Media Group (TMG), and those servers haven&apos;t been kept running smoothly since TMG shifted its focus to its newer streaming platform, TMGCast. The result has been a stream that keeps cutting out or won&apos;t play at all. Rather than leave a station up that doesn&apos;t work properly, we&apos;ve decided to pull it until things are stable again.</p><p>We&apos;re sorry for the disruption — we know plenty of you enjoy it on the road. The rest of the network is unaffected, so there&apos;s still plenty to listen to in the meantime. We&apos;ll post an update here as soon as TruckHits Radio is back.</p>]]></content:encoded>
     </item>
     <item>
       <title>Live Chat Is Here — Talk on Every Station Page</title>
