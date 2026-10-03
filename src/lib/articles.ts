@@ -29,7 +29,7 @@ export const articles: Article[] = [
     image: truckHitsThumb.url,
     content: `Quick update for TruckHits fans: we've temporarily taken TruckHits Radio off the LeonXM channel list and the home page.
 
-The station has been having ongoing problems with its streaming service, which meant it kept cutting out or wouldn't play at all. Rather than leave a station up that doesn't work properly, we've decided to pull it until things are stable again.
+TruckHits has been unreliable for a couple of months now. The station runs on older AzuraCast servers operated by Typical Media Group (TMG), and those servers haven't been kept running smoothly since TMG shifted its focus to its newer streaming platform. The result has been a stream that keeps cutting out or won't play at all. Rather than leave a station up that doesn't work properly, we've decided to pull it until things are stable again.
 
 We're sorry for the disruption — we know plenty of you enjoy it on the road. The rest of the network is unaffected, so there's still plenty to listen to in the meantime. We'll post an update here as soon as TruckHits Radio is back.`,
     link: { to: "/channels", label: "Browse the other channels →" },
