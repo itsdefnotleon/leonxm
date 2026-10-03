@@ -1,4 +1,4 @@
-import { channels } from "@/lib/channels";
+import { useStations } from "@/hooks/use-stations";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { ChannelCard } from "@/components/ChannelCard";
 import { Header } from "@/components/Header";
@@ -10,6 +10,7 @@ import { FeaturedHero } from "@/components/FeaturedHero";
 
 const Index = () => {
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
+  const channels = useStations();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">

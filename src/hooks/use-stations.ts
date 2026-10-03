@@ -35,7 +35,7 @@ export function useStations(): Channel[] {
     staleTime: 60_000,
   });
 
-  return data && data.length > 0 ? data : staticChannels;
+  return data && data.length > 0 ? data : staticChannels.filter((c) => !c.unlisted);
 }
 
 export function useStation(id: number | undefined): Channel | undefined {

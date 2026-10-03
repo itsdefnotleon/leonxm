@@ -22,6 +22,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "truckhits-unavailable-oct-2026",
+    title: "TruckHits Radio Is Temporarily Unavailable",
+    date: "October 3, 2026",
+    summary: "We've taken TruckHits Radio off the channel list for now while issues with its stream are sorted out.",
+    image: truckHitsThumb.url,
+    content: `Quick update for TruckHits fans: we've temporarily taken TruckHits Radio off the LeonXM channel list and the home page.
+
+The station has been having ongoing problems with its streaming service, which meant it kept cutting out or wouldn't play at all. Rather than leave a station up that doesn't work properly, we've decided to pull it until things are stable again.
+
+We're sorry for the disruption — we know plenty of you enjoy it on the road. The rest of the network is unaffected, so there's still plenty to listen to in the meantime. We'll post an update here as soon as TruckHits Radio is back.`,
+    link: { to: "/channels", label: "Browse the other channels →" },
+  },
+  {
     id: "station-live-chat-launch",
     title: "Live Chat Is Here — Talk on Every Station Page",
     date: "September 22, 2026",
@@ -29,9 +42,9 @@ export const articles: Article[] = [
     image: defaultThumb.url,
     content: `LeonXM just got a lot more social. Every station page now has its own live chat — a place where listeners can ask questions, talk about the track that just played, or simply say hi while the stream runs in the background.
 
-It works in real time: when someone posts a message, it appears instantly for everyone on that station's page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you're listening to. Chatting on TruckHits stays with the TruckHits crew, and ilikeRadio listeners keep their own corner of the site.
+It works in real time: when someone posts a message, it appears instantly for everyone on that station's page — no refreshing, no waiting. Each station has its own chat, so the conversation stays about the music you're listening to. Chatting on Relax stays with the Relax crew, and ilikeRadio listeners keep their own corner of the site.
 
-Anyone can read the chat, and signing in takes seconds if you want to join in — you can use your email or a Google account, and pick a display name to post under. You can also delete your own messages at any time.
+Anyone can read the chat, and signing in takes seconds if you want to join in — just use your email address and pick a display name to post under. You can also delete your own messages at any time.
 
 Whether it's a quick question for other listeners, a song shout-out during a long haul, or just keeping company on a late-night chill session with Relax, the chat is there. Open any station page, scroll to the chat, and join the conversation.`,
     link: { to: "/channels", label: "Pick a station and join the chat →" },

@@ -20,6 +20,7 @@ export interface Channel {
   genre?: string;
   location?: string;
   requestUrl?: string;
+  unlisted?: boolean;
 }
 
 // Song request pages (external players with a Request button)
@@ -45,6 +46,7 @@ export const channels: Channel[] = [
   {
     id: 1,
     name: "TruckHits Radio",
+    unlisted: true,
     logo: "https://leons-image-library.neocities.org/truckhitsradio/cover.png",
     streamUrl: "https://azura.typicalmedia.net/listen/truckhits/radio.mp3",
     nowPlayingApi: "https://azura.typicalmedia.net/api/station/truckhits/nowplaying",

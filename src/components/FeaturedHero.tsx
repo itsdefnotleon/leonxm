@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Play, Pause, ArrowRight, Mic2 } from "lucide-react";
-import { channels, Channel, requestUrls } from "@/lib/channels";
+import { Channel, requestUrls } from "@/lib/channels";
+import { useStations } from "@/hooks/use-stations";
 import { useNowPlaying } from "@/hooks/use-now-playing";
 import { useTimeTheme, TimeTheme } from "@/hooks/use-time-theme";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 
 const featuredByTime: Record<TimeTheme, { id: number; blurb: string }> = {
-  dawn: { id: 1, blurb: "TruckBreakfast with Neuro-sama — weekdays 5am-10am" },
+  dawn: { id: 9, blurb: "Every LeonXM Original, in one stream" },
   day: { id: 2, blurb: "Your daytime soundtrack" },
   dusk: { id: 3, blurb: "Evening drive companion" },
   night: { id: 4, blurb: "All chill non-stop" },
@@ -22,6 +23,7 @@ const timeLabels: Record<TimeTheme, string> = {
 export function FeaturedHero() {
   const theme = useTimeTheme();
   const pick = featuredByTime[theme];
+  const channels = useStations();
   const channel: Channel = channels.find((c) => c.id === pick.id) ?? channels[0];
   const nowPlaying = useNowPlaying(channel.nowPlayingApi);
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();

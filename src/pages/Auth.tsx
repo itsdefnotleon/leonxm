@@ -47,13 +47,6 @@ export default function Auth() {
     }
   };
 
-  const google = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin },
-    });
-    if (error) toast.error(error.message);
-  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -72,18 +65,8 @@ export default function Auth() {
             You need an account to join the live chat.
           </p>
 
-          <button
-            onClick={google}
-            className="mt-6 w-full rounded-full border border-border bg-secondary px-5 py-3 text-sm font-semibold text-foreground hover:bg-secondary/70 transition-colors"
-          >
-            Continue with Google
-          </button>
 
-          <div className="my-5 flex items-center gap-3 text-[10px] uppercase tracking-widest text-muted-foreground">
-            <span className="h-px flex-1 bg-border" /> or <span className="h-px flex-1 bg-border" />
-          </div>
-
-          <form onSubmit={submit} className="space-y-3">
+          <form onSubmit={submit} className="mt-6 space-y-3">
             {mode === "signup" && (
               <input
                 value={displayName}
