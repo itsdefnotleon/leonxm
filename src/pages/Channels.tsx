@@ -1,4 +1,4 @@
-import { channels } from "@/lib/channels";
+import { useStations } from "@/hooks/use-stations";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { ChannelCard } from "@/components/ChannelCard";
 import { Header } from "@/components/Header";
@@ -7,12 +7,13 @@ import { SEO } from "@/components/SEO";
 
 export default function Channels() {
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
+  const channels = useStations();
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="All Channels — LeonXM"
-        description="Browse every LeonXM channel — TruckHits Radio, ilikeRadio, Swarm Radio and more. Free 24/7 streaming, no signup."
+        description="Browse every LeonXM channel — ilikeRadio, Swarm Radio and more. Free 24/7 streaming, no signup."
         path="/channels"
       />
       <Header />

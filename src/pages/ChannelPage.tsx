@@ -12,6 +12,8 @@ import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
 import { StationChat } from "@/components/StationChat";
+import { StationAssistant } from "@/components/StationAssistant";
+import { useStations } from "@/hooks/use-stations";
 
 const stationNewsSource: Record<number, "ilikeradio" | "swarmradio"> = {
   2: "ilikeradio",
@@ -90,6 +92,7 @@ const channelDescriptions: Record<number, { tagline: string; description: string
 const ChannelPage = () => {
   const { id } = useParams();
   const channel = channels.find((c) => c.id === Number(id));
+  const listed = useStations();
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
   const nowPlaying = useNowPlaying(channel?.nowPlayingApi ?? "");
   const { status: geoStatus, country } = useGeoCountry();
@@ -134,7 +137,7 @@ const ChannelPage = () => {
     else play(channel);
   };
 
-  const otherChannels = channels.filter((c) => c.id !== channel.id);
+  const otherChannels = listed.filter((c) => c.id !== channel.id);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -318,6 +321,14 @@ const ChannelPage = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">{info.description}</p>
           </div>
         )}
+
+        <div className="lg:col-span-3">
+          <StationAssistant
+            station={{ name: channel.name, tagline: info?.tagline, description: info?.description, genre: info?.genre, location: info?.location }}
+            nowPlaying={{ title: nowPlaying?.now_playing?.song?.title, artist: nowPlaying?.now_playing?.song?.artist }}
+            stations={listed.map((s) => ({ name: s.name, genre: s.genre, tagline: s.tagline }))}
+          />
+        </div>
 
         <div className="lg:col-span-3">
           <StationChat stationId={channel.id} stationName={channel.name} />

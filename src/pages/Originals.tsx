@@ -1,4 +1,4 @@
-import { channels } from "@/lib/channels";
+import { useStations } from "@/hooks/use-stations";
 import { useAudioPlayerContext } from "@/contexts/AudioPlayerContext";
 import { ChannelCard } from "@/components/ChannelCard";
 import { Header } from "@/components/Header";
@@ -8,6 +8,7 @@ import { Sparkles } from "lucide-react";
 
 export default function Originals() {
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
+  const channels = useStations();
   const originals = channels.filter((c) => c.original);
 
   return (
