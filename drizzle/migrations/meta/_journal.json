@@ -8,6 +8,13 @@
       "when": 1791102253003,
       "tag": "0000_moderators_manage_stations",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791102492421,
+      "tag": "0001_restrict_roles_and_mutes_visibility",
+      "breakpoints": true
     }
   ]
 }
