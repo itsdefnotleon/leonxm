@@ -60,6 +60,11 @@ export function Header() {
           >
             Survey
           </NavLink>
+          {isModerator && (
+            <NavLink to="/moderator" className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors">
+              Mod
+            </NavLink>
+          )}
           {user ? (
             <button
               onClick={() => supabase.auth.signOut()}
