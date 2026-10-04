@@ -4,6 +4,7 @@ import { useTimeTheme, useCurrentTime } from "@/hooks/use-time-theme";
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
 import { useArticleReads } from "@/hooks/use-article-reads";
 import { useAuth } from "@/hooks/use-auth";
+import { useModerator } from "@/hooks/use-moderator";
 import { supabase } from "@/integrations/supabase/client";
 
 const themeIcons = { dawn: Sunrise, day: Sun, dusk: Sunset, night: Moon } as const;
@@ -21,8 +22,8 @@ export function Header() {
   const Icon = themeIcons[theme];
   const { hasUnread, unreadCount } = useArticleReads();
   const { user } = useAuth();
-  return (
   const isModerator = useModerator();
+  return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 py-3 sm:h-20 sm:py-0 flex flex-col sm:flex-row items-center gap-3 sm:gap-0 sm:justify-between">
         <Link to="/" className="flex items-center gap-3 group">
