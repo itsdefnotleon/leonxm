@@ -58,6 +58,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/channel/:id" element={<ChannelPage />} />
+              <Route path="/channel/:id/schedule" element={<Schedule />} />
               <Route path="/about" element={<About />} />
               <Route path="/news" element={<News />} />
               <Route path="/terms" element={<Terms />} />
