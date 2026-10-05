@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ShareButtons } from "@/components/ShareButtons";
-import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight, Mic2 } from "lucide-react";
+import { Play, Pause, ArrowLeft, Radio, MapPin, Users, ArrowRight, Mic2, CalendarDays } from "lucide-react";
 import { useGeoCountry, isChannelBlocked } from "@/hooks/use-geo-country";
 import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
@@ -241,6 +241,13 @@ const ChannelPage = () => {
                     Request a song
                   </a>
                 )}
+                <Link
+                  to={`/channel/${channel.id}/schedule`}
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-card transition-colors"
+                >
+                  <CalendarDays className="w-4 h-4" />
+                  Schedule
+                </Link>
                 <ShareButtons
                   url={`https://leonxm.lovable.app/channel/${channel.id}`}
                   title={`${channel.name} on LeonXM`}

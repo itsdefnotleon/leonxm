@@ -98,6 +98,39 @@ export type Database = {
         }
         Relationships: []
       }
+      station_shows: {
+        Row: {
+          created_at: string
+          day_of_week: number
+          end_time: string
+          host: string | null
+          id: string
+          start_time: string
+          station_id: number
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          day_of_week: number
+          end_time: string
+          host?: string | null
+          id?: string
+          start_time: string
+          station_id: number
+          title: string
+        }
+        Update: {
+          created_at?: string
+          day_of_week?: number
+          end_time?: string
+          host?: string | null
+          id?: string
+          start_time?: string
+          station_id?: number
+          title?: string
+        }
+        Relationships: []
+      }
       stations: {
         Row: {
           active: boolean
@@ -112,6 +145,7 @@ export type Database = {
           name: string
           now_playing_api: string
           request_url: string | null
+          schedule_api: string | null
           sort_order: number
           stream_url: string
           tagline: string | null
@@ -130,6 +164,7 @@ export type Database = {
           name: string
           now_playing_api: string
           request_url?: string | null
+          schedule_api?: string | null
           sort_order?: number
           stream_url: string
           tagline?: string | null
@@ -148,6 +183,7 @@ export type Database = {
           name?: string
           now_playing_api?: string
           request_url?: string | null
+          schedule_api?: string | null
           sort_order?: number
           stream_url?: string
           tagline?: string | null

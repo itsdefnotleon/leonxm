@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Schedule from "./pages/Schedule";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -58,6 +59,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/channel/:id" element={<ChannelPage />} />
+              <Route path="/channel/:id/schedule" element={<Schedule />} />
               <Route path="/about" element={<About />} />
               <Route path="/news" element={<News />} />
               <Route path="/terms" element={<Terms />} />
