@@ -146,6 +146,7 @@ const ChannelPage = () => {
   };
 
   const otherChannels = listed.filter((c) => c.id !== channel.id);
+  const requestUrl = channel.requestUrl ?? requestUrls[channel.id];
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -238,9 +239,9 @@ const ChannelPage = () => {
                     </>
                   )}
                 </button>
-                {requestUrls[channel.id] && (
+                {requestUrl && (
                   <a
-                    href={requestUrls[channel.id]}
+                    href={requestUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors"
@@ -262,7 +263,7 @@ const ChannelPage = () => {
                   compact
                 />
               </div>
-              {requestUrls[channel.id] && (
+              {requestUrl && (
                 <p className="mt-3 text-xs text-muted-foreground max-w-xl">
                   Opens the {channel.name} player — press the{" "}
                   <span className="font-semibold text-foreground">Request</span> button there to send your song.
