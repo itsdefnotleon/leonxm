@@ -128,7 +128,13 @@ const ChannelPage = () => {
     );
   }
 
-  const info = channelDescriptions[channel.id];
+  const staticInfo = channelDescriptions[channel.id];
+  const info = {
+    tagline: channel.tagline ?? staticInfo?.tagline,
+    description: channel.description ?? staticInfo?.description,
+    genre: channel.genre ?? staticInfo?.genre,
+    location: channel.location ?? staticInfo?.location,
+  };
   const songTitle = nowPlaying?.now_playing?.song?.title || "Loading...";
   const artist = nowPlaying?.now_playing?.song?.artist || "";
   const albumArt = nowPlaying?.now_playing?.song?.art;
