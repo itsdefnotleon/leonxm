@@ -91,8 +91,10 @@ const channelDescriptions: Record<number, { tagline: string; description: string
 
 const ChannelPage = () => {
   const { id } = useParams();
-  const channel = channels.find((c) => c.id === Number(id));
   const listed = useStations();
+  const channel =
+    listed.find((c) => c.id === Number(id)) ??
+    channels.find((c) => c.id === Number(id));
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
   const nowPlaying = useNowPlaying(channel?.nowPlayingApi ?? "");
   const { status: geoStatus, country } = useGeoCountry();
