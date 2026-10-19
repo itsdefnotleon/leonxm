@@ -1,0 +1,2 @@
+# Architecture rules
+- StationCalendar presents a rolling seven-day schedule using the station's live feed and recurring station_shows; keep date generation in the tested schedule-week helper to handle month and year boundaries.
