@@ -18,19 +18,16 @@ export default function News() {
   const [openIds, setOpenIds] = useState<Set<string>>(new Set());
   const [autoOpened, setAutoOpened] = useState(false);
 
-  // Auto-open the newest unread article(s) on first mount
+  // Auto-open the newest unread article(s) on first mount, and save them as read.
+  // (Previously the save timer was cancelled by the re-render, so reads never stuck.)
   useEffect(() => {
     if (autoOpened) return;
+    setAutoOpened(true);
     const unread = sortedArticles.filter((a) => !isRead(a.id)).map((a) => a.id);
     if (unread.length > 0) {
       setOpenIds(new Set(unread));
-      const timer = setTimeout(() => {
-        unread.forEach(markRead);
-      }, 800);
-      setAutoOpened(true);
-      return () => clearTimeout(timer);
+      unread.forEach(markRead);
     }
-    setAutoOpened(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoOpened]);
 
