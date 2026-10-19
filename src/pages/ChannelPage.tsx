@@ -13,6 +13,7 @@ import { useGeoBlock } from "@/contexts/GeoBlockContext";
 import { StationNews } from "@/components/StationNews";
 import { StationChat } from "@/components/StationChat";
 import { StationAssistant } from "@/components/StationAssistant";
+import { StationCalendar } from "@/components/StationCalendar";
 import { useStations } from "@/hooks/use-stations";
 
 const stationNewsSource: Record<number, "ilikeradio" | "swarmradio"> = {
@@ -337,6 +338,10 @@ const ChannelPage = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">{info.description}</p>
           </div>
         )}
+
+        <div className="lg:col-span-3">
+          <StationCalendar stationId={channel.id} stationName={channel.name} />
+        </div>
 
         <div className="lg:col-span-3">
           <StationAssistant
