@@ -1,3 +1,3 @@
 # Tasks
-- [ ] Replace monthly station calendar with seven daily tabs.
-- [ ] Verify station schedules and request publication.
+- [x] Replace monthly station calendar with seven daily tabs.
+- [x] Verify station schedules and request publication.
