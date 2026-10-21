@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { scheduleWeek } from "@/lib/schedule-week";
+import { scheduleWeek, scheduleApiForDay, entriesStartingOnDay } from "@/lib/schedule-week";
 
 interface LiveEntry { id: number; title: string; start: string; end: string; is_now: boolean }
 interface Show { id: string; title: string; host: string | null; day_of_week: number; start_time: string; end_time: string }
