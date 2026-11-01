@@ -25,14 +25,19 @@ export function StationCalendar({ stationId, stationName }: { stationId: number;
   });
   const api = station.data?.schedule_api;
   const live = useQuery({
-    queryKey: ["live-schedule", api],
+    queryKey: ["live-schedule-week", api, todayKey],
     enabled: !!api,
     refetchInterval: 300_000,
     queryFn: async (): Promise<LiveEntry[]> => {
       if (!api) return [];
-      const r = await fetch(api);
-      if (!r.ok) throw new Error("schedule");
-      return r.json();
+      const days = await Promise.all(
+        week.map(async (d) => {
+          const r = await fetch(scheduleApiForDay(api, d));
+          if (!r.ok) throw new Error("schedule");
+          return entriesStartingOnDay((await r.json()) as LiveEntry[], d);
+        }),
+      );
+      return days.flat();
     },
   });
   const shows = useQuery({

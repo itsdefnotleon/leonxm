@@ -8,6 +8,7 @@ import { useModerator } from "@/hooks/use-moderator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { scheduleWeek, scheduleApiForDay, entriesStartingOnDay } from "@/lib/schedule-week";
 
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const input =
@@ -30,16 +31,20 @@ export default function Schedule() {
   });
 
   const live = useQuery({
-    queryKey: ["live-schedule", station.data?.schedule_api],
+    queryKey: ["live-schedule-week", station.data?.schedule_api, new Date().toDateString()],
     enabled: !!station.data?.schedule_api,
     refetchInterval: 300_000,
     queryFn: async (): Promise<LiveEntry[]> => {
-      const r = await fetch(station.data!.schedule_api!);
-      if (!r.ok) throw new Error("schedule");
-      const rows: LiveEntry[] = await r.json();
-      // Drop duplicate/overlapping entries with the same start time
+      const api = station.data!.schedule_api!;
+      const days = await Promise.all(
+        scheduleWeek(new Date()).map(async (d) => {
+          const r = await fetch(scheduleApiForDay(api, d));
+          if (!r.ok) throw new Error("schedule");
+          return entriesStartingOnDay((await r.json()) as LiveEntry[], d);
+        }),
+      );
       const seen = new Set<string>();
-      return rows.filter((e) => (seen.has(e.start) ? false : (seen.add(e.start), true)));
+      return days.flat().filter((e) => (seen.has(e.start) ? false : (seen.add(e.start), true)));
     },
   });
 
