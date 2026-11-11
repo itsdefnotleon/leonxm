@@ -21,6 +21,7 @@ import SurveyConfirmation from "./pages/SurveyConfirmation.tsx";
 import Auth from "./pages/Auth.tsx";
 import Moderator from "./pages/Moderator.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
+import { PolicyAcceptanceGate } from "@/components/PolicyAcceptanceGate";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => {
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PolicyAcceptanceGate>
       <AudioPlayerProvider>
         <BrowserRouter>
           <RouteTracker />
@@ -79,6 +81,7 @@ const App = () => {
           </GeoBlockProvider>
         </BrowserRouter>
       </AudioPlayerProvider>
+      </PolicyAcceptanceGate>
     </TooltipProvider>
   </QueryClientProvider>
   );

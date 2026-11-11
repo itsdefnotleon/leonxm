@@ -1,2 +1,4 @@
 # Architecture rules
 - StationCalendar presents a rolling seven-day schedule using the station's live feed and recurring station_shows; keep date generation in the tested schedule-week helper to handle month and year boundaries.
+- Keep policy content and revision identifiers in the shared legal-policies module; change POLICY_VERSION whenever either policy changes so stale browser acceptance cannot unlock the app.
+- Mount service routes and the audio provider only after the versioned PolicyAcceptanceGate succeeds; render shared policy content inside the blocking dialog so it remains readable without enabling listening or chat.
