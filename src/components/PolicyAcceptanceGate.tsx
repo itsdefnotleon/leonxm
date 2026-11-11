@@ -64,7 +64,6 @@ export function PolicyAcceptanceGate({ children }: { children: ReactNode }) {
                 <label htmlFor="accept-policies" className="text-sm leading-relaxed cursor-pointer">I accept the Terms of Service and acknowledge and accept the Privacy Policy dated {POLICY_DATE}.</label>
               </div>
               <Button disabled={!checked} onClick={accept}>Accept and continue</Button>
-              <p className="text-xs text-muted-foreground">If you disagree, close this page. Acceptance is saved in this browser when storage is available; new policy versions require acceptance again.</p>
             </>
           )}
         </AlertDialogContent>
