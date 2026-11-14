@@ -6,4 +6,9 @@
 - [x] Move ilikeRadio and Swarm Radio metadata and schedules to Zyphonic.
 - [x] Publish the Zyphonic transition article with supplied artwork.
 - [x] Add a persistent latest-service-update area and dismissible popup.
-- [ ] Review policies, test the changes and publish the site.
+- [ ] Rewrite the Zyphonic article as original LeonXM coverage.
+- [ ] Add account data export, privacy requests and permanent account deletion.
+- [ ] Add moderator tracking for privacy requests.
+- [ ] Remove BlazeXM references and install the new Swarm Radio icon.
+- [ ] Update policies and the latest service-update notice for account controls.
+- [ ] Test the changes and verify the central account flows.
