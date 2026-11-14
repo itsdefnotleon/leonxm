@@ -25,7 +25,7 @@ export interface Channel {
 
 // Song request pages (external players with a Request button)
 export const requestUrls: Record<number, string> = {
-  2: "https://live.typicalnerds.uk/?station=ilikeradio",
+  2: "https://zyphonic.co.uk/player",
   3: "https://swarm.itsdefnotleon.qzz.io/",
 };
 
@@ -56,14 +56,14 @@ export const channels: Channel[] = [
     name: "ilikeRadio",
     logo: ilikeRadioLogo.url,
     streamUrl: "https://stream.zeno.fm/otmlz6yddt6vv",
-    nowPlayingApi: "https://live.typicalnerds.co.uk/api/station/ilikeradio/nowplaying",
+    nowPlayingApi: "https://stream.zyphonic.co.uk/api/station/ilikeradio/nowplaying",
   },
   {
     id: 3,
     name: "Swarm Radio",
     logo: "https://leons-image-library.neocities.org/swarm.png",
     streamUrl: "https://stream.zeno.fm/acunkwb7nf9uv",
-    nowPlayingApi: "https://live.typicalnerds.co.uk/api/station/swarm/nowplaying",
+    nowPlayingApi: "https://stream.zyphonic.co.uk/api/station/swarm/nowplaying",
   },
   {
     id: 4,

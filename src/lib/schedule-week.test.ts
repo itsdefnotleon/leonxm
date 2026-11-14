@@ -12,8 +12,8 @@ describe("daily schedule week", () => {
 
 describe("scheduleApiForDay", () => {
   it("appends now twelve hours before the day's midnight to an existing query string", () => {
-    const url = scheduleApiForDay("https://live.typicalnerds.co.uk/api/station/swarm/schedule?rows=48", new Date(2026, 9, 23));
-    expect(url).toBe("https://live.typicalnerds.co.uk/api/station/swarm/schedule?rows=48&now=2026-10-22T12:00:00");
+    const url = scheduleApiForDay("https://stream.zyphonic.co.uk/api/station/swarm/schedule?rows=48", new Date(2026, 9, 23));
+    expect(url).toBe("https://stream.zyphonic.co.uk/api/station/swarm/schedule?rows=48&now=2026-10-22T12:00:00");
   });
 
   it("uses a question mark when the base URL has no query string", () => {

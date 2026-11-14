@@ -16,7 +16,7 @@ function formatDate(iso: string | null) {
 }
 
 const swarmPlatforms = [
-  { label: "Typical Nerds LIVE! Player", url: "https://live.typicalnerds.uk/?station=swarm" },
+  { label: "Zyphonic Player", url: "https://zyphonic.co.uk/player" },
   { label: "Swarm Radio Player", url: "https://swarm.itsdefnotleon.qzz.io/" },
   { label: "OnlineRadioBox", url: "https://onlineradiobox.com/se/swarm/" },
   { label: "RadioReg", url: "https://radioreg.net/stations/684" },
