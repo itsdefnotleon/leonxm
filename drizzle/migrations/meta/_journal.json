@@ -29,6 +29,13 @@
       "when": 1794381462332,
       "tag": "0003_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794660198644,
+      "tag": "0004_move_ilike_swarm_metadata_to_zyphonic",
+      "breakpoints": true
     }
   ]
 }

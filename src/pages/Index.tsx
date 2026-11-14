@@ -7,6 +7,7 @@ import { SEO } from "@/components/SEO";
 import { Radio, Headphones, Zap, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FeaturedHero } from "@/components/FeaturedHero";
+import { ServiceUpdateNotice } from "@/components/ServiceUpdateNotice";
 
 const Index = () => {
   const { currentChannel, isPlaying, play, stop } = useAudioPlayerContext();
@@ -29,6 +30,8 @@ const Index = () => {
 
       {/* Featured station of the moment */}
       <FeaturedHero />
+
+      <ServiceUpdateNotice />
 
       <section className="relative">
         {/* Stats strip */}
