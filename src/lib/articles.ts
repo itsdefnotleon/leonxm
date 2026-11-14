@@ -9,6 +9,7 @@ import swarmShutdownThumb from "@/assets/swarm-shutdown-thumbnail.png.asset.json
 import ninetiesThumb from "@/assets/leonxm-90s-launch.png.asset.json";
 import oneLaunchThumb from "@/assets/leonxm-one-launch.png.asset.json";
 import defaultThumb from "@/assets/LeonXM_thumbnail.png.asset.json";
+import zyphonicThumb from "@/assets/leonxm-hello-zyphonic.png.asset.json";
 
 export type Article = {
   id: string;
@@ -18,9 +19,48 @@ export type Article = {
   content: string;
   image?: string;
   link?: { to: string; label: string };
+  serviceUpdate?: boolean;
 };
 
 export const articles: Article[] = [
+  {
+    id: "ilikeradio-swarm-zyphonic-metadata-restored",
+    title: "ilikeRadio and Swarm Radio Metadata Fixed Again",
+    date: "November 14, 2026",
+    summary: "Now-playing information and schedules are working again after Typical Nerds LIVE! became Zyphonic Player.",
+    image: zyphonicThumb.url,
+    serviceUpdate: true,
+    content: `Now-playing metadata for ilikeRadio and Swarm Radio has been fixed once again on LeonXM. Track titles, artists and schedule information are available again after the feeds became unavailable during the transition from Typical Nerds LIVE! to Zyphonic Player.
+
+Both stations now use Zyphonic's new AzuraCast server at stream.zyphonic.co.uk. This was a metadata change behind the scenes; the listening streams themselves have not changed.
+
+Hello Zyphonic, Goodbye Typical Nerds LIVE!
+
+Typical Nerds LIVE! has officially rebranded as Zyphonic, introducing a new identity, a new website and a larger selection of stations for listeners.
+
+A New Identity
+
+The change marks a fresh chapter for the service, with a completely new brand identity replacing the Typical Nerds LIVE! name. Zyphonic now has its own home online at zyphonic.co.uk, where listeners can find out more about the brand and what it has to offer.
+
+More Stations and More Choice
+
+Alongside the new name, Zyphonic brings more stations than ever before. The expanded line-up offers a wider variety of music and a greater range of listening choices, so there is more to explore whatever your taste.
+
+Nothing to Change for Existing Listeners
+
+All stations that previously operated under the Typical Nerds LIVE! brand have been automatically migrated to Zyphonic. Existing listeners do not need to make any changes to continue enjoying their favourite stations.
+
+Listen Now
+
+The new online player is available now at zyphonic.co.uk/player. Whether you are a long-standing listener or tuning in for the first time, it is the best place to start exploring the stations on offer.
+
+Looking Ahead
+
+The move to Zyphonic marks the beginning of a new chapter, built around a fresh identity and a broader choice of music. Visit zyphonic.co.uk to find out more, and press play at zyphonic.co.uk/player to hear it for yourself.
+
+Thanks for your patience while we restored the metadata. You can read the full announcement from ilike Presents using the link below.`,
+    link: { to: "https://ilikepresents.short.gy/hello-zyphonic-goodbye-typical-nerds-live", label: "Read Hello Zyphonic, Goodbye Typical Nerds LIVE! →" },
+  },
   {
     id: "truckhits-unavailable-oct-2026",
     title: "TruckHits Radio Is Temporarily Unavailable",
@@ -292,3 +332,5 @@ Finally, ilikeRadio and Swarm Radio are now only reachable from the United Kingd
 export const sortedArticles = [...articles].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
+
+export const latestServiceUpdate = sortedArticles.find((article) => article.serviceUpdate);

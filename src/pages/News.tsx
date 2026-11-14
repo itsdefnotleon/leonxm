@@ -163,10 +163,16 @@ export default function News() {
 
                     {article.link && (
                       <div className="mt-6 flex items-center gap-2 text-primary text-sm">
-                        <Radio className="w-4 h-4" />
-                        <Link to={article.link.to} className="hover:underline font-medium">
-                          {article.link.label}
-                        </Link>
+                        <Radio className="w-4 h-4 shrink-0" />
+                        {article.link.to.startsWith("http") ? (
+                          <a href={article.link.to} target="_blank" rel="noopener noreferrer" className="hover:underline font-medium">
+                            {article.link.label}
+                          </a>
+                        ) : (
+                          <Link to={article.link.to} className="hover:underline font-medium">
+                            {article.link.label}
+                          </Link>
+                        )}
                       </div>
                     )}
                   </div>
