@@ -12,4 +12,4 @@
 - [x] Remove BlazeXM references and install the new Swarm Radio icon.
 - [x] Update policies and the latest service-update notice for account controls.
 - [ ] Verify signed-in export, request/status and deletion flows (blocked: needs a preview sign-in and a disposable account for permanent deletion).
-- [ ] Show a last-edited date on every news article.
+- [x] Show a last-edited date on every news article.
