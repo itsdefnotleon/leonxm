@@ -67,6 +67,7 @@ export default function News() {
         description: focused.summary,
         image: [focused.image ?? defaultArticleImage.url],
         datePublished: new Date(focused.date).toISOString(),
+        dateModified: new Date(articleLastEdited(focused)).toISOString(),
         url: `${SITE_URL}/news#${focused.id}`,
         publisher: { "@type": "Organization", name: "LeonXM" },
       }
