@@ -250,6 +250,32 @@ export default function Moderator() {
                 ))}
               </div>
             )}
+
+            {tab === "privacy" && (
+              <div className="space-y-3">
+                <p className="text-sm text-muted-foreground">Review listener requests and keep their status up to date. Contact details are only visible to moderators here and to the listener on their own account page.</p>
+                {privacyRequests.isError && <p className="text-sm text-destructive">Could not load privacy requests.</p>}
+                {(privacyRequests.data ?? []).length === 0 && !privacyRequests.isError && <p className="text-sm text-muted-foreground">No privacy requests have been submitted.</p>}
+                {(privacyRequests.data ?? []).map((request) => (
+                  <article key={request.id} className="rounded-xl border border-border bg-card/60 p-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-foreground">{PRIVACY_REQUEST_TYPES.find((type) => type.value === request.request_type)?.label ?? request.request_type}</h2>
+                        <p className="text-xs text-muted-foreground mt-1 break-all">{request.contact_email} · user {request.user_id.slice(0, 8)}</p>
+                        <p className="text-xs text-muted-foreground mt-1">Submitted {new Date(request.created_at).toLocaleString()}</p>
+                      </div>
+                      <label className="text-xs font-semibold text-muted-foreground">
+                        Status
+                        <select aria-label={`Status for ${request.contact_email}`} className={`${input} mt-1 min-w-36`} value={request.status} onChange={(event) => updatePrivacyStatus(request.id, event.target.value)}>
+                          {PRIVACY_REQUEST_STATUSES.map((status) => <option key={status.value} value={status.value}>{status.label}</option>)}
+                        </select>
+                      </label>
+                    </div>
+                    {request.details && <p className="mt-3 whitespace-pre-wrap break-words text-sm text-foreground">{request.details}</p>}
+                  </article>
+                ))}
+              </div>
+            )}
           </>
         )}
       </main>
