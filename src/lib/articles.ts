@@ -332,3 +332,7 @@ export const sortedArticles = [...articles].sort(
 );
 
 export const latestServiceUpdate = sortedArticles.find((article) => article.serviceUpdate);
+
+export function articleLastEdited(article: Article): string {
+  return article.lastEdited ?? article.date;
+}

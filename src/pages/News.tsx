@@ -126,7 +126,11 @@ export default function News() {
                     <div className="flex flex-wrap items-center gap-3 mb-3">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm">
                         <Calendar className="w-4 h-4" />
-                        <time>{article.date}</time>
+                        <span>
+                          <time>{article.date}</time>
+                          <span aria-hidden="true"> · </span>
+                          Last edited <time>{articleLastEdited(article)}</time>
+                        </span>
                       </div>
                       {isNew && (
                         <span className="inline-flex items-center gap-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 animate-pulse">
