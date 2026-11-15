@@ -15,6 +15,7 @@ export type Article = {
   id: string;
   title: string;
   date: string;
+  lastEdited?: string;
   summary: string;
   content: string;
   image?: string;
@@ -45,6 +46,7 @@ Listening still does not require an account. These controls are for listeners wh
     id: "ilikeradio-swarm-zyphonic-metadata-restored",
     title: "ilikeRadio and Swarm Radio Metadata Fixed Again",
     date: "November 14, 2026",
+    lastEdited: "November 15, 2026",
     summary: "Now-playing information and schedules are working again after Typical Nerds LIVE! became Zyphonic Player.",
     image: zyphonicThumb.url,
     serviceUpdate: true,
@@ -330,3 +332,7 @@ export const sortedArticles = [...articles].sort(
 );
 
 export const latestServiceUpdate = sortedArticles.find((article) => article.serviceUpdate);
+
+export function articleLastEdited(article: Article): string {
+  return article.lastEdited ?? article.date;
+}

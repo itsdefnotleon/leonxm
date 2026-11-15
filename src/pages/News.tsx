@@ -6,7 +6,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { Calendar, ChevronDown, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
 import defaultArticleImage from "@/assets/LeonXM_thumbnail.png.asset.json";
-import { sortedArticles } from "@/lib/articles";
+import { articleLastEdited, sortedArticles } from "@/lib/articles";
 import { useArticleReads } from "@/hooks/use-article-reads";
 import { StationNews } from "@/components/StationNews";
 
@@ -67,6 +67,7 @@ export default function News() {
         description: focused.summary,
         image: [focused.image ?? defaultArticleImage.url],
         datePublished: new Date(focused.date).toISOString(),
+        dateModified: new Date(articleLastEdited(focused)).toISOString(),
         url: `${SITE_URL}/news#${focused.id}`,
         publisher: { "@type": "Organization", name: "LeonXM" },
       }
@@ -125,7 +126,11 @@ export default function News() {
                     <div className="flex flex-wrap items-center gap-3 mb-3">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm">
                         <Calendar className="w-4 h-4" />
-                        <time>{article.date}</time>
+                        <span>
+                          <time>{article.date}</time>
+                          <span aria-hidden="true"> · </span>
+                          Last edited <time>{articleLastEdited(article)}</time>
+                        </span>
                       </div>
                       {isNew && (
                         <span className="inline-flex items-center gap-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 animate-pulse">
