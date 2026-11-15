@@ -59,7 +59,7 @@ export function ServiceUpdateNotice() {
 
       <Dialog open={open} onOpenChange={(nextOpen) => { if (!nextOpen) dismiss(); }}>
         <DialogContent className="max-w-xl overflow-hidden p-0">
-          <img src={update.image} alt="Hello Zyphonic, Goodbye Typical Nerds LIVE!" className="w-full border-b border-border" />
+          <img src={update.image} alt={update.title} className="w-full border-b border-border" />
           <DialogHeader className="px-6 pt-2">
             <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-primary">
               <BellRing className="w-4 h-4" /> Latest service update

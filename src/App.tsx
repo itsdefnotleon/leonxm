@@ -21,6 +21,7 @@ import SurveyConfirmation from "./pages/SurveyConfirmation.tsx";
 import Auth from "./pages/Auth.tsx";
 import Moderator from "./pages/Moderator.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
+import Account from "./pages/Account.tsx";
 import { PolicyAcceptanceGate } from "@/components/PolicyAcceptanceGate";
 
 const queryClient = new QueryClient();

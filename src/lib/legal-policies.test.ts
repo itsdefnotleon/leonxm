@@ -5,7 +5,7 @@ describe("policy acceptance", () => {
   it("blocks visitors who have not accepted", () => {
     expect(hasCurrentPolicyAcceptance(null)).toBe(false);
   });
-  it("accepts both policies dated November 14, 2026", () => {
+  it("accepts both policies dated November 15, 2026", () => {
     const record = JSON.parse(createPolicyAcceptance());
     expect(record.termsVersion).toBe("2026-11-14");
     expect(record.privacyVersion).toBe("2026-11-14");

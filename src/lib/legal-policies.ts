@@ -1,5 +1,5 @@
-export const POLICY_DATE = "November 14, 2026";
-export const POLICY_VERSION = "2026-11-14";
+export const POLICY_DATE = "November 15, 2026";
+export const POLICY_VERSION = "2026-11-15";
 export const POLICY_ACCEPTANCE_KEY = "leonxm-policy-acceptance";
 
 export function hasCurrentPolicyAcceptance(raw: string | null): boolean {

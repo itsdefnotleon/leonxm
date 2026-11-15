@@ -24,42 +24,38 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "account-privacy-controls",
+    title: "Download Your Data, Make Privacy Requests and Delete Your Account",
+    date: "November 15, 2026",
+    summary: "Signed-in listeners now have a dedicated account page for downloading their information, submitting privacy requests and permanently deleting their account.",
+    image: defaultThumb.url,
+    serviceUpdate: true,
+    content: `LeonXM now has a dedicated Account & privacy page for listeners who have created an account. You can open it from the Account link in the site header after signing in.
+
+The new Download my data button creates a JSON file containing your account details, profile, chat messages, moderation records and privacy requests. You can keep this file for your own records without contacting the team first.
+
+You can also submit requests about access, correction, portability, restriction, objection or deletion directly from the same page. Your recent requests and their current status appear below the form, while moderators can track and update them in the moderator dashboard.
+
+Finally, the Delete my account control permanently removes your LeonXM account and account-linked data. To prevent accidents, you must type DELETE before the final confirmation becomes available. This action cannot be undone.
+
+Listening still does not require an account. These controls are for listeners who signed up to use features such as live chat.`,
+    link: { to: "/account", label: "Open Account & privacy →" },
+  },
+  {
     id: "ilikeradio-swarm-zyphonic-metadata-restored",
     title: "ilikeRadio and Swarm Radio Metadata Fixed Again",
     date: "November 14, 2026",
     summary: "Now-playing information and schedules are working again after Typical Nerds LIVE! became Zyphonic Player.",
     image: zyphonicThumb.url,
     serviceUpdate: true,
-    content: `Now-playing metadata for ilikeRadio and Swarm Radio has been fixed once again on LeonXM. Track titles, artists and schedule information are available again after the feeds became unavailable during the transition from Typical Nerds LIVE! to Zyphonic Player.
+    content: `Now-playing information for ilikeRadio and Swarm Radio is working again on LeonXM. Track titles, artists and programme schedules had become unavailable when Typical Nerds LIVE! moved its services to Zyphonic.
 
-Both stations now use Zyphonic's new AzuraCast server at stream.zyphonic.co.uk. This was a metadata change behind the scenes; the listening streams themselves have not changed.
+We have reconnected both stations to their new metadata feeds on Zyphonic's AzuraCast server. The weekly schedule pages now request each day's listings from the new service as well. The audio streams themselves did not need to change.
 
-Hello Zyphonic, Goodbye Typical Nerds LIVE!
+The wider Typical Nerds LIVE! service has also adopted the Zyphonic name, a new website and an expanded station line-up. Stations from the previous service have moved across automatically, so listeners do not need to reconfigure anything. Zyphonic's online player is available at zyphonic.co.uk/player.
 
-Typical Nerds LIVE! has officially rebranded as Zyphonic, introducing a new identity, a new website and a larger selection of stations for listeners.
-
-A New Identity
-
-The change marks a fresh chapter for the service, with a completely new brand identity replacing the Typical Nerds LIVE! name. Zyphonic now has its own home online at zyphonic.co.uk, where listeners can find out more about the brand and what it has to offer.
-
-More Stations and More Choice
-
-Alongside the new name, Zyphonic brings more stations than ever before. The expanded line-up offers a wider variety of music and a greater range of listening choices, so there is more to explore whatever your taste.
-
-Nothing to Change for Existing Listeners
-
-All stations that previously operated under the Typical Nerds LIVE! brand have been automatically migrated to Zyphonic. Existing listeners do not need to make any changes to continue enjoying their favourite stations.
-
-Listen Now
-
-The new online player is available now at zyphonic.co.uk/player. Whether you are a long-standing listener or tuning in for the first time, it is the best place to start exploring the stations on offer.
-
-Looking Ahead
-
-The move to Zyphonic marks the beginning of a new chapter, built around a fresh identity and a broader choice of music. Visit zyphonic.co.uk to find out more, and press play at zyphonic.co.uk/player to hear it for yourself.
-
-Thanks for your patience while we restored the metadata. You can read the full announcement from ilike Presents using the link below.`,
-    link: { to: "https://ilikepresents.short.gy/hello-zyphonic-goodbye-typical-nerds-live", label: "Read Hello Zyphonic, Goodbye Typical Nerds LIVE! →" },
+Thank you for your patience while we restored the feeds. ilike Presents has published its own announcement about the rebrand and the additional stations now available; you can read it through the link below.`,
+    link: { to: "https://ilikepresents.short.gy/hello-zyphonic-goodbye-typical-nerds-live", label: "Read ilike Presents’ Zyphonic announcement →" },
   },
   {
     id: "truckhits-unavailable-oct-2026",
