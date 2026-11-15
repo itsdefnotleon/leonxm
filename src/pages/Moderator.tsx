@@ -113,6 +113,16 @@ export default function Moderator() {
     },
   });
 
+  const privacyRequests = useQuery({
+    queryKey: ["mod-privacy-requests"],
+    enabled: isModerator,
+    queryFn: async () => {
+      const { data, error } = await supabase.from("privacy_requests").select("*").order("created_at", { ascending: false });
+      if (error) throw error;
+      return data as PrivacyRequestRow[];
+    },
+  });
+
   useEffect(() => {
     if (!isModerator) return;
     const ch = supabase
