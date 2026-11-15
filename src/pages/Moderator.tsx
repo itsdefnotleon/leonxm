@@ -192,9 +192,9 @@ export default function Moderator() {
         ) : (
           <>
             <div className="flex flex-wrap gap-2 mb-6">
-              {(["stations", "chat", "pinned", "mutes"] as Tab[]).map((t) => (
+              {(["stations", "chat", "pinned", "mutes", "privacy"] as Tab[]).map((t) => (
                 <button key={t} onClick={() => setTab(t)} className={`rounded-full px-4 py-2 text-sm font-semibold capitalize ${tab === t ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground"}`}>
-                  {t === "chat" ? "Chat" : t === "pinned" ? "Pinned" : t === "mutes" ? "Muted" : "Stations"}
+                  {t === "chat" ? "Chat" : t === "pinned" ? "Pinned" : t === "mutes" ? "Muted" : t === "privacy" ? "Privacy requests" : "Stations"}
                 </button>
               ))}
             </div>
