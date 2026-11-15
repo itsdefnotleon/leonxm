@@ -68,12 +68,17 @@ export function Header() {
             </NavLink>
           )}
           {user ? (
-            <button
-              onClick={() => supabase.auth.signOut()}
-              className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Sign out
-            </button>
+            <>
+              <NavLink to="/account" className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors">
+                Account
+              </NavLink>
+              <button
+                onClick={() => supabase.auth.signOut()}
+                className="ml-2 px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Sign out
+              </button>
+            </>
           ) : (
             <NavLink
               to="/auth"

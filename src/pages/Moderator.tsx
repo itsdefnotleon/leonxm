@@ -9,8 +9,11 @@ import { useModerator } from "@/hooks/use-moderator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import type { Database } from "@/integrations/supabase/types";
+import { PRIVACY_REQUEST_STATUSES, PRIVACY_REQUEST_TYPES } from "@/lib/account-privacy";
 
-type Tab = "stations" | "chat" | "pinned" | "mutes";
+type Tab = "stations" | "chat" | "pinned" | "mutes" | "privacy";
+type PrivacyRequestRow = Database["public"]["Tables"]["privacy_requests"]["Row"];
 
 interface StationRow {
   id: number;

@@ -62,7 +62,7 @@ export const channels: Channel[] = [
   {
     id: 3,
     name: "Swarm Radio",
-    logo: "https://leons-image-library.neocities.org/swarm.png",
+    logo: swarmLogo.url,
     streamUrl: "https://stream.zeno.fm/acunkwb7nf9uv",
     nowPlayingApi: "https://stream.zyphonic.co.uk/api/station/swarm/nowplaying",
   },
