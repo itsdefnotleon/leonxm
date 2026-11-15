@@ -6,7 +6,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { Calendar, ChevronDown, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
 import defaultArticleImage from "@/assets/LeonXM_thumbnail.png.asset.json";
-import { sortedArticles } from "@/lib/articles";
+import { articleLastEdited, sortedArticles } from "@/lib/articles";
 import { useArticleReads } from "@/hooks/use-article-reads";
 import { StationNews } from "@/components/StationNews";
 

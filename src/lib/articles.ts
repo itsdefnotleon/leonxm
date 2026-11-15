@@ -15,6 +15,7 @@ export type Article = {
   id: string;
   title: string;
   date: string;
+  lastEdited?: string;
   summary: string;
   content: string;
   image?: string;
