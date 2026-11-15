@@ -21,6 +21,7 @@ import SurveyConfirmation from "./pages/SurveyConfirmation.tsx";
 import Auth from "./pages/Auth.tsx";
 import Moderator from "./pages/Moderator.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
+import Account from "./pages/Account.tsx";
 import { PolicyAcceptanceGate } from "@/components/PolicyAcceptanceGate";
 
 const queryClient = new QueryClient();
@@ -74,6 +75,7 @@ const App = () => {
               <Route path="/moderator" element={<Moderator />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/account" element={<Account />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

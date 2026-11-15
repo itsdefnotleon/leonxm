@@ -5,6 +5,7 @@ import danceLogo from "@/assets/dance-logo.png.asset.json";
 import hiphopLogo from "@/assets/leonxm-hiphop-logo.png.asset.json";
 import ninetiesLogo from "@/assets/leonxm-90s-logo.png.asset.json";
 import oneLogo from "@/assets/leonxm-one-logo.png.asset.json";
+import swarmLogo from "@/assets/swarm-radio-logo.png.asset.json";
 
 
 export interface Channel {
@@ -61,7 +62,7 @@ export const channels: Channel[] = [
   {
     id: 3,
     name: "Swarm Radio",
-    logo: "https://leons-image-library.neocities.org/swarm.png",
+    logo: swarmLogo.url,
     streamUrl: "https://stream.zeno.fm/acunkwb7nf9uv",
     nowPlayingApi: "https://stream.zyphonic.co.uk/api/station/swarm/nowplaying",
   },

@@ -83,15 +83,10 @@ const About = () => {
               </div>
               <h2 className="text-xl font-bold text-foreground">Why LeonXM Exists</h2>
             </div>
-            <p className="mb-4">
-              LeonXM was created as a direct alternative to BlazeXM. While BlazeXM may have had a similar concept, 
-              it's owned and operated by someone who has proven themselves to be unprofessional and dishonest — 
-              someone the community simply can't trust or rely on.
-            </p>
             <p>
-              LeonXM is different. We believe that if you're going to run a platform, you should do it with 
-              <span className="text-foreground font-medium"> integrity, transparency, and respect</span> for 
-              your listeners. No lies, no drama — just good radio.
+              LeonXM was created to give listeners a dependable home for free online radio. We believe in running
+              the platform with <span className="text-foreground font-medium">integrity, transparency, and respect</span> for
+              our listeners and station partners — keeping listening simple, communicating clearly, and putting good radio first.
             </p>
           </div>
 
