@@ -160,6 +160,14 @@ export default function Moderator() {
     const { error } = await supabase.from("chat_mutes").delete().eq("id", id);
     if (error) toast.error("Could not unmute."); else refresh();
   };
+  const updatePrivacyStatus = async (id: string, status: string) => {
+    const { error } = await supabase.from("privacy_requests").update({ status }).eq("id", id);
+    if (error) toast.error("Could not update the privacy request.");
+    else {
+      toast.success("Privacy request updated.");
+      qc.invalidateQueries({ queryKey: ["mod-privacy-requests"] });
+    }
+  };
   const addStation = () => {
     const nextId = Math.max(0, ...(stations.data ?? []).map((s) => s.id)) + 1;
     qc.setQueryData<StationRow[]>(["mod-stations"], (prev) => [
