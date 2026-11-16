@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Download, FileLock2, Loader2, ShieldCheck, Trash2 } from "lucide-react";
+import { Download, FileLock2, Loader2, Pencil, ShieldCheck, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -20,40 +19,26 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useAuth, displayNameOf } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
-import type { Database } from "@/integrations/supabase/types";
 import {
   ACCOUNT_DELETE_CONFIRMATION,
-  PRIVACY_REQUEST_TYPES,
+  DISPLAY_NAME_MAX_LENGTH,
   canConfirmAccountDeletion,
-  type PrivacyRequestType,
+  normalizeDisplayName,
 } from "@/lib/account-privacy";
-
-type PrivacyRequestRow = Database["public"]["Tables"]["privacy_requests"]["Row"];
 
 const input = "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary";
 
 export default function Account() {
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
   const { user, session, loading } = useAuth();
-  const [busy, setBusy] = useState<"export" | "request" | "delete" | null>(null);
-  const [requestType, setRequestType] = useState<PrivacyRequestType>("access");
-  const [details, setDetails] = useState("");
+  const [busy, setBusy] = useState<"export" | "correct" | "delete" | null>(null);
+  const [displayName, setDisplayName] = useState("");
   const [deleteConfirmation, setDeleteConfirmation] = useState("");
   const [deleteOpen, setDeleteOpen] = useState(false);
 
-  const requests = useQuery({
-    queryKey: ["privacy-requests", user?.id],
-    enabled: Boolean(user),
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("privacy_requests")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data as PrivacyRequestRow[];
-    },
-  });
+  useEffect(() => {
+    if (user) setDisplayName(displayNameOf(user));
+  }, [user]);
 
   const invoke = async (body: Record<string, unknown>) => {
     if (!session) throw new Error("Please sign in again.");
@@ -83,17 +68,23 @@ export default function Account() {
     }
   };
 
-  const submitRequest = async (event: React.FormEvent) => {
+  const correctDisplayName = async (event: React.FormEvent) => {
     event.preventDefault();
-    setBusy("request");
+    const normalizedName = normalizeDisplayName(displayName);
+    if (!normalizedName) {
+      toast.error("Enter a display name between 1 and 40 characters.");
+      return;
+    }
+    setBusy("correct");
     try {
-      const { error } = await invoke({ action: "request", requestType, details });
+      const { error } = await invoke({ action: "correct", displayName: normalizedName });
       if (error) throw error;
-      setDetails("");
-      await queryClient.invalidateQueries({ queryKey: ["privacy-requests", user?.id] });
-      toast.success("Your privacy request has been submitted.");
+      const { error: refreshError } = await supabase.auth.refreshSession();
+      if (refreshError) throw refreshError;
+      setDisplayName(normalizedName);
+      toast.success("Your display name and existing chat messages have been updated.");
     } catch {
-      toast.error("Could not submit your request. Please try again.");
+      toast.error("Could not correct your display name. Please try again.");
     } finally {
       setBusy(null);
     }
@@ -118,12 +109,12 @@ export default function Account() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <SEO title="Account & Privacy — LeonXM" description="Download your LeonXM data, submit a privacy request or delete your account." path="/account" />
+      <SEO title="Account & Privacy — LeonXM" description="Download or correct your LeonXM data, or permanently delete your account." path="/account" />
       <Header />
       <main className="flex-1 w-full max-w-3xl mx-auto px-4 py-12 pb-32">
         <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-2">Your information</p>
         <h1 className="text-4xl font-black tracking-tight text-foreground">Account & privacy</h1>
-        <p className="mt-3 text-muted-foreground leading-relaxed">Manage your LeonXM account and the information linked to it.</p>
+        <p className="mt-3 text-muted-foreground leading-relaxed">Use these self-service controls immediately. Nothing here is sent to a moderator queue.</p>
 
         {loading ? (
           <div className="mt-12 flex items-center gap-2 text-muted-foreground"><Loader2 className="w-5 h-5 animate-spin" /> Loading your account…</div>
@@ -149,55 +140,39 @@ export default function Account() {
             <section aria-labelledby="download-data-title" className="rounded-2xl border border-border bg-card/60 p-6">
               <div className="flex items-center gap-3 mb-3">
                 <Download className="w-5 h-5 text-primary" />
-                <h2 id="download-data-title" className="text-xl font-bold text-foreground">Download your data</h2>
+                <h2 id="download-data-title" className="text-xl font-bold text-foreground">Access or move your data</h2>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">Get a JSON file containing your account details, profile, chat messages, moderation records and privacy requests.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Download a JSON copy straight away. It contains your account details, profile, chat messages, moderation records and any earlier privacy requests. This covers both access and data-portability requests without waiting for the team.</p>
               <Button onClick={downloadData} disabled={busy !== null} className="mt-5">
                 {busy === "export" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
                 {busy === "export" ? "Preparing download…" : "Download my data"}
               </Button>
             </section>
 
-            <section aria-labelledby="privacy-request-title" className="rounded-2xl border border-border bg-card/60 p-6">
+            <section aria-labelledby="correct-data-title" className="rounded-2xl border border-border bg-card/60 p-6">
               <div className="flex items-center gap-3 mb-3">
-                <FileLock2 className="w-5 h-5 text-primary" />
-                <h2 id="privacy-request-title" className="text-xl font-bold text-foreground">Make a privacy request</h2>
+                <Pencil className="w-5 h-5 text-primary" />
+                <h2 id="correct-data-title" className="text-xl font-bold text-foreground">Correct your display name</h2>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">Ask us about access, correction, portability, restriction, objection or deletion. Your account email is attached so the team can respond.</p>
-              <form onSubmit={submitRequest} className="mt-5 space-y-3">
+              <p className="text-sm text-muted-foreground leading-relaxed">Save a correction immediately. Your profile, account and existing chat messages will all use the corrected name.</p>
+              <form onSubmit={correctDisplayName} className="mt-5 space-y-3">
                 <label className="block text-sm font-medium text-foreground">
-                  Request type
-                  <select className={`${input} mt-2`} value={requestType} onChange={(event) => setRequestType(event.target.value as PrivacyRequestType)}>
-                    {PRIVACY_REQUEST_TYPES.map((type) => <option key={type.value} value={type.value}>{type.label}</option>)}
-                  </select>
+                  Display name
+                  <input className={`${input} mt-2`} value={displayName} onChange={(event) => setDisplayName(event.target.value)} maxLength={DISPLAY_NAME_MAX_LENGTH} autoComplete="nickname" />
                 </label>
-                <label className="block text-sm font-medium text-foreground">
-                  Details <span className="font-normal text-muted-foreground">(optional)</span>
-                  <textarea className={`${input} mt-2 min-h-28 resize-y`} value={details} onChange={(event) => setDetails(event.target.value)} maxLength={2000} placeholder="Tell us what you need help with. Do not include your password." />
-                </label>
-                <Button type="submit" disabled={busy !== null}>
-                  {busy === "request" ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-                  {busy === "request" ? "Submitting…" : "Submit privacy request"}
+                <Button type="submit" disabled={busy !== null || !normalizeDisplayName(displayName)}>
+                  {busy === "correct" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Pencil className="w-4 h-4" />}
+                  {busy === "correct" ? "Correcting…" : "Save corrected name"}
                 </Button>
               </form>
+            </section>
 
-              {requests.data && requests.data.length > 0 && (
-                <div className="mt-6 border-t border-border pt-5">
-                  <h3 className="text-sm font-bold text-foreground mb-3">Your requests</h3>
-                  <div className="space-y-2">
-                    {requests.data.map((request) => (
-                      <div key={request.id} className="rounded-xl border border-border bg-background/50 p-3 text-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <span className="font-semibold text-foreground">{PRIVACY_REQUEST_TYPES.find((type) => type.value === request.request_type)?.label ?? request.request_type}</span>
-                          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold capitalize text-primary">{request.status.replace("_", " ")}</span>
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-1">Submitted {new Date(request.created_at).toLocaleString()}</p>
-                        {request.details && <p className="text-muted-foreground mt-2 whitespace-pre-wrap break-words">{request.details}</p>}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+            <section aria-labelledby="processing-choices-title" className="rounded-2xl border border-border bg-card/60 p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <FileLock2 className="w-5 h-5 text-primary" />
+                <h2 id="processing-choices-title" className="text-xl font-bold text-foreground">Restriction and objection choices</h2>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">LeonXM does not use your account information for advertising or third-party marketing, so there is no advertising profile to switch off. To stop account-based processing, use the permanent deletion control below instead of submitting a request.</p>
             </section>
 
             <section aria-labelledby="delete-account-title" className="rounded-2xl border border-destructive/40 bg-destructive/5 p-6">
@@ -205,7 +180,7 @@ export default function Account() {
                 <Trash2 className="w-5 h-5 text-destructive" />
                 <h2 id="delete-account-title" className="text-xl font-bold text-foreground">Delete your account</h2>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">Permanently delete your account, profile, chat messages, moderation records and privacy requests. This cannot be undone. Browser-only preferences stay on your device until you clear them.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Permanently delete your account, profile, chat messages, moderation records and any earlier privacy requests. This cannot be undone. Browser-only preferences stay on your device until you clear them.</p>
               <AlertDialog open={deleteOpen} onOpenChange={(open) => { setDeleteOpen(open); if (!open) setDeleteConfirmation(""); }}>
                 <AlertDialogTrigger asChild><Button variant="destructive" className="mt-5" disabled={busy !== null}>Delete my account</Button></AlertDialogTrigger>
                 <AlertDialogContent>

@@ -1,15 +1,13 @@
 # Tasks
 - [x] Replace monthly station calendar with seven daily tabs.
 - [x] Verify station schedules and request publication.
-- [x] Rewrite both policies for November 11, 2026 and record ongoing policy review requirement.
 - [x] Require versioned policy acceptance before service access and verify persistence and blocking.
 - [x] Move ilikeRadio and Swarm Radio metadata and schedules to Zyphonic.
 - [x] Publish the Zyphonic transition article with supplied artwork.
 - [x] Add a persistent latest-service-update area and dismissible popup.
 - [x] Rewrite the Zyphonic article as original LeonXM coverage.
-- [x] Add account data export, privacy requests and permanent account deletion.
-- [x] Add moderator tracking for privacy requests.
+- [x] Add account data export and permanent account deletion.
 - [x] Remove BlazeXM references and install the new Swarm Radio icon.
-- [x] Update policies and the latest service-update notice for account controls.
-- [ ] Verify signed-in export, request/status and deletion flows (blocked: needs a preview sign-in and a disposable account for permanent deletion).
+- [ ] Replace manual privacy requests with immediate self-service controls and remove moderator tracking.
+- [ ] Verify signed-in export and display-name correction; permanent deletion still needs a disposable account.
 - [x] Show a last-edited date on every news article.

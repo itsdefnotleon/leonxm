@@ -3,9 +3,8 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 import { z } from "npm:zod@3";
 
 const BodySchema = z.object({
-  action: z.enum(["export", "request", "delete"]),
-  requestType: z.enum(["access", "correction", "portability", "restriction", "objection", "deletion", "other"]).optional(),
-  details: z.string().trim().max(2000).optional().default(""),
+  action: z.enum(["export", "correct", "delete"]),
+  displayName: z.string().trim().min(1).max(40).optional(),
   confirmation: z.string().optional(),
 });
 
@@ -66,17 +65,27 @@ Deno.serve(async (req) => {
       });
     }
 
-    if (input.action === "request") {
-      if (!input.requestType) return json({ error: "Choose a privacy request type." }, 400);
-      if (!user.email) return json({ error: "Your account does not have a contact email." }, 400);
-      const { data, error } = await admin.from("privacy_requests").insert({
-        user_id: user.id,
-        contact_email: user.email,
-        request_type: input.requestType,
-        details: input.details,
-      }).select("id, request_type, status, created_at").single();
-      if (error) throw error;
-      return json({ ok: true, request: data }, 201);
+    if (input.action === "correct") {
+      if (!input.displayName) return json({ error: "Enter a display name between 1 and 40 characters." }, 400);
+      const displayName = input.displayName;
+
+      const { error: profileError } = await admin.from("profiles").upsert({
+        id: user.id,
+        display_name: displayName,
+      });
+      if (profileError) throw profileError;
+
+      const { error: messagesError } = await admin.from("chat_messages").update({
+        display_name: displayName,
+      }).eq("user_id", user.id);
+      if (messagesError) throw messagesError;
+
+      const { error: userError } = await admin.auth.admin.updateUserById(user.id, {
+        user_metadata: { ...user.user_metadata, display_name: displayName },
+      });
+      if (userError) throw userError;
+
+      return json({ ok: true, displayName });
     }
 
     if (input.confirmation !== "DELETE") return json({ error: "Type DELETE to confirm permanent account deletion." }, 400);
