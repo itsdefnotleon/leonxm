@@ -6,17 +6,17 @@
     <atom:link href="https://leonxm.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Updates, announcements, and station news from LeonXM.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2026 10:53:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 19:29:46 GMT</lastBuildDate>
     <item>
-      <title>Download Your Data, Make Privacy Requests and Delete Your Account</title>
+      <title>Download, Correct or Delete Your Data Automatically</title>
       <link>https://leonxm.lovable.app/news#account-privacy-controls</link>
       <guid isPermaLink="false">account-privacy-controls</guid>
       <pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate>
-      <description>Signed-in listeners now have a dedicated account page for downloading their information, submitting privacy requests and permanently deleting their account.</description>
+      <description>Signed-in listeners can download their information, correct their display name and permanently delete their account without submitting a request.</description>
       <enclosure url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" type="image/png"/>
       <media:content url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" medium="image"/>
       <media:thumbnail url="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png"/>
-      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" alt=""/></p><p>LeonXM now has a dedicated Account &amp; privacy page for listeners who have created an account. You can open it from the Account link in the site header after signing in.</p><p>The new Download my data button creates a JSON file containing your account details, profile, chat messages, moderation records and privacy requests. You can keep this file for your own records without contacting the team first.</p><p>You can also submit requests about access, correction, portability, restriction, objection or deletion directly from the same page. Your recent requests and their current status appear below the form, while moderators can track and update them in the moderator dashboard.</p><p>Finally, the Delete my account control permanently removes your LeonXM account and account-linked data. To prevent accidents, you must type DELETE before the final confirmation becomes available. This action cannot be undone.</p><p>Listening still does not require an account. These controls are for listeners who signed up to use features such as live chat.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p><img src="https://leonxm.lovable.app/__l5e/assets-v1/1597e8ef-a879-4950-a769-3d5fbed3be39/LeonXM_thumbnail.png" alt=""/></p><p>LeonXM&apos;s Account &amp; privacy page now handles privacy controls immediately. You can open it from the Account link in the site header after signing in; there is no request form and no moderator queue.</p><p>The Download my data button creates a JSON file containing your account details, profile, chat messages, moderation records and any earlier privacy requests. This provides both access and a portable copy of your information without contacting the team first.</p><p>The display-name correction control updates your account, profile and existing chat messages straight away. LeonXM does not use account information for advertising or third-party marketing; if you want to stop account-based processing, you can use the account deletion control instead.</p><p>Delete my account permanently removes your LeonXM account and account-linked data. To prevent accidents, you must type DELETE before the final confirmation becomes available. This action cannot be undone.</p><p>Listening still does not require an account. These controls are for listeners who signed up to use features such as live chat.</p>]]></content:encoded>
     </item>
     <item>
       <title>ilikeRadio and Swarm Radio Metadata Fixed Again</title>
