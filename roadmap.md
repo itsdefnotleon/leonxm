@@ -8,6 +8,6 @@
 - [x] Rewrite the Zyphonic article as original LeonXM coverage.
 - [x] Add account data export and permanent account deletion.
 - [x] Remove BlazeXM references and install the new Swarm Radio icon.
-- [ ] Replace manual privacy requests with immediate self-service controls and remove moderator tracking.
-- [ ] Verify signed-in export and display-name correction; permanent deletion still needs a disposable account.
+- [x] Replace manual privacy requests with immediate self-service controls and remove moderator tracking.
+- [ ] Verify signed-in export and display-name correction (blocked: preview sign-in unavailable); permanent deletion still needs a disposable account.
 - [x] Show a last-edited date on every news article.
