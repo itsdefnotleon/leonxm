@@ -26,18 +26,19 @@ export type Article = {
 export const articles: Article[] = [
   {
     id: "account-privacy-controls",
-    title: "Download Your Data, Make Privacy Requests and Delete Your Account",
+    title: "Download, Correct or Delete Your Data Automatically",
     date: "November 15, 2026",
-    summary: "Signed-in listeners now have a dedicated account page for downloading their information, submitting privacy requests and permanently deleting their account.",
+    lastEdited: "November 16, 2026",
+    summary: "Signed-in listeners can download their information, correct their display name and permanently delete their account without submitting a request.",
     image: defaultThumb.url,
     serviceUpdate: true,
-    content: `LeonXM now has a dedicated Account & privacy page for listeners who have created an account. You can open it from the Account link in the site header after signing in.
+    content: `LeonXM's Account & privacy page now handles privacy controls immediately. You can open it from the Account link in the site header after signing in; there is no request form and no moderator queue.
 
-The new Download my data button creates a JSON file containing your account details, profile, chat messages, moderation records and privacy requests. You can keep this file for your own records without contacting the team first.
+The Download my data button creates a JSON file containing your account details, profile, chat messages, moderation records and any earlier privacy requests. This provides both access and a portable copy of your information without contacting the team first.
 
-You can also submit requests about access, correction, portability, restriction, objection or deletion directly from the same page. Your recent requests and their current status appear below the form, while moderators can track and update them in the moderator dashboard.
+The display-name correction control updates your account, profile and existing chat messages straight away. LeonXM does not use account information for advertising or third-party marketing; if you want to stop account-based processing, you can use the account deletion control instead.
 
-Finally, the Delete my account control permanently removes your LeonXM account and account-linked data. To prevent accidents, you must type DELETE before the final confirmation becomes available. This action cannot be undone.
+Delete my account permanently removes your LeonXM account and account-linked data. To prevent accidents, you must type DELETE before the final confirmation becomes available. This action cannot be undone.
 
 Listening still does not require an account. These controls are for listeners who signed up to use features such as live chat.`,
     link: { to: "/account", label: "Open Account & privacy →" },

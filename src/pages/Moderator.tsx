@@ -9,11 +9,7 @@ import { useModerator } from "@/hooks/use-moderator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import type { Database } from "@/integrations/supabase/types";
-import { PRIVACY_REQUEST_STATUSES, PRIVACY_REQUEST_TYPES } from "@/lib/account-privacy";
-
-type Tab = "stations" | "chat" | "pinned" | "mutes" | "privacy";
-type PrivacyRequestRow = Database["public"]["Tables"]["privacy_requests"]["Row"];
+type Tab = "stations" | "chat" | "pinned" | "mutes";
 
 interface StationRow {
   id: number;
@@ -113,16 +109,6 @@ export default function Moderator() {
     },
   });
 
-  const privacyRequests = useQuery({
-    queryKey: ["mod-privacy-requests"],
-    enabled: isModerator,
-    queryFn: async () => {
-      const { data, error } = await supabase.from("privacy_requests").select("*").order("created_at", { ascending: false });
-      if (error) throw error;
-      return data as PrivacyRequestRow[];
-    },
-  });
-
   useEffect(() => {
     if (!isModerator) return;
     const ch = supabase
@@ -160,14 +146,6 @@ export default function Moderator() {
     const { error } = await supabase.from("chat_mutes").delete().eq("id", id);
     if (error) toast.error("Could not unmute."); else refresh();
   };
-  const updatePrivacyStatus = async (id: string, status: string) => {
-    const { error } = await supabase.from("privacy_requests").update({ status }).eq("id", id);
-    if (error) toast.error("Could not update the privacy request.");
-    else {
-      toast.success("Privacy request updated.");
-      qc.invalidateQueries({ queryKey: ["mod-privacy-requests"] });
-    }
-  };
   const addStation = () => {
     const nextId = Math.max(0, ...(stations.data ?? []).map((s) => s.id)) + 1;
     qc.setQueryData<StationRow[]>(["mod-stations"], (prev) => [
@@ -192,9 +170,9 @@ export default function Moderator() {
         ) : (
           <>
             <div className="flex flex-wrap gap-2 mb-6">
-              {(["stations", "chat", "pinned", "mutes", "privacy"] as Tab[]).map((t) => (
+              {(["stations", "chat", "pinned", "mutes"] as Tab[]).map((t) => (
                 <button key={t} onClick={() => setTab(t)} className={`rounded-full px-4 py-2 text-sm font-semibold capitalize ${tab === t ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground"}`}>
-                  {t === "chat" ? "Chat" : t === "pinned" ? "Pinned" : t === "mutes" ? "Muted" : t === "privacy" ? "Privacy requests" : "Stations"}
+                  {t === "chat" ? "Chat" : t === "pinned" ? "Pinned" : t === "mutes" ? "Muted" : "Stations"}
                 </button>
               ))}
             </div>
@@ -251,31 +229,6 @@ export default function Moderator() {
               </div>
             )}
 
-            {tab === "privacy" && (
-              <div className="space-y-3">
-                <p className="text-sm text-muted-foreground">Review listener requests and keep their status up to date. Contact details are only visible to moderators here and to the listener on their own account page.</p>
-                {privacyRequests.isError && <p className="text-sm text-destructive">Could not load privacy requests.</p>}
-                {(privacyRequests.data ?? []).length === 0 && !privacyRequests.isError && <p className="text-sm text-muted-foreground">No privacy requests have been submitted.</p>}
-                {(privacyRequests.data ?? []).map((request) => (
-                  <article key={request.id} className="rounded-xl border border-border bg-card/60 p-4">
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-foreground">{PRIVACY_REQUEST_TYPES.find((type) => type.value === request.request_type)?.label ?? request.request_type}</h2>
-                        <p className="text-xs text-muted-foreground mt-1 break-all">{request.contact_email} · user {request.user_id.slice(0, 8)}</p>
-                        <p className="text-xs text-muted-foreground mt-1">Submitted {new Date(request.created_at).toLocaleString()}</p>
-                      </div>
-                      <label className="text-xs font-semibold text-muted-foreground">
-                        Status
-                        <select aria-label={`Status for ${request.contact_email}`} className={`${input} mt-1 min-w-36`} value={request.status} onChange={(event) => updatePrivacyStatus(request.id, event.target.value)}>
-                          {PRIVACY_REQUEST_STATUSES.map((status) => <option key={status.value} value={status.value}>{status.label}</option>)}
-                        </select>
-                      </label>
-                    </div>
-                    {request.details && <p className="mt-3 whitespace-pre-wrap break-words text-sm text-foreground">{request.details}</p>}
-                  </article>
-                ))}
-              </div>
-            )}
           </>
         )}
       </main>

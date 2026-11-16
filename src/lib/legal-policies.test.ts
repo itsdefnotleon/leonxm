@@ -5,18 +5,18 @@ describe("policy acceptance", () => {
   it("blocks visitors who have not accepted", () => {
     expect(hasCurrentPolicyAcceptance(null)).toBe(false);
   });
-  it("accepts both policies dated November 15, 2026", () => {
+  it("accepts both policies dated November 16, 2026", () => {
     const record = JSON.parse(createPolicyAcceptance());
-    expect(record.termsVersion).toBe("2026-11-15");
-    expect(record.privacyVersion).toBe("2026-11-15");
+    expect(record.termsVersion).toBe("2026-11-16");
+    expect(record.privacyVersion).toBe("2026-11-16");
     expect(hasCurrentPolicyAcceptance(JSON.stringify(record))).toBe(true);
   });
   it("requires acceptance again when either policy is outdated", () => {
-    expect(hasCurrentPolicyAcceptance(JSON.stringify({ termsVersion: "2026-04-10", privacyVersion: "2026-11-15" }))).toBe(false);
-    expect(hasCurrentPolicyAcceptance(JSON.stringify({ termsVersion: "2026-11-15", privacyVersion: "2026-04-11" }))).toBe(false);
+    expect(hasCurrentPolicyAcceptance(JSON.stringify({ termsVersion: "2026-11-15", privacyVersion: "2026-11-16" }))).toBe(false);
+    expect(hasCurrentPolicyAcceptance(JSON.stringify({ termsVersion: "2026-11-16", privacyVersion: "2026-11-15" }))).toBe(false);
   });
   it("does not accept malformed or incomplete records", () => {
-    for (const raw of ["invalid", "null", "{}", '{"termsVersion":"2026-11-15"}']) {
+    for (const raw of ["invalid", "null", "{}", '{"termsVersion":"2026-11-16"}']) {
       expect(hasCurrentPolicyAcceptance(raw)).toBe(false);
     }
   });
